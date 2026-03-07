@@ -32,11 +32,11 @@ Directly send your MAID (an 84-character string starting with `SGWCMAID`) to upd
 
 After binding, switch to your region's server:
 
-```
-/切服 jp     # Switch to JP server
-/切服 intl   # Switch to INTL server
-/切服 cn     # Switch to CN server (default)
-```
+| Command | Description |
+|---------|-------------|
+| `/切服 jp` | Switch to JP server |
+| `/切服 intl` | Switch to INTL server |
+| `/切服 cn` | Switch to CN server (default) |
 
 ::: tip CN Users
 CN users can bind a QQ account via `/用户名 [your QQ]` to use data from the Diving Fish score tracker. Some features may be limited.
@@ -46,11 +46,11 @@ CN users can bind a QQ account via `/用户名 [your QQ]` to use data from the D
 
 Once set up, try these common commands:
 
-```
-/帮助        # View all available commands
-/b50         # Generate your Top 50 chart
-/今日舞萌    # View today's fortune & recommended songs
-```
+| Command | Description |
+|---------|-------------|
+| `/帮助` | View all available commands |
+| `/b50` | Generate your Top 50 chart |
+| `/今日舞萌` | View today's fortune & recommended songs |
 
 ## Next Steps
 
