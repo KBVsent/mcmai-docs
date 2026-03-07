@@ -1,0 +1,115 @@
+# Account & Server
+
+## Bind SEGA ID
+
+Link your QQ account to your SEGA ID for querying maimai NET data.
+
+Only JP and INTL users need to bind an account. CN users update data via MAID directly.
+
+**Command:** `/绑定`
+
+**Note:** This generates a dedicated binding link (or QR code). Open it in your browser to complete authorization.
+
+::: warning Note
+Each execution of `/绑定` generates a new verification code. Complete the binding promptly.
+:::
+
+---
+
+## Switch Server
+
+Switch your current game region.
+
+**Command:** `/切服 <server>`
+
+**Parameters:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `cn` | China server |
+| `jp` | Japan server |
+| `intl` | International server |
+
+**Examples:**
+
+| Command |
+|---------|
+| `/切服 jp` |
+| `/切服 cn` |
+| `/切服 intl` |
+
+---
+
+## Set Username
+
+Set a username so others can query your data.
+
+**Command:** `/用户名 [username|QQ|清除]`
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/用户名 Sakura` | Set username to Sakura |
+| `/用户名 123456789` | Link QQ number as username |
+| `/用户名` | View current username |
+| `/用户名 清除` | Clear username |
+
+::: warning Note
+When using a username as a query parameter, always prefix it with `#`.
+
+For example: `/b50 #Sakura`, not `/b50 Sakura`.
+:::
+
+---
+
+## Privacy Settings
+
+Control whether others can query your data.
+
+**Command:** `/隐私设置 <action> <target>`
+
+**Actions:**
+
+| Action | Description |
+|--------|-------------|
+| `查看` / `show` | View current permission settings |
+| `开启` / `allow` | Allow the specified target to query |
+| `关闭` / `deny` | Deny the specified target from querying |
+
+**Targets:** `score` (score data), `all` (everything)
+
+**Examples:**
+
+| Command |
+|---------|
+| `/隐私设置 查看` |
+| `/隐私设置 关闭 score` |
+| `/隐私设置 开启 all` |
+
+---
+
+## Friend Management
+
+Manage your McMai friend list, used for PK features.
+
+**Command:** `/好友 [action] [param]`
+
+**Aliases:** `friend`, `好友管理`
+
+**Actions:**
+
+| Action | Description | Param |
+|--------|-------------|-------|
+| `列表` | View friend list | — |
+| `添加` | Add a friend | `#username` |
+| `删除` | Remove a friend | `#username` or slot number |
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/好友 列表` | View friend list |
+| `/好友 添加 #Sakura` | Add friend named Sakura |
+| `/好友 添加 #Sakura 1` | Add Sakura to slot 1 |
+| `/好友 删除 1` | Remove friend in slot 1 |

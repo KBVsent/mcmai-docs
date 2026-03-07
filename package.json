@@ -1,0 +1,24 @@
+{
+  "name": "mcmai-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.26.1",
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "vitepress": "^1.6.4",
+    "vitepress-theme-teek": "^1.5.5"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4"
+  }
+}
