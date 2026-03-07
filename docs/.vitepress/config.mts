@@ -21,7 +21,6 @@ const teekConfig = defineTeekConfig({
 export default defineConfig({
   title: "McMai",
   description: "maimai DX 一站式服务插件 - 数据查询、统计分析、图表生成",
-  base: '/mcmai-docs/',
   extends: teekConfig,
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
 
