@@ -65,27 +65,41 @@ For example: `/b50 #Sakura`, not `/b50 Sakura`.
 
 ## Privacy Settings
 
-Control whether others can query your data.
+Control whether others can query your game data.
 
-**Command:** `/隐私设置 <action> <target>`
+**Command:** `/隐私设置 <action> [target]`
 
 **Actions:**
 
 | Action | Description |
 |--------|-------------|
-| `查看` / `show` | View current permission settings |
-| `开启` / `allow` | Allow the specified target to query |
-| `关闭` / `deny` | Deny the specified target from querying |
+| `查看` | View current privacy settings |
+| `开启` | Allow others to query the specified target |
+| `关闭` | Block others from querying the specified target |
+| `重置` | Reset the specified target to default (all allowed) |
 
-**Targets:** `score` (score data), `all` (everything)
+**Targets:**
+
+| Target | Description |
+|--------|-------------|
+| `查询` | Master switch — controls all query permissions |
+| `b50查询` | Best 50 and other similar queries |
+| `分数查询` | Score (info) queries |
+| `进度查询` | Completion table / progress queries |
+
+::: tip
+Disabling `查询` (master switch) prevents others from accessing any of your data, overriding all individual settings.
+:::
 
 **Examples:**
 
-| Command |
-|---------|
-| `/隐私设置 查看` |
-| `/隐私设置 关闭 score` |
-| `/隐私设置 开启 all` |
+| Command | Description |
+|---------|-------------|
+| `/隐私设置 查看` | View current privacy status |
+| `/隐私设置 关闭 查询` | Block all queries from others |
+| `/隐私设置 关闭 分数查询` | Block only score queries from others |
+| `/隐私设置 开启 b50查询` | Re-allow Best 50 queries from others |
+| `/隐私设置 重置 查询` | Reset all query permissions to default |
 
 ---
 
