@@ -22,7 +22,33 @@ export default defineConfig({
   title: "McMai",
   description: "maimai DX 一站式服务插件 - 数据查询、统计分析、图表生成",
   extends: teekConfig,
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['script', {}, `
+(function () {
+  // Only auto-redirect from the root path on first visit
+  var path = window.location.pathname;
+  if (path !== '/' && path !== '/index.html') return;
+  if (sessionStorage.getItem('lang-redirected')) return;
+
+  var lang = (navigator.language || '').toLowerCase();
+  var target;
+
+  if (lang.startsWith('zh-tw') || lang.startsWith('zh-hk') || lang.startsWith('zh-mo')) {
+    target = '/zh-TW/';
+  } else if (lang.startsWith('ja')) {
+    target = '/ja/';
+  } else if (lang.startsWith('zh')) {
+    target = null; // root is already Simplified Chinese
+  } else {
+    target = '/en/';
+  }
+
+  sessionStorage.setItem('lang-redirected', '1');
+  if (target) window.location.replace(target);
+})();
+    `],
+  ],
 
   locales: {
     root: {

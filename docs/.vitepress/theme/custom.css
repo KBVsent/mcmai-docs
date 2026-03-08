@@ -80,55 +80,62 @@
   }
 }
 
-/* ===== Hero section: VitePress-style glow ===== */
-.VPHero {
+/* ===== Home page: glow covering hero + feature cards + footer ===== */
+
+/* VPHome hosts the glows; no overflow:hidden so blur spreads into footer */
+.VPHome {
   position: relative;
-  overflow: hidden;
 }
 
-/* Ensure text is above the effect */
-.VPHero .container {
+/* Prevent horizontal scrollbar from oversized blur */
+.VPContent {
+  overflow-x: clip;
+}
+
+/* Left glow (blue) */
+.VPHome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80px;
+  width: 700px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at top left, rgba(100, 108, 255, 0.20) 0%, transparent 65%);
+  filter: blur(80px);
+}
+
+/* Right glow (purple) */
+.VPHome::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -80px;
+  width: 700px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.17) 0%, transparent 65%);
+  filter: blur(80px);
+}
+
+/* Ensure content stays above glows */
+.VPHero,
+.VPFeatures {
   position: relative;
   z-index: 1;
 }
 
-/* Left glow (blue) */
-.VPHero::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  left: -120px;
-  width: 800px;
-  height: 800px;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(100, 108, 255, 0.18) 0%, transparent 70%);
-  filter: blur(60px);
-}
-
-/* Right glow (purple) */
-.VPHero::after {
-  content: '';
-  position: absolute;
-  top: -80px;
-  right: -100px;
-  width: 700px;
-  height: 700px;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-}
-
 /* Dark mode: slightly brighter */
-.dark .VPHero::before {
-  background: radial-gradient(circle, rgba(100, 108, 255, 0.28) 0%, transparent 70%);
+.dark .VPHome::before {
+  background: radial-gradient(ellipse at top left, rgba(100, 108, 255, 0.30) 0%, transparent 65%);
 }
 
-.dark .VPHero::after {
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
+.dark .VPHome::after {
+  background: radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.24) 0%, transparent 65%);
 }
 
 /* Hide article recent update module */
