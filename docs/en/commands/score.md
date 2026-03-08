@@ -45,20 +45,19 @@ Query platform-wide statistics for a song, including average achievement rate an
 
 Calculate the number of allowable mistakes for a given difficulty and target score.
 
-**Command:** `/分数线 <difficulty> <song ID> <target%>`
+**Command:** `/分数线 <song ID> [difficulty]`
 
-| Parameter | Description |
-|-----------|-------------|
-| Difficulty | `绿`, `黄`, `红`, `紫`, `白` |
-| Song ID | Numeric ID |
-| Target % | Target achievement rate, e.g. `101.0` |
+| Parameter | Description | Default |
+|-----------|-------------|--------|
+| Song ID | Numeric ID | — |
+| Difficulty | `绿`, `黄`, `红`, `紫`, `白` | 紫 (Master) |
 
 **Examples:**
 
 | Command |
 |---------|
-| `/分数线 紫 11451 101.0` |
-| `/分数线 白 11451 100.5` |
+| `/分数线 11451` |
+| `/分数线 11820 白` |
 
 ---
 
