@@ -64,7 +64,10 @@ export default defineConfig({
           '/guide/': [
             {
               text: '指南',
-              items: [{ text: '快速开始', link: '/guide/getting-started' }],
+              items: [
+                { text: '快速开始', link: '/guide/getting-started' },
+                { text: '用户名与好友系统', link: '/guide/identity-and-friends' },
+              ],
             },
           ],
           '/commands/': [
@@ -100,7 +103,10 @@ export default defineConfig({
           '/en/guide/': [
             {
               text: 'Guide',
-              items: [{ text: 'Getting Started', link: '/en/guide/getting-started' }],
+              items: [
+                { text: 'Getting Started', link: '/en/guide/getting-started' },
+                { text: 'Username & Friend System', link: '/en/guide/identity-and-friends' },
+              ],
             },
           ],
           '/en/commands/': [
@@ -136,7 +142,10 @@ export default defineConfig({
           '/ja/guide/': [
             {
               text: 'ガイド',
-              items: [{ text: 'はじめに', link: '/ja/guide/getting-started' }],
+              items: [
+                { text: 'はじめに', link: '/ja/guide/getting-started' },
+                { text: 'ユーザー名とフレンドシステム', link: '/ja/guide/identity-and-friends' },
+              ],
             },
           ],
           '/ja/commands/': [
@@ -172,7 +181,10 @@ export default defineConfig({
           '/zh-TW/guide/': [
             {
               text: '指南',
-              items: [{ text: '快速開始', link: '/zh-TW/guide/getting-started' }],
+              items: [
+                { text: '快速開始', link: '/zh-TW/guide/getting-started' },
+                { text: '使用者名稱與好友系統', link: '/zh-TW/guide/identity-and-friends' },
+              ],
             },
           ],
           '/zh-TW/commands/': [

@@ -54,4 +54,5 @@ Once set up, try these common commands:
 
 ## Next Steps
 
+- See [Username & Friend System](/en/guide/identity-and-friends) to learn how to set up a username and manage friends
 - See [Command Reference](/en/commands/basic) for all available commands
