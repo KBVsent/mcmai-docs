@@ -36,3 +36,7 @@ features:
     title: 柔軟な設定
     details: プロフィール表示カスタマイズ・プライバシー設定・フレンド管理など。
 ---
+
+## 関連リンク
+
+**[JiETNG](https://jietng.matsuki.work/)** — Line を利用しているなら、JiETNG Bot もおすすめの選択肢です。

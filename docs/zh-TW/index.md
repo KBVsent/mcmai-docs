@@ -36,3 +36,7 @@ features:
     title: 靈活設定
     details: 支援頂板樣式自訂、隱私權限控制、好友管理等個性化設定。
 ---
+
+## 友情連結
+
+**[JiETNG](https://jietng.matsuki.work/)** — 如果你正在使用 Line，JiETNG Bot 也是一個不錯的選擇。

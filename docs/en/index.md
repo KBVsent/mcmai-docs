@@ -36,3 +36,7 @@ features:
     title: Flexible Settings
     details: Customize profile display, privacy controls, friend management, and more.
 ---
+
+## Friend Links
+
+**[JiETNG](https://jietng.matsuki.work/)** — If you use Line, JiETNG Bot is also a great choice.

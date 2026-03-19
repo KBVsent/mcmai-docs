@@ -37,3 +37,6 @@ features:
     details: 支持顶板样式自定义、隐私权限控制、好友管理等个性化设置。
 ---
 
+## 友情链接
+
+**[JiETNG](https://jietng.matsuki.work/)** — 如果你是海外用户且正在使用 Line，JiETNG Bot也是一个不错的选择。
