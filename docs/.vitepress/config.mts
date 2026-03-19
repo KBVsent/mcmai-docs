@@ -66,6 +66,7 @@ export default defineConfig({
               text: '指南',
               items: [
                 { text: '快速开始', link: '/guide/getting-started' },
+                { text: 'QQ Bot 使用小提示', link: '/guide/qqbot-tips' },
                 { text: '用户名与好友系统', link: '/guide/identity-and-friends' },
               ],
             },
