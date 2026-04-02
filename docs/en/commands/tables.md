@@ -53,10 +53,10 @@ View completion progress for a grade evaluation or plate.
 
 | Command |
 |---------|
-| `/完成表 SSS` |
-| `/完成表 SSS #Sakura` |
+| `/完成表 13` |
+| `/完成表 14 #Sakura` |
 | `/完成表 真 极` |
-| `/完成表 舞 jp` |
+| `/完成表 舞将 jp #Sakura` |
 
 ---
 
@@ -69,7 +69,7 @@ Query which songs you should play to improve your current Rating.
 | Parameter | Description | Example |
 |-----------|-------------|---------|
 | Level or constant | Target level or constant | `14`, `13.7` |
-| Score | Target achievement rate | `100.5` |
+| Score | Target score value | `10` |
 | Page | Optional, for pagination | `2` |
 
 **Examples:**

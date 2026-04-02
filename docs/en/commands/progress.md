@@ -2,15 +2,15 @@
 
 ## Level Progress
 
-Query achievement progress for all songs at a specified level, filterable by grade and category.
+Query achievement progress for all songs at a specified level, filterable by achievement/sync target and completion status.
 
-**Command:** `/进度 <level or constant> <grade> [filter] [page]`
+**Command:** `/进度 <level or constant> <achievement/sync target> <completed/unfinished> [page]`
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
 | Level or constant | `12`, `13+`, `14.0`, etc. | `13+` |
-| Grade | Target grade | `SSS`, `SS`, `S`, `A`, etc. |
-| Filter | Optional, filter by `ap`, `fc`, etc. | `fc` |
+| Achievement/sync target | Target achievement or sync threshold | `99.5`, `fc`, `ap`, `SSS` |
+| Completed/unfinished | `已完成` or `未完成` | `已完成` |
 | Page | Optional, default page 1 | `2` |
 
 **Grade Reference:**
@@ -29,8 +29,9 @@ Query achievement progress for all songs at a specified level, filterable by gra
 | Command |
 |---------|
 | `/进度 13+ SSS` |
-| `/进度 14 SSS+ fc` |
+| `/进度 14 fc` |
 | `/进度 13+ SS 2` |
+| `/进度 14 ap 已完成 2` |
 
 ---
 
@@ -38,21 +39,22 @@ Query achievement progress for all songs at a specified level, filterable by gra
 
 Query progress by song genre (pop, Touhou Project, etc.).
 
-**Command:** `/分类进度 <genre> <grade> [filter] [page]`
+**Command:** `/分类进度 <genre> <achievement/sync target> <completed/unfinished> [page]`
 
-| Parameter | Description |
-|-----------|-------------|
-| Genre | Genre name |
-| Grade | Target grade (same as level progress) |
-| Filter | Optional, `ap`, `fc`, etc. |
-| Page | Optional, default page 1 |
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| Genre | Genre name | `动漫`, `东方` |
+| Achievement/sync target | Target achievement or sync threshold | `99.5`, `fc`, `ap`, `SSS` |
+| Completed/unfinished | `已完成` or `未完成` | `已完成` |
+| Page | Optional, default page 1 | `2` |
 
 **Examples:**
 
 | Command |
 |---------|
-| `/分类进度 流行与动漫 SSS` |
-| `/分类进度 东方Project SS` |
+| `/分类进度 动漫 SSS` |
+| `/分类进度 东方 SS 2` |
+| `/分类进度 舞萌 fc 已完成 2` |
 
 ---
 

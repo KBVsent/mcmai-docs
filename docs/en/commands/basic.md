@@ -37,3 +37,7 @@ Randomly recommend a song. Can be filtered by type, difficulty color, or level.
 | `/随机歌曲 dx 紫 14` |
 | `/随机歌曲 13+` |
 | `/随机歌曲 sd` |
+
+::: tip
+Parameter order is flexible. You can combine them in any order, for example `/随机歌曲 14 dx` and `/随机歌曲 dx 14` produce the same result.
+:::
