@@ -6,12 +6,12 @@ Link your QQ account to your SEGA ID for querying maimai NET data.
 
 Only JP and INTL users need to bind an account. CN users update data via MAID directly.
 
-**Command:** `/绑定`
+**Command:** `/bind`
 
 **Note:** This generates a dedicated binding link (or QR code). Open it in your browser to complete authorization.
 
 ::: warning Note
-Each execution of `/绑定` generates a new verification code. Complete the binding promptly.
+Each execution of `/bind` generates a new verification code. Complete the binding promptly.
 :::
 
 ---
@@ -20,7 +20,7 @@ Each execution of `/绑定` generates a new verification code. Complete the bind
 
 Switch your current game region.
 
-**Command:** `/切服 <server>`
+**Command:** `/switchserver <server>`
 
 **Parameters:**
 
@@ -34,31 +34,46 @@ Switch your current game region.
 
 | Command |
 |---------|
-| `/切服 jp` |
-| `/切服 cn` |
-| `/切服 intl` |
+| `/switchserver jp` |
+| `/switchserver cn` |
+| `/switchserver intl` |
 
 ---
 
 ## Set Username
 
-Set a username so others can query your data.
+Set a username so others can query your data using `#username`.
 
-**Command:** `/用户名 [username|QQ|清除]`
+**Command:** `/setname [username|QQ number|clear|clearqq]`
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/用户名 Sakura` | Set username to Sakura |
-| `/用户名 123456789` | Link QQ number as username |
-| `/用户名` | View current username |
-| `/用户名 清除` | Clear username |
+| `/setname Sakura` | Set username to Sakura |
+| `/setname` | View current username, query ID, and linked QQ |
+| `/setname clear` | Clear username |
+| `/setname 123456789` | Link a QQ number (5–11 digits) |
+| `/setname clearqq` | Unlink the linked QQ number |
+
+**Query ID:**
+
+Every user has a system-assigned **query ID** (a short ID prefixed with `#mc`). Even without setting a username, others can query your data using this ID. After setting a username, both `#username` and the query ID work.
 
 ::: warning Note
 When using a username as a query parameter, always prefix it with `#`.
 
 For example: `/b50 #Sakura`, not `/b50 Sakura`.
+:::
+
+::: tip Review Process
+Usernames go through a review after being set:
+
+- **Pending**: Others can query using `#username`, but the username is partially masked in display
+- **Approved**: Username is shown in full
+- **Rejected**: Username is automatically deleted; you will need to set a new one
+
+Usernames can only be changed once every **3 days**, so choose carefully.
 :::
 
 ---
@@ -67,39 +82,39 @@ For example: `/b50 #Sakura`, not `/b50 Sakura`.
 
 Control whether others can query your game data.
 
-**Command:** `/隐私设置 <action> [target]`
+**Command:** `/privacy <action> [target]`
 
 **Actions:**
 
 | Action | Description |
 |--------|-------------|
-| `查看` | View current privacy settings |
-| `开启` | Allow others to query the specified target |
-| `关闭` | Block others from querying the specified target |
-| `重置` | Reset the specified target to default (all allowed) |
+| `show` / `status` | View current privacy settings |
+| `on` / `allow` | Allow others to query the specified target |
+| `off` | Block others from querying the specified target |
+| `reset` | Reset the specified target to default (all allowed) |
 
 **Targets:**
 
 | Target | Description |
 |--------|-------------|
-| `查询` | Master switch — controls all query permissions |
-| `b50查询` | Best 50 and other similar queries |
-| `分数查询` | Score (info) queries |
-| `进度查询` | Completion table / progress queries |
+| `all` / `query` | Master switch — controls all query permissions |
+| `b50` | Best 50 and other similar queries |
+| `score` | Score (info) queries |
+| `progress` | Completion table / progress queries |
 
 ::: tip
-Disabling `查询` (master switch) prevents others from accessing any of your data, overriding all individual settings.
+Disabling `all` (master switch) prevents others from accessing any of your data, overriding all individual settings.
 :::
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/隐私设置 查看` | View current privacy status |
-| `/隐私设置 关闭 查询` | Block all queries from others |
-| `/隐私设置 关闭 分数查询` | Block only score queries from others |
-| `/隐私设置 开启 b50查询` | Re-allow Best 50 queries from others |
-| `/隐私设置 重置 查询` | Reset all query permissions to default |
+| `/privacy show` | View current privacy status |
+| `/privacy off all` | Block all queries from others |
+| `/privacy off score` | Block only score queries from others |
+| `/privacy on b50` | Re-allow Best 50 queries from others |
+| `/privacy reset all` | Reset all query permissions to default |
 
 ---
 
@@ -107,23 +122,23 @@ Disabling `查询` (master switch) prevents others from accessing any of your da
 
 Manage your McMai friend list, used for PK features.
 
-**Command:** `/好友 [action] [param]`
+**Command:** `/friend [action] [param]`
 
-**Aliases:** `friend`, `好友管理`
+**Aliases:** `好友`, `好友管理`
 
 **Actions:**
 
 | Action | Description | Param |
 |--------|-------------|-------|
-| `列表` | View friend list | — |
-| `添加` | Add a friend | `#username` |
-| `删除` | Remove a friend | `#username` or slot number |
+| `list` | View friend list | — |
+| `add` | Add a friend | `#username` |
+| `del` / `remove` | Remove a friend | `#username` or slot number |
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/好友 列表` | View friend list |
-| `/好友 添加 #Sakura` | Add friend named Sakura |
-| `/好友 添加 #Sakura 1` | Add Sakura to slot 1 |
-| `/好友 删除 1` | Remove friend in slot 1 |
+| `/friend list` | View friend list |
+| `/friend add #Sakura` | Add friend named Sakura |
+| `/friend add #Sakura 1` | Add Sakura to slot 1 |
+| `/friend del 1` | Remove friend in slot 1 |

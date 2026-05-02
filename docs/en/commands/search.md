@@ -4,14 +4,14 @@
 
 Search for songs by title, alias, or ID.
 
-**Command:** `/查歌 <keyword>`
+**Command:** `/search <keyword>`
 
 **Examples:**
 
 | Command |
 |---------|
-| `/查歌 潘多拉` |
-| `/查歌 11451` |
+| `/search 潘多拉` |
+| `/search 11451` |
 
 ---
 
@@ -33,7 +33,7 @@ Query detailed chart info (difficulty, constant, charter, etc.) by song ID.
 
 Find songs within a specified constant range, with paging support.
 
-**Command:** `/定数查歌 <constant> [page]`
+**Command:** `/dssearch <constant> [page]`
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -44,9 +44,9 @@ Find songs within a specified constant range, with paging support.
 
 | Command |
 |---------|
-| `/定数查歌 14.0` |
-| `/定数查歌 13.7-14.0` |
-| `/定数查歌 14.0 2` |
+| `/dssearch 14.0` |
+| `/dssearch 13.7-14.0` |
+| `/dssearch 14.0 2` |
 
 ---
 
@@ -54,7 +54,7 @@ Find songs within a specified constant range, with paging support.
 
 Find songs within a specified BPM range, with paging support.
 
-**Command:** `/BPM查歌 <BPM> [page]`
+**Command:** `/bpmsearch <BPM> [page]`
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -65,8 +65,8 @@ Find songs within a specified BPM range, with paging support.
 
 | Command |
 |---------|
-| `/BPM查歌 180` |
-| `/BPM查歌 160-200` |
+| `/bpmsearch 180` |
+| `/bpmsearch 160-200` |
 
 ---
 
@@ -74,14 +74,14 @@ Find songs within a specified BPM range, with paging support.
 
 Search songs by composer / arranger name.
 
-**Command:** `/曲师查歌 <composer> [page]`
+**Command:** `/artistsearch <composer> [page]`
 
 **Examples:**
 
 | Command |
 |---------|
-| `/曲师查歌 t+pazolite` |
-| `/曲师查歌 xi 2` |
+| `/artistsearch t+pazolite` |
+| `/artistsearch xi 2` |
 
 ---
 
@@ -89,10 +89,34 @@ Search songs by composer / arranger name.
 
 Search songs by chart designer name.
 
-**Command:** `/谱师查歌 <charter> [page]`
+**Command:** `/designsearch <charter> [page]`
 
 **Examples:**
 
 | Command |
 |---------|
-| `/谱师查歌 Jack 2` |
+| `/designsearch Jack 2` |
+
+---
+
+## Version Search
+
+Filter songs by game version or release date, with paging support.
+
+**Command:** `/versearch <version keyword> [page]`
+
+| Input | Description | Example |
+|-------|-------------|---------|
+| `new` / `latest` | Songs added in the most recent update for your server | `/versearch new` |
+| Date | Songs released on the specified date (`YYYYMMDD` or `YYYY-MM-DD`) | `/versearch 2025-01-09` |
+| English version name | Songs belonging to the corresponding game version | `/versearch circle`, `/versearch prism` |
+| Version name substring | Version name keyword (case-insensitive) | `/versearch buddies`, `/versearch 2025` |
+
+**Examples:**
+
+| Command |
+|---------|
+| `/versearch new` |
+| `/versearch 2025-01-09` |
+| `/versearch circle` |
+| `/versearch prism 2` |

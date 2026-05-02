@@ -4,7 +4,7 @@
 
 Query the constant table (as an image) for a specified level or constant.
 
-**Command:** `/定数表 <level or constant> [server]`
+**Command:** `/rating <level or constant> [server]`
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -15,9 +15,9 @@ Query the constant table (as an image) for a specified level or constant.
 
 | Command |
 |---------|
-| `/定数表 13+` |
-| `/定数表 14` |
-| `/定数表 14 jp` |
+| `/rating 13+` |
+| `/rating 14` |
+| `/rating 14 jp` |
 
 ---
 
@@ -25,7 +25,7 @@ Query the constant table (as an image) for a specified level or constant.
 
 Query the course requirements for a specified Dan-i (rank) stage.
 
-**Command:** `/段位表 <rank name> [server] [#username]`
+**Command:** `/dancourse <rank name> [server] [#username]`
 
 | Parameter | Description |
 |-----------|-------------|
@@ -37,9 +37,9 @@ Query the course requirements for a specified Dan-i (rank) stage.
 
 | Command |
 |---------|
-| `/段位表 真十段` |
-| `/段位表 真十段 #Sakura` |
-| `/段位表 真皆伝 jp` |
+| `/dancourse 真十段` |
+| `/dancourse 真十段 #Sakura` |
+| `/dancourse 真皆伝 jp` |
 
 ---
 
@@ -47,16 +47,27 @@ Query the course requirements for a specified Dan-i (rank) stage.
 
 View completion progress for a grade evaluation or plate.
 
-**Command:** `/完成表 <grade or plate> [plate level] [server] [#username]`
+**Command:** `/plate <grade or plate> [plate level] [#username]`
+
+**Parameters:**
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| Grade or plate | Numeric level (`13`, `14+`) or version name (`circle`, `plus`, etc.) | `13+` |
+| Plate level | Required for plate mode (`fc`, `sss`, `ap`, `fdx`) | `sss` |
+| #username | Query another player (requires their permission) | `#Sakura` |
+
+**Version name aliases:** `circle` (丸), `plus` (真), `prism` (鏡), `buddies` (双), `festival` (祭), `universe` (宙), `splash` (爽), `dx` (熊), and their `p` variants (e.g. `circlep`, `prismp`).
 
 **Examples:**
 
 | Command |
 |---------|
-| `/完成表 13` |
-| `/完成表 14 #Sakura` |
-| `/完成表 真 极` |
-| `/完成表 舞将 jp #Sakura` |
+| `/plate 13` |
+| `/plate 14 #Sakura` |
+| `/plate plus fc` |
+| `/plate circle sss` |
+| `/plate circle sss #Sakura` |
 
 ---
 
@@ -64,7 +75,7 @@ View completion progress for a grade evaluation or plate.
 
 Query which songs you should play to improve your current Rating.
 
-**Command:** `/上分 <level or constant> <score> [page]`
+**Command:** `/risescore <level or constant> <score> [page]`
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -76,5 +87,5 @@ Query which songs you should play to improve your current Rating.
 
 | Command |
 |---------|
-| `/上分 14 5` |
-| `/上分 13.7 9 2` |
+| `/risescore 14 5` |
+| `/risescore 13.7 9 2` |

@@ -4,7 +4,7 @@
 
 View your profile card (a card-style image showing your best scores).
 
-**Command:** `/查看顶板 [region]`
+**Command:** `/topboard [region]`
 
 | Parameter | Description |
 |-----------|-------------|
@@ -16,34 +16,64 @@ View your profile card (a card-style image showing your best scores).
 
 Customize the fields displayed on your profile card.
 
-**Command:** `/顶板样式 <action> <field>`
+**Command:** `/topsetting <action> [field]`
+
+**Actions:**
+
+| Action | Description |
+|--------|-------------|
+| `status` (or no argument) | View current settings |
+| `show` | Show the specified field |
+| `hide` | Hide the specified field |
+| `reset` | Reset all settings to default |
+
+**Available Fields:**
+
+| Field | Description |
+|-------|-------------|
+| `nickname` | In-game nickname |
+| `playcount` | Total play count |
+| `本版本游玩次数` | Play count for the current version |
+| `awake` | Total awakenings |
+| `mile` | maimai mileage |
+| `gift` | Partner gift count |
+| `circle` | Circle / group |
+| `banner` | Top banner image |
+| `all` | Operate on all fields at once |
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/顶板样式 查看` | View current settings |
-| `/顶板样式 开启 游玩次数` | Show play count |
-| `/顶板样式 关闭 昵称` | Hide nickname |
+| `/topsetting` | View current settings |
+| `/topsetting show playcount` | Show play count |
+| `/topsetting hide nickname` | Hide nickname |
+| `/topsetting show banner` | Show top banner |
+| `/topsetting hide all` | Hide all fields |
+| `/topsetting reset` | Reset to default |
 
 ---
 
 ## Privacy Settings
 
-Control others' ability to query your data.
+Control others' ability to query your data. See also [Account & Server → Privacy Settings](/commands/account#privacy-settings).
 
-**Command:** `/隐私设置 <action> <target>`
+**Command:** `/privacy <action> [target]`
 
-| Action | Description |
+**Targets:**
+
+| Target | Description |
 |--------|-------------|
-| `查看` / `show` | View current permission config |
-| `开启` / `allow` | Allow querying |
-| `关闭` / `deny` | Deny querying |
+| `all` / `query` | Master switch — controls all query permissions |
+| `b50` | Best 50 and other similar queries |
+| `score` | Score (info) queries |
+| `progress` | Completion table / progress queries |
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/隐私设置 查看` | View current permissions |
-| `/隐私设置 关闭 score` | Prevent others from querying your scores |
-| `/隐私设置 开启 all` | Allow querying all data |
+| `/privacy show` | View current permission config |
+| `/privacy off all` | Block all queries from others |
+| `/privacy off score` | Block only score queries from others |
+| `/privacy reset all` | Reset all query permissions to default |
