@@ -27,7 +27,7 @@ Username is the primary way for others to find and query you on QQ. If you want 
 
 ### How to set a username?
 
-**Command:** `/用户名 <username>`
+**Command:** `/setname <username>`
 
 **Rules:**
 - 5–10 characters long
@@ -37,9 +37,9 @@ Username is the primary way for others to find and query you on QQ. If you want 
 
 | Command | Description |
 |---------|-------------|
-| `/用户名 MaiPlayer` | Set username to MaiPlayer |
-| `/用户名 清除` | Delete current username |
-| `/用户名` | View current username and QQ binding status |
+| `/setname MaiPlayer` | Set username to MaiPlayer |
+| `/setname clear` | Delete current username |
+| `/setname` | View current username and QQ binding status |
 
 ---
 
@@ -60,12 +60,12 @@ JP / INTL users bind their accounts via SEGA ID and do not need to bind a QQ num
 
 Pass your QQ number (5–11 digits) as the argument — the system automatically detects it as a QQ binding, not a username.
 
-**Command:** `/用户名 <QQ number>`
+**Command:** `/setname <QQ number>`
 
 | Command | Description |
 |---------|-------------|
-| `/用户名 123456789` | Bind QQ number 123456789 |
-| `/用户名 解绑qq` | Unbind QQ number |
+| `/setname 123456789` | Bind QQ number 123456789 |
+| `/setname clearqq` | Unbind QQ number |
 
 ---
 
@@ -87,15 +87,15 @@ The friend system is designed for exactly this. Save up to **3 players** in frie
 
 ### How to manage friends?
 
-**Command:** `/好友`
+**Command:** `/friend`
 
 | Command | Description |
 |---------|-------------|
-| `/好友 列表` | View your 3 friend slots |
-| `/好友 添加 #username` | Add a friend by username (auto-fills first empty slot) |
-| `/好友 添加 #username 2` | Add a friend to a specific slot (overwrites existing) |
-| `/好友 添加 #QQnumber` | Add a friend by QQ number |
-| `/好友 删除 1` | Remove friend in slot 1 |
+| `/friend list` | View your 3 friend slots |
+| `/friend add #username` | Add a friend by username (auto-fills first empty slot) |
+| `/friend add #username 2` | Add a friend to a specific slot (overwrites existing) |
+| `/friend add #QQnumber` | Add a friend by QQ number |
+| `/friend del 1` | Remove friend in slot 1 |
 
 ### How to use friend slots in queries?
 
@@ -108,7 +108,7 @@ Once friends are added, use `#friendN` in any command that supports a target:
 | `/pk50 #friend1` | PK against friend 1 |
 
 ::: tip Multilingual Support
-Friend slots also support Chinese (`#好友1`) and Japanese (`#フレンド1`) notation — all equivalent.
+Friend slots also support localized notation, such as Japanese `#フレンド1`.
 :::
 
 ---
@@ -125,7 +125,7 @@ Friend slots also support Chinese (`#好友1`) and Japanese (`#フレンド1`) n
 | `/pk50 #friend1` | PK against friend 1 |
 
 ::: warning Note
-Both players must have updated B50 data (`/更新b50` or `/更新记录`) before initiating a PK, and the target's B50 privacy must be set to public.
+Both players must have updated B50 data (`/update` or `/updateb50`) before initiating a PK, and the target's B50 privacy must be set to public.
 :::
 
 ---

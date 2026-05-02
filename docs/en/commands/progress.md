@@ -50,7 +50,7 @@ Query completion progress for a version plate (e.g. `circle sss`, `prism ap`).
 | `ap` | AP all songs |
 | `fdx` | FDX all songs |
 
-Use English version name aliases (e.g. `circle`, `prism`, `plus`) or plate characters (e.g. `丸`, `鏡`, `真`).
+Use English version name aliases such as `circle`, `prism`, `plus`, `buddies`, `festival`, `universe`, `splash`, and `dx`.
 
 **Examples:**
 
@@ -61,7 +61,7 @@ Use English version name aliases (e.g. `circle`, `prism`, `plus`) or plate chara
 | `/progress prism ap 2` |
 
 ::: tip
-When using Chinese plate characters, the character and level can be written together, e.g. `/progress 丸将` equals `/progress 丸 将`.
+For plate progress, use the English version alias with a plate level, e.g. `/progress circle sss`.
 :::
 
 ---

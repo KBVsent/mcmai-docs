@@ -10,7 +10,6 @@ Search for songs by title, alias, or ID.
 
 | Command |
 |---------|
-| `/search 潘多拉` |
 | `/search 11451` |
 
 ---

@@ -17,7 +17,6 @@ Add `#username` to query another player's data.
 | Command |
 |---------|
 | `/info 11451` |
-| `/info 潘多拉` |
 | `/info 11451 #Sakura` |
 
 ---
@@ -58,6 +57,5 @@ Query AP rate, FC rate, play rate and other statistics for a song's charts.
 | Command |
 |---------|
 | `/rankstats 11451` |
-| `/rankstats 潘多拉` |
 | `/rankstats 11451 jp` |
 | `/rankstats 11451 cn` |

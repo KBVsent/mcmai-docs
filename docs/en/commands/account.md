@@ -124,8 +124,6 @@ Manage your McMai friend list, used for PK features.
 
 **Command:** `/friend [action] [param]`
 
-**Aliases:** `好友`, `好友管理`
-
 **Actions:**
 
 | Action | Description | Param |

@@ -16,8 +16,8 @@ You need to bind your account and update data before using personal data queries
 
 **JP / INTL Users**
 
-1. Use `/绑定` to bind your SEGA ID
-2. After binding, use `/更新记录` to sync your data
+1. Use `/bind` to bind your SEGA ID
+2. After binding, use `/update` to sync your data
 
 **CN Users**
 
@@ -34,12 +34,12 @@ After binding, switch to your region's server:
 
 | Command | Description |
 |---------|-------------|
-| `/切服 jp` | Switch to JP server |
-| `/切服 intl` | Switch to INTL server |
-| `/切服 cn` | Switch to CN server (default) |
+| `/switchserver jp` | Switch to JP server |
+| `/switchserver intl` | Switch to INTL server |
+| `/switchserver cn` | Switch to CN server (default) |
 
 ::: tip CN Users
-CN users can bind a QQ account via `/用户名 [your QQ]` to use data from the Diving Fish score tracker. Some features may be limited.
+CN users can bind a QQ account via `/setname [your QQ]` to use data from the Diving Fish score tracker. Some features may be limited.
 :::
 
 ## Basic Usage
@@ -48,9 +48,9 @@ Once set up, try these common commands:
 
 | Command | Description |
 |---------|-------------|
-| `/帮助` | View all available commands |
+| `/help` | View all available commands |
 | `/b50` | Generate your Top 50 chart |
-| `/今日舞萌` | View today's fortune & recommended songs |
+| `/maitoday` | View today's fortune & recommended songs |
 
 ## Next Steps
 
