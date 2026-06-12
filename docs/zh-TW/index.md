@@ -37,6 +37,11 @@ features:
     details: 支援頂板樣式自訂、隱私權限控制、好友管理等個性化設定。
 ---
 
+## 社群交流
+
+- **QQ 群**：[1006348059](https://qun.qq.com/universal-share/share?ac=1&authKey=a%2B7GQ%2FsIH%2FMzeTpaTR70%2FdDEvTk4%2Firp8W%2FvL1JvLBtM7AuNog3vs9S7uApshxyL&busi_data=eyJncm91cENvZGUiOiIxMDA2MzQ4MDU5IiwidG9rZW4iOiJnRFhqczMxYlZzQTVSNm9SZ1ZkOU1WNjJobTd4QzdyR3lyS1lwb0JOTlZTYmlSeVU1SnNKV2Z1bTVLYjBvR3BJIiwidWluIjoiMTQ4MTYxODMxOSJ9&data=m-7IeXvdz1a8EKGoCkMeid1DwluG3vH6z1sdNVC641CqCINiRQEE7WY-rowa5ZqB2blPVRLHqmPina6U02PZSw&svctype=4&tempid=h5_group_info)
+- **Discord 伺服器**：[點擊加入](https://discord.gg/Y6r9tHVjRw)
+
 ## 友情連結
 
 **[JiETNG](https://jietng.matsuki.work/)** — 如果你正在使用 Line，JiETNG Bot 也是一個不錯的選擇。

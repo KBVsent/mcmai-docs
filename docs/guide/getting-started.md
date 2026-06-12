@@ -4,12 +4,13 @@ McMai 是一个支持国服、日服、国际服三区数据查询的全功能 m
 
 ## 添加 Bot
 
-McMai 已在 QQ、Discord 平台发布，扫描下方对应二维码即可使用：
+McMai 已在 QQ、Discord 平台发布，**扫描下方二维码，或点击按钮**即可使用：
 
-| QQ | Discord |
-| :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot 二维码" width="200" /> |
-| 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 |
+| QQ | Discord | Discord 官方服务器 |
+| :---: | :---: | :---: |
+| <img src="/QQBot.png" alt="McMai QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot 二维码" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 官方服务器二维码" width="200" /> |
+| 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 | 加入官方服务器<br>无需安装直接使用 |
+| [🔗 点击添加](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 点击邀请](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 点击加入](https://discord.gg/Y6r9tHVjRw) |
 
 后续将逐步拓展至 Telegram 等更多平台。
 

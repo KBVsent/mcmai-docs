@@ -4,12 +4,13 @@ McMai is a full-featured maimai DX assistant Bot plugin supporting CN, JP, and I
 
 ## Add the Bot
 
-McMai is available on QQ and Discord. Scan the corresponding QR code below to get started:
+McMai is available on QQ and Discord. **Scan the QR code or tap the button** below to get started:
 
-| QQ | Discord |
-| :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> |
-| Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app |
+| QQ | Discord | Official Discord Server |
+| :---: | :---: | :---: |
+| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Official Discord Server QR Code" width="200" /> |
+| Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app | Join the official server<br>and use it without installing |
+| [🔗 Add](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 Invite](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 Join](https://discord.gg/Y6r9tHVjRw) |
 
 More platforms (Telegram, etc.) will be supported in the future.
 
