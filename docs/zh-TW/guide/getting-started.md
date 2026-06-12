@@ -4,11 +4,14 @@ McMai 是一個支援國服、日服、國際服三區資料查詢的全功能 m
 
 ## 新增 Bot
 
-McMai 已透過 QQ 機器人平台發布，掃描下方 QR Code 加好友，或將其拉入群組使用：
+McMai 已在 QQ、Discord 平台發布，掃描下方對應 QR Code 即可使用：
 
-<img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" />
+| QQ | Discord |
+| :---: | :---: |
+| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> |
+| 加好友<br>或將其拉入群組使用 | 邀請 Bot 加入你的伺服器<br>或作為個人安裝 |
 
-後續將逐步拓展至 Telegram、Discord 等平台。
+後續將逐步拓展至 Telegram 等更多平台。
 
 ## 綁定帳號 & 更新資料
 
