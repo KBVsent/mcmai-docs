@@ -89,3 +89,11 @@ Query which songs you should play to improve your current Rating.
 |---------|
 | `/risescore 14 5` |
 | `/risescore 13.7 9 2` |
+
+### New-Version Rating Mode
+
+Shows which songs added in your server's latest version can raise your Rating. This mode renders a single image and is not paginated.
+
+**Command:** `/risescore new`
+
+Adding `new` anywhere in the arguments enters this mode; all other arguments are ignored.

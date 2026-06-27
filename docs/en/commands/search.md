@@ -119,3 +119,7 @@ Filter songs by game version or release date, with paging support.
 | `/versearch 2025-01-09` |
 | `/versearch circle` |
 | `/versearch prism 2` |
+
+::: tip Cross-server lookup
+If the queried version doesn't exist on your server, the Bot automatically looks it up on other servers and returns those songs. The actual source server is noted above the results.
+:::

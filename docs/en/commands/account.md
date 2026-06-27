@@ -40,6 +40,33 @@ Switch your current game region.
 
 ---
 
+## Switch Aime Card
+
+View or switch the Aime card slot on your Japan-server account.
+
+::: info Japan server only
+This feature is available only to Japan-server (JP) users who have bound a Japan-server account.
+:::
+
+**Command:** `/aime [card number]`
+
+**Description:**
+
+- `/aime`: Lists all Aime cards on your account, marking the currently selected one along with its Rating and card type (standard / free).
+- `/aime <number>`: Switches to the card with the given number.
+- If your account has only one card, no switching is needed.
+
+The change takes effect the next time you run `/update`.
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/aime` | View all Aime cards on your account |
+| `/aime 2` | Switch to card #2 |
+
+---
+
 ## Set Username
 
 Set a username so others can query your data using `#username`.
