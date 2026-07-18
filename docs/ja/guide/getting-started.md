@@ -10,7 +10,7 @@ McMai は QQ・Discord で公開されています。**QR コードをスキャ�
 | :---: | :---: | :---: |
 | <img src="/QQBot.png" alt="McMai QQ Bot QR コード" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR コード" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 公式サーバー QR コード" width="200" /> |
 | Bot を友達に追加<br>またはグループに招待 | Bot をサーバーに招待<br>または個人インストール | 公式サーバーに参加<br>インストール不要ですぐ利用 |
-| [🔗 追加する](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 招待する](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 参加する](https://discord.gg/VMGMdsxWCb) |
+| [🔗 追加する](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 招待する](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 参加する](https://discord.gg/fvAU8sTcWz) |
 
 今後、Telegram などのプラットフォームへの対応も予定しています。
 
