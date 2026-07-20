@@ -28,12 +28,15 @@ Query achievement progress for a specified level or version plate, filterable by
 
 **Sync/FC keywords:** `fc`, `fc+`, `ap`, `ap+`, `fs`, `fs+`, `fdx`, `fdx+`
 
+**DX star target:** `1star` – `7star` (e.g. `5star` means DX star ≥ 5; `7star` is theoretical DXScore 100%)
+
 **Examples:**
 
 | Command |
 |---------|
 | `/progress 13+ SSS` |
 | `/progress 14 fc` |
+| `/progress 14 5star` |
 | `/progress 13+ SS completed` |
 | `/progress 14 ap unfinished 2` |
 
@@ -104,7 +107,7 @@ Query your full score list for a specified level or constant, with multi-dimensi
 | Grade | `sss+`, `sss`, `ss+`, `ss`, `s+`, `s`, `a`, `aa`, `aaa`, `b`, `bb`, `bbb`, etc. |
 | Chart type | `dx`, `sd` |
 | New / old | `new` (new version), `old` (old version) |
-| DX star level | `1star` – `6star` |
+| DX star level | `1star` – `7star` (`7star` = theoretical DXScore 100%) |
 
 Prefix a filter with `=` for exact match (Combo/Sync only), e.g. `=fc` shows only charts that are exactly FC (not yet FC+).
 

@@ -23,7 +23,7 @@ Add `#username` to query another player's data.
 
 ## Score Tolerance
 
-Query the deduction per note type for a given difficulty, and the DX score tolerance for each DX star level.
+Query the deduction per note type for a given difficulty, the DX score tolerance for each DX star level, and the TAP-error tolerance for each rank.
 
 **Command:** `/scoreline <song ID> [difficulty]`
 
@@ -38,6 +38,11 @@ Query the deduction per note type for a given difficulty, and the DX score toler
 |---------|
 | `/scoreline 11451` |
 | `/scoreline 11820 white` |
+
+::: tip The image includes
+- **DX star**: the DX score tolerance required to reach each DX star level.
+- **Rank tolerance**: based on the theoretical 101% baseline, the maximum number of a single TAP Great / TAP Good / TAP Miss error tolerable throughout to still reach each rank (SSS+ / SSS / SS+ / SS / S+); the three tiers are mutually exclusive.
+:::
 
 ---
 

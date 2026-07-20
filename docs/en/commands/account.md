@@ -16,6 +16,32 @@ Each execution of `/bind` generates a new verification code. Complete the bindin
 
 ---
 
+## Unbind Account
+
+Unbind your current SEGA account and clear your score records across **all regions**.
+
+**Command:** `/unbind [confirm]`
+
+**Aliases:** `解绑账号`, `連携解除`
+
+::: danger Irreversible
+Unbinding permanently clears the following, and it **cannot be undone**:
+
+- SEGA account binding info (segaid & password)
+- Your score records on all regions (CN / JP / INTL)
+
+To prevent mistakes, a two-step confirmation is required: first send `/unbind` to review what will be deleted, then send `/unbind confirm` to execute. The confirmation request is valid for **5 minutes**; after that you must start over.
+:::
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/unbind` | Review what will be deleted and start an unbind request |
+| `/unbind confirm` | Confirm and execute the unbind (valid for 5 minutes) |
+
+---
+
 ## Switch Server
 
 Switch your current game region.
