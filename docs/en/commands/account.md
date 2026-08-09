@@ -22,8 +22,6 @@ Unbind your current SEGA account and clear your score records across **all regio
 
 **Command:** `/unbind [confirm]`
 
-**Aliases:** `解绑账号`, `連携解除`
-
 ::: danger Irreversible
 Unbinding permanently clears the following, and it **cannot be undone**:
 

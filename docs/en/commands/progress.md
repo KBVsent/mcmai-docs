@@ -108,6 +108,7 @@ Query your full score list for a specified level or constant, with multi-dimensi
 | Chart type | `dx`, `sd` |
 | New / old | `new` (new version), `old` (old version) |
 | DX star level | `1star` – `7star` (`7star` = theoretical DXScore 100%) |
+| Game version | Plate character (e.g. `双`, `鏡`, `丸`) or English version alias (e.g. `buddies`, `prism`); Plus versions end with `+`, e.g. `buddies+` |
 
 Prefix a filter with `=` for exact match (Combo/Sync only), e.g. `=fc` shows only charts that are exactly FC (not yet FC+).
 
@@ -126,3 +127,5 @@ Sortable fields: `ra` (Rating contribution), `acc` (achievement rate), `dx` (DX 
 | `/scorelist 14 dx sss` | DX charts with SSS and above |
 | `/scorelist 14 sort:ra-` | Sort by Rating contribution descending |
 | `/scorelist 14 1star` | Filter DX star level 1 |
+| `/scorelist buddies` | Filter songs from the BUDDiES version |
+| `/scorelist buddies+` | Filter songs from the BUDDiES PLUS version |

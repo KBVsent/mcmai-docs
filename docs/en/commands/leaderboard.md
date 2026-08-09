@@ -95,8 +95,6 @@ This feature is available only to group owners / admins on the QQ Official platf
 
 **Commands:** `/gban <#query ID or #username>`, `/gunban <#query ID or #username>`
 
-**Aliases:** gban = `踢出群榜` = `移出群榜`; gunban = `恢复群榜` = `移回群榜`
-
 **Note:** Copy the target member's `#`-prefixed query ID or username exactly as shown on the group leaderboard. A removed member cannot rejoin on their own; an admin must restore them with `/gunban`.
 
 **Examples:**

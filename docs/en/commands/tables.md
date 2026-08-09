@@ -91,7 +91,7 @@ Query which songs you should play to improve your current Rating.
 | `/risescore 13.7 9 2` |
 
 ::: tip
-The result image distinguishes two kinds of boost: **Rating** is the points your overall game Rating gains once you hit the target for that difficulty; **single-song ra** is the points that chart's single-song ra gains (for players chasing the theoretical value).
+The result image distinguishes two kinds of boost: **Rating** is the points your overall game Rating gains once you hit the target for that difficulty; **single-song ra** is the points that chart's single-song ra gains (for players who have already reached their theoretical Rating).
 :::
 
 ### New-Version Rating Mode

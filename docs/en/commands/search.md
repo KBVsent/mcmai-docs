@@ -28,6 +28,27 @@ Query detailed chart info (difficulty, constant, charter, etc.) by song ID.
 
 ---
 
+## Song Recognition (from Image)
+
+Send a result screenshot and the bot identifies the song in it and returns the chart details — no need to type the title.
+
+**Command:** `/whatsong`
+
+**How to use:**
+
+- Attach a result screenshot **together with** the command; or
+- **Reply to** a message containing a result screenshot, then mention the bot and send the command.
+
+On success the reply is the same as `/search` (chart details, chart-confirm button, etc.).
+
+::: tip Improving recognition
+- Send the **original file** whenever possible — platforms compress images by default, and compressed screenshots often fail to be recognized.
+- The image must contain the **full song title panel**, otherwise the bot reports that no title was found.
+- If a title is recognized but cannot be matched to exactly one song, the recognized text is returned so you can look it up with `/search`.
+:::
+
+---
+
 ## Search by Level Constant
 
 Find songs within a specified constant range, with paging support.

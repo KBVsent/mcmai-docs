@@ -69,3 +69,26 @@ Run without arguments to view your current language setting.
 | `/lang` | View current language |
 | `/lang en` | Switch to English |
 | `/lang ja` | Switch to Japanese |
+
+---
+
+## Server Status
+
+View the real-time online status and heartbeat monitoring of each maimai DX region.
+
+**Command:** `/status`
+
+---
+
+## Region-Exclusive Features
+
+List the commands that are exclusive to the region you are currently on.
+
+**Command:** `/serverfeat`
+
+**Notes:** Some features are only available in specific regions. This command lists the exclusive commands available on your current region; if there are none, it points you to `/switchserver` to change region.
+
+| Region | Exclusive command |
+|--------|-------------------|
+| Japan (JP) | `/aime` — view / switch Aime card slots |
+| China (CN) | `/pc50` — top 50 scores by play count |
