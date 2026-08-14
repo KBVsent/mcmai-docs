@@ -4,15 +4,25 @@ McMai 是一個支援國服、日服、國際服三區資料查詢的全功能 m
 
 ## 新增 Bot
 
-McMai 已在 QQ、Discord 平台發布，**掃描下方 QR Code，或點擊按鈕**即可使用：
+McMai 已在 QQ、Discord、LINE 平台發布，**掃描下方 QR Code，或點擊按鈕**即可使用：
 
-| QQ | Discord | Discord 官方伺服器 |
+| QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 官方伺服器 QR Code" width="200" /> |
-| 加好友<br>或將其拉入群組使用 | 邀請 Bot 加入你的伺服器<br>或作為個人安裝 | 加入官方伺服器<br>無需安裝直接使用 |
-| [🔗 點擊新增](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 點擊邀請](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 點擊加入](https://discord.gg/fvAU8sTcWz) |
+| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 官方帳號 QR Code" width="200" /> |
+| 加好友<br>或將其拉入群組使用 | 邀請 Bot 加入你的伺服器<br>或作為個人安裝 | 加入官方帳號好友<br>或將其邀請進群組使用 |
+| [🔗 點擊新增](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 點擊邀請](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 點擊新增](https://line.me/R/ti/p/@819jucvv) |
 
 後續將逐步拓展至 Telegram 等更多平台。
+
+## 加入官方群組
+
+也可以直接加入官方群組，**無需安裝即可使用 Bot**，同時歡迎在群內交流與回饋意見：
+
+| QQ 群 | Discord 官方伺服器 | LINE 群組 |
+| :---: | :---: | :---: |
+| <img src="/QQ_Group.png" alt="McMai QQ 官方群 QR Code" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 官方伺服器 QR Code" width="200" /> | <img src="/Line_Group.png" alt="McMai LINE 官方群組 QR Code" width="200" /> |
+| 官方交流群 1006348059 | 加入官方伺服器<br>無需安裝直接使用 | 加入官方群組<br>群內已有 Bot 可直接使用 |
+| [🔗 點擊加入](https://qun.qq.com/universal-share/share?ac=1&authKey=a%2B7GQ%2FsIH%2FMzeTpaTR70%2FdDEvTk4%2Firp8W%2FvL1JvLBtM7AuNog3vs9S7uApshxyL&busi_data=eyJncm91cENvZGUiOiIxMDA2MzQ4MDU5IiwidG9rZW4iOiJnRFhqczMxYlZzQTVSNm9SZ1ZkOU1WNjJobTd4QzdyR3lyS1lwb0JOTlZTYmlSeVU1SnNKV2Z1bTVLYjBvR3BJIiwidWluIjoiMTQ4MTYxODMxOSJ9&data=m-7IeXvdz1a8EKGoCkMeid1DwluG3vH6z1sdNVC641CqCINiRQEE7WY-rowa5ZqB2blPVRLHqmPina6U02PZSw&svctype=4&tempid=h5_group_info) | [🔗 點擊加入](https://discord.gg/fvAU8sTcWz) | [🔗 點擊加入](https://line.me/ti/g/EKt3QG4bbX) |
 
 ## 綁定帳號 & 更新資料
 

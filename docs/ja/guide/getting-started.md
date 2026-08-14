@@ -4,15 +4,25 @@ McMai は CN・JP・INTL 三サーバーのデータ照会をサポートする�
 
 ## Bot を追加する
 
-McMai は QQ・Discord で公開されています。**QR コードをスキャン、またはボタンをタップ**してご利用ください：
+McMai は QQ・Discord・LINE で公開されています。**QR コードをスキャン、またはボタンをタップ**してご利用ください：
 
-| QQ | Discord | Discord 公式サーバー |
+| QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR コード" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR コード" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 公式サーバー QR コード" width="200" /> |
-| Bot を友達に追加<br>またはグループに招待 | Bot をサーバーに招待<br>または個人インストール | 公式サーバーに参加<br>インストール不要ですぐ利用 |
-| [🔗 追加する](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 招待する](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 参加する](https://discord.gg/fvAU8sTcWz) |
+| <img src="/QQBot.png" alt="McMai QQ Bot QR コード" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR コード" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 公式アカウント QR コード" width="200" /> |
+| Bot を友達に追加<br>またはグループに招待 | Bot をサーバーに招待<br>または個人インストール | 公式アカウントを友だち追加<br>またはグループに招待 |
+| [🔗 追加する](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 招待する](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 追加する](https://line.me/R/ti/p/@819jucvv) |
 
 今後、Telegram などのプラットフォームへの対応も予定しています。
+
+## 公式グループに参加する
+
+公式グループに参加すれば、**インストール不要で Bot をそのまま利用**できます。交流やご意見もお気軽にどうぞ：
+
+| QQ グループ | Discord 公式サーバー | LINE グループ |
+| :---: | :---: | :---: |
+| <img src="/QQ_Group.png" alt="McMai QQ 公式グループ QR コード" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 公式サーバー QR コード" width="200" /> | <img src="/Line_Group.png" alt="McMai LINE 公式グループ QR コード" width="200" /> |
+| 公式交流グループ 1006348059 | 公式サーバーに参加<br>インストール不要ですぐ利用 | 公式グループに参加<br>グループ内の Bot をそのまま利用 |
+| [🔗 参加する](https://qun.qq.com/universal-share/share?ac=1&authKey=a%2B7GQ%2FsIH%2FMzeTpaTR70%2FdDEvTk4%2Firp8W%2FvL1JvLBtM7AuNog3vs9S7uApshxyL&busi_data=eyJncm91cENvZGUiOiIxMDA2MzQ4MDU5IiwidG9rZW4iOiJnRFhqczMxYlZzQTVSNm9SZ1ZkOU1WNjJobTd4QzdyR3lyS1lwb0JOTlZTYmlSeVU1SnNKV2Z1bTVLYjBvR3BJIiwidWluIjoiMTQ4MTYxODMxOSJ9&data=m-7IeXvdz1a8EKGoCkMeid1DwluG3vH6z1sdNVC641CqCINiRQEE7WY-rowa5ZqB2blPVRLHqmPina6U02PZSw&svctype=4&tempid=h5_group_info) | [🔗 参加する](https://discord.gg/fvAU8sTcWz) | [🔗 参加する](https://line.me/ti/g/EKt3QG4bbX) |
 
 ## アカウント連携 & データ更新
 

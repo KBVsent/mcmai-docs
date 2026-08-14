@@ -4,15 +4,25 @@ McMai 是一个支持国服、日服、国际服三区数据查询的全功能 m
 
 ## 添加 Bot
 
-McMai 已在 QQ、Discord 平台发布，**扫描下方二维码，或点击按钮**即可使用：
+McMai 已在 QQ、Discord、LINE 平台发布，**扫描下方二维码，或点击按钮**即可使用：
 
-| QQ | Discord | Discord 官方服务器 |
+| QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot 二维码" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 官方服务器二维码" width="200" /> |
-| 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 | 加入官方服务器<br>无需安装直接使用 |
-| [🔗 点击添加](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 点击邀请](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 点击加入](https://discord.gg/fvAU8sTcWz) |
+| <img src="/QQBot.png" alt="McMai QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot 二维码" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 官方账号二维码" width="200" /> |
+| 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 | 添加官方账号好友<br>或将其邀请进群聊使用 |
+| [🔗 点击添加](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 点击邀请](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 点击添加](https://line.me/R/ti/p/@819jucvv) |
 
 后续将逐步拓展至 Telegram 等更多平台。
+
+## 加入官方群组
+
+也可以直接加入官方群组，**无需安装即可使用 Bot**，同时欢迎在群内交流与反馈意见：
+
+| QQ 群 | Discord 官方服务器 | LINE 群组 |
+| :---: | :---: | :---: |
+| <img src="/QQ_Group.png" alt="McMai QQ 官方群二维码" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Discord 官方服务器二维码" width="200" /> | <img src="/Line_Group.png" alt="McMai LINE 官方群组二维码" width="200" /> |
+| 官方交流群 1006348059 | 加入官方服务器<br>无需安装直接使用 | 加入官方群组<br>群内已有 Bot 可直接使用 |
+| [🔗 点击加入](https://qun.qq.com/universal-share/share?ac=1&authKey=a%2B7GQ%2FsIH%2FMzeTpaTR70%2FdDEvTk4%2Firp8W%2FvL1JvLBtM7AuNog3vs9S7uApshxyL&busi_data=eyJncm91cENvZGUiOiIxMDA2MzQ4MDU5IiwidG9rZW4iOiJnRFhqczMxYlZzQTVSNm9SZ1ZkOU1WNjJobTd4QzdyR3lyS1lwb0JOTlZTYmlSeVU1SnNKV2Z1bTVLYjBvR3BJIiwidWluIjoiMTQ4MTYxODMxOSJ9&data=m-7IeXvdz1a8EKGoCkMeid1DwluG3vH6z1sdNVC641CqCINiRQEE7WY-rowa5ZqB2blPVRLHqmPina6U02PZSw&svctype=4&tempid=h5_group_info) | [🔗 点击加入](https://discord.gg/fvAU8sTcWz) | [🔗 点击加入](https://line.me/ti/g/EKt3QG4bbX) |
 
 ::: tip QQ Bot 使用小提示
 在 QQ 中可以输入 `/` 快速触发指令菜单，还可以使用 `/c` 通用前缀直接发送指令，无需手动 @ Bot。详见 [QQ Bot 使用小提示](/guide/qqbot-tips)。

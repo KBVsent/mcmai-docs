@@ -4,15 +4,25 @@ McMai is a full-featured maimai DX assistant Bot plugin supporting CN, JP, and I
 
 ## Add the Bot
 
-McMai is available on QQ and Discord. **Scan the QR code or tap the button** below to get started:
+McMai is available on QQ, Discord, and LINE. **Scan the QR code or tap the button** below to get started:
 
-| QQ | Discord | Official Discord Server |
+| QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Official Discord Server QR Code" width="200" /> |
-| Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app | Join the official server<br>and use it without installing |
-| [🔗 Add](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 Invite](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 Join](https://discord.gg/fvAU8sTcWz) |
+| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="McMai LINE Official Account QR Code" width="200" /> |
+| Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app | Add the official account<br>or invite it to a group chat |
+| [🔗 Add](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 Invite](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 Add](https://line.me/R/ti/p/@819jucvv) |
 
 More platforms (Telegram, etc.) will be supported in the future.
+
+## Join an Official Group
+
+You can also join an official group to **use the bot without installing anything**, and share feedback with the community:
+
+| QQ Group | Official Discord Server | LINE Group |
+| :---: | :---: | :---: |
+| <img src="/QQ_Group.png" alt="McMai Official QQ Group QR Code" width="200" /> | <img src="/Discord_Guild.png" alt="McMai Official Discord Server QR Code" width="200" /> | <img src="/Line_Group.png" alt="McMai Official LINE Group QR Code" width="200" /> |
+| Official group 1006348059 | Join the official server<br>and use it without installing | Join the official group<br>where the bot is already available |
+| [🔗 Join](https://qun.qq.com/universal-share/share?ac=1&authKey=a%2B7GQ%2FsIH%2FMzeTpaTR70%2FdDEvTk4%2Firp8W%2FvL1JvLBtM7AuNog3vs9S7uApshxyL&busi_data=eyJncm91cENvZGUiOiIxMDA2MzQ4MDU5IiwidG9rZW4iOiJnRFhqczMxYlZzQTVSNm9SZ1ZkOU1WNjJobTd4QzdyR3lyS1lwb0JOTlZTYmlSeVU1SnNKV2Z1bTVLYjBvR3BJIiwidWluIjoiMTQ4MTYxODMxOSJ9&data=m-7IeXvdz1a8EKGoCkMeid1DwluG3vH6z1sdNVC641CqCINiRQEE7WY-rowa5ZqB2blPVRLHqmPina6U02PZSw&svctype=4&tempid=h5_group_info) | [🔗 Join](https://discord.gg/fvAU8sTcWz) | [🔗 Join](https://line.me/ti/g/EKt3QG4bbX) |
 
 ## Bind Your Account & Update Data
 
