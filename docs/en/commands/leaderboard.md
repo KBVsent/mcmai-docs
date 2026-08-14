@@ -89,8 +89,8 @@ Remove yourself from the current group's leaderboard.
 
 Group owners or admins can remove a member from this group's leaderboard, or restore them.
 
-::: info QQ Official groups only
-This feature is available only to group owners / admins on the QQ Official platform.
+::: info QQ platform only
+This feature is available only to group owners / admins on the QQ platform.
 :::
 
 **Commands:** `/gban <#query ID or #username>`, `/gunban <#query ID or #username>`

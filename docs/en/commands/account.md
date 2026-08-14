@@ -16,6 +16,16 @@ Each execution of `/bind` generates a new verification code. Complete the bindin
 
 ---
 
+## Cross-Platform Data Sync
+
+Once the same game account (the same card) is bound on different platforms, its data is shared automatically: **update your scores once on any platform and they show up on the others**, so there is no need to update separately on each platform.
+
+::: tip Tip
+Sharing is keyed on the game account, not the platform identity. Accounts bound to different cards stay separate and are not shared.
+:::
+
+---
+
 ## Unbind Account
 
 Unbind your current SEGA account and clear your score records across **all regions**.
