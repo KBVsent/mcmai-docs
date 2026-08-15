@@ -19,70 +19,108 @@
   border-color: #ec4899 !important;
 }
 
-/* Navbar: frosted glass effect when scrolled */
-:root {
-  .VPNavBar:not(.has-sidebar):not(.home.top) {
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px);
-  }
+/* Navbar: one continuous frosted-glass layer instead of nested filters. */
+.VPNav > .VPNavBar:not(.home.top):not(.screen-open) {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
 
-  /* Feature cards: transparent background with shadow */
-  .VPFeature {
-    border: none;
-    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
-    background-color: transparent;
-  }
+.dark .VPNav > .VPNavBar:not(.home.top):not(.screen-open) {
+  background-color: rgba(15, 15, 15, 0.92) !important;
+}
 
-  /* Sidebar curtain: transparent */
-  .curtain {
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px);
-  }
-
-  @media (min-width: 960px) {
-    /* Doc page center navbar: transparent */
-    .VPNavBar:not(.home.top) .content-body {
-      background-color: rgba(255, 255, 255, 0);
-      backdrop-filter: blur(10px);
-    }
-  }
-
-  /* Mobile outline nav: transparent */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .VPNav > .VPNavBar:not(.home.top):not(.screen-open),
+  .curtain,
   .VPLocalNav {
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.72) !important;
+    -webkit-backdrop-filter: saturate(150%) blur(10px);
+    backdrop-filter: saturate(150%) blur(10px);
+  }
+
+  .dark .VPNav > .VPNavBar:not(.home.top):not(.screen-open),
+  .dark .curtain,
+  .dark .VPLocalNav {
+    background-color: rgba(15, 15, 15, 0.72) !important;
   }
 }
 
-/* Dark mode adjustments */
-.dark :root,
-.dark {
-  .VPNavBar:not(.has-sidebar):not(.home.top) {
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(10px);
+@media (min-width: 960px) {
+  /* VitePress normally paints this inner region separately. Keeping it clear
+     prevents the right side of the navbar from receiving a second blur pass. */
+  :root .VPNav .VPNavBar:not(.home.top) .content-body {
+    background-color: transparent !important;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
+}
 
-  .curtain {
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(10px);
-  }
+/* Feature cards: transparent background with shadow */
+.VPFeature {
+  border: none;
+  box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
+  background-color: transparent;
+}
 
-  @media (min-width: 960px) {
-    .VPNavBar:not(.home.top) .content-body {
-      background-color: rgba(0, 0, 0, 0);
-      backdrop-filter: blur(10px);
-    }
-  }
+/* Safari can paint VitePress's masked dropdown chevron as a solid square.
+   Draw the same shape with borders so this control does not depend on masks. */
+.VPNavBarTranslations .vpi-chevron-down {
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 2px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  background-color: transparent !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  -webkit-transform: translateY(-2px) rotate(45deg);
+  transform: translateY(-2px) rotate(45deg);
+}
 
-  .VPLocalNav {
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(10px);
-  }
+/* WebKit can also expose the rectangular mask boundary around these stroked
+   icons. Render them as ordinary SVG backgrounds instead of color masks. */
+.VPNavBarTranslations .vpi-languages {
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%233c3c43' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6'/%3E%3C/svg%3E") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.VPNavBarTranslations:hover .vpi-languages {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2367676c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6'/%3E%3C/svg%3E") !important;
+}
+
+.VPSwitchAppearance .vpi-sun,
+.VPSwitchAppearance .vpi-moon {
+  background-color: transparent !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.VPSwitchAppearance .vpi-sun {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2367676c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/%3E%3C/svg%3E") !important;
+}
+
+.VPSwitchAppearance .vpi-moon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23dfdfd6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/%3E%3C/svg%3E") !important;
+}
+
+.dark .VPNavBarTranslations .vpi-languages {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23dfdfd6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6'/%3E%3C/svg%3E") !important;
+}
+
+.dark .VPNavBarTranslations:hover .vpi-languages {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2398989f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6'/%3E%3C/svg%3E") !important;
 }
 
 /* ===== Home page: glow covering hero + feature cards + footer ===== */
 
-/* VPHome hosts the glows; no overflow:hidden so blur spreads into footer */
+/* VPHome hosts the glows; direct gradients avoid large offscreen blur buffers. */
 .VPHome {
   position: relative;
 }
@@ -92,50 +130,31 @@
   overflow-x: clip;
 }
 
-/* Left glow (blue) */
+/* Both glows are painted in one static layer. */
 .VPHome::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -80px;
-  width: 700px;
-  height: 100%;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at top left, rgba(100, 108, 255, 0.20) 0%, transparent 65%);
-  filter: blur(80px);
-}
-
-/* Right glow (purple) */
-.VPHome::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -80px;
-  width: 700px;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.17) 0%, transparent 65%);
-  filter: blur(80px);
+  background:
+    radial-gradient(900px 70% at 0% 0%, rgba(100, 108, 255, 0.20) 0%, rgba(100, 108, 255, 0.08) 35%, transparent 70%),
+    radial-gradient(900px 70% at 100% 0%, rgba(168, 85, 247, 0.17) 0%, rgba(168, 85, 247, 0.07) 35%, transparent 70%);
 }
 
 /* Ensure content stays above glows */
-.VPHero,
-.VPFeatures {
+.VPHomeHero,
+.VPHomeFeatures,
+.VPHomeContent {
   position: relative;
   z-index: 1;
 }
 
 /* Dark mode: slightly brighter */
 .dark .VPHome::before {
-  background: radial-gradient(ellipse at top left, rgba(100, 108, 255, 0.30) 0%, transparent 65%);
-}
-
-.dark .VPHome::after {
-  background: radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.24) 0%, transparent 65%);
+  background:
+    radial-gradient(900px 70% at 0% 0%, rgba(100, 108, 255, 0.30) 0%, rgba(100, 108, 255, 0.12) 35%, transparent 70%),
+    radial-gradient(900px 70% at 100% 0%, rgba(168, 85, 247, 0.24) 0%, rgba(168, 85, 247, 0.10) 35%, transparent 70%);
 }
 
 /* Hide article recent update module */
