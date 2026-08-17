@@ -5,6 +5,17 @@
   let resetConfetti: (() => void) | undefined
   let isUnmounted = false
 
+  const getLogoOrigin = () => {
+    const logo = document.querySelector<HTMLElement>('.VPHomeHero .image-src')
+    if (!logo) return { x: 0.5, y: 0.6 }
+
+    const { left, top, width, height } = logo.getBoundingClientRect()
+    return {
+      x: (left + width / 2) / window.innerWidth,
+      y: (top + height / 2) / window.innerHeight,
+    }
+  }
+
   const startConfetti = async () => {
     const { default: confetti } = await import('canvas-confetti')
     if (isUnmounted) return
@@ -13,7 +24,7 @@
     confetti({
       particleCount: 100,
       spread: 170,
-      origin: { y: 0.6 },
+      origin: getLogoOrigin(),
       disableForReducedMotion: true,
     })
   }
