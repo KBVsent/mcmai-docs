@@ -216,7 +216,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/KBVsent' },
     ],
     footer: {
-      copyright: 'Copyright © 2026 <a href="https://github.com/KBVsent" target="_blank">KBVsent</a>',
+      copyright: 'Copyright © 2026 <a href="https://github.com/KBVsent" target="_blank">KBVsent</a> · McMai is an unofficial tool · <a href="/en/privacy">Privacy Policy</a> · <a href="/en/terms">Terms of Service</a>',
     },
     search: {
       provider: 'local',
