@@ -19,6 +19,11 @@ Add `#username` to query another player's data.
 | `/info 11451` |
 | `/info 11451 #Sakura` |
 
+::: tip The image includes
+- **My Scores**: when the same account has scores on multiple servers, every server is shown side by side for comparison; a difficulty with no chart on that server shows "no chart".
+- **Friends**: when you add `#username`, the other player's scores are compared with yours on your main server difficulty by difficulty, with the achievement gap marked (▲/▼); if they hid their query permission, only "private" is shown.
+:::
+
 ---
 
 ## Score Tolerance
