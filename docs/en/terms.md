@@ -8,7 +8,7 @@ lastUpdated: false
 # McMai Terms of Service
 
 **Effective date: August 20, 2026**  
-**Last updated: August 20, 2026**
+**Last updated: August 21, 2026**
 
 These Terms of Service (the "Terms") govern your access to and use of McMai (the "Service"), operated by Chips Team from Mainland China.
 
@@ -95,6 +95,8 @@ McMai's original code, documentation, text, and original visual elements are pro
 
 Game titles, trademarks, service marks, artwork, characters, interface materials, music, musical works, sound recordings, cover images, charts, and other third-party materials remain the property of their respective owners. No ownership of third-party content is claimed by Chips Team.
 
+Unless otherwise stated, third-party game-related resources made available through McMai are obtained from sources that were publicly accessible on the Internet at the time of collection. Public accessibility does not mean that such materials are free of copyright, related rights, licence restrictions, or other third-party rights.
+
 Any reference to a third-party game, platform, company, artist, or work is for identification and interoperability purposes and does not imply affiliation, endorsement, authorization, or sponsorship.
 
 Open-source components and third-party software remain subject to their respective licences and notices.
@@ -178,4 +180,3 @@ The English version of these Terms is the authoritative version.
 ## 18. Contact
 
 Support questions, privacy requests, security reports, and copyright complaints may be sent to [support@moev.cc](mailto:support@moev.cc).
-
