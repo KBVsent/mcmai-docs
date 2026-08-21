@@ -16,6 +16,41 @@ Each execution of `/bind` generates a new verification code. Complete the bindin
 
 ---
 
+## Update Scores with a Bookmarklet
+
+You can update your scores without handing over your SEGA ID and password. Install a bookmarklet, click it on a maimai NET page you are already logged into, and your scores upload to McMai.
+
+Available for the **JP and INTL regions**. CN players update via MAID and do not need this.
+
+::: tip Why no password is needed
+Fetching runs inside your own browser using the session you are already logged into. Your SEGA ID and password never reach the bot.
+:::
+
+**Getting started:** Send `/bind` in chat to get your link, then click "Rather not hand over your password? Use a bookmarklet" at the bottom of the page.
+
+Binding page: [id.moev.cc](https://id.moev.cc) (generating a bookmarklet requires the verification code the bot sends you)
+
+### How it works
+
+| Step | What to do |
+|------|------|
+| 1. Generate | Enter your verification code on the binding page to issue your personal bookmarklet |
+| 2. Install | On desktop, drag it to the bookmarks bar; on mobile, copy the code and create a bookmark |
+| 3. Log in | Open the JP or INTL site in your **system browser** and sign in |
+| 4. Click it | Run it from any maimai NET page; fetching takes a dozen seconds or so |
+
+The page has detailed instructions split by Desktop / iPhone / Android — just follow the tab for your device.
+
+::: warning Things to watch out for
+- Each bookmarklet is **unique to you**. Regenerating invalidates the old one immediately, and every device needs reinstalling.
+- Do not paste the code into the address bar. Chrome strips the leading `javascript:` and you end up with a broken bookmark.
+- Browsers built into SNS apps cannot run bookmarklets. Use your system browser instead.
+- On iPhone, open it from the **bookmarks list**; on Android, type the name in the address bar and tap the **bookmark suggestion**. The two are exactly opposite.
+- Verification codes are single-use. To view or regenerate the bookmarklet later, send `/bind` again.
+:::
+
+---
+
 ## Cross-Platform Data Sync
 
 Once the same game account (the same card) is bound on different platforms, its data is shared automatically: **update your scores once on any platform and they show up on the others**, so there is no need to update separately on each platform.
