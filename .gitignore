@@ -19,4 +19,9 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# 源码参考（本地）
 ref/
+
+# Cloudflare Worker（独立仓库）
+worker/

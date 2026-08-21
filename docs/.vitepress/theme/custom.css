@@ -200,3 +200,38 @@
 .vp-doc td a:not(:has(img)):active {
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   提交类型的配色，首页动态与更新记录页共用。
+
+   只有三个彩色：任意两个类型标记都可能相邻出现，属于 all-pairs 场景，
+   色数一多必有色对分不开（实测橙与品牌粉正常视觉 ΔE 只有 13.9，低于 15 的
+   硬底线）。颜色留给用户直接感知的三类，其余三类靠形态区分。
+   这三色 all-pairs 全部通过：亮色 CVD ΔE 8.9 / 正常 18.9，暗色 9.1 / 20.0。
+   ========================================================================== */
+:root {
+  --mc-feat-fg: #a8306f;
+  --mc-feat-bg: rgba(168, 48, 111, 0.08);
+  --mc-fix-fg: #0573aa;
+  --mc-fix-bg: rgba(5, 115, 170, 0.08);
+  --mc-perf-fg: #09672e;
+  --mc-perf-bg: rgba(9, 103, 46, 0.08);
+  --mc-neutral-fg: #4b4b52;
+  --mc-neutral-bg: rgba(75, 75, 82, 0.06);
+  --mc-neutral-line: rgba(75, 75, 82, 0.3);
+  /* 时间线的竖线。用 --vp-c-divider 在暗色下对比太低，线会整条消失 */
+  --mc-timeline: rgba(60, 60, 67, 0.16);
+}
+
+.dark {
+  --mc-feat-fg: #fe9ac6;
+  --mc-feat-bg: rgba(254, 154, 198, 0.14);
+  --mc-fix-fg: #78c7fe;
+  --mc-fix-bg: rgba(120, 199, 254, 0.14);
+  --mc-perf-fg: #3ce073;
+  --mc-perf-bg: rgba(60, 224, 115, 0.14);
+  --mc-neutral-fg: #b8b8c0;
+  --mc-neutral-bg: rgba(184, 184, 192, 0.08);
+  --mc-neutral-line: rgba(184, 184, 192, 0.3);
+  --mc-timeline: rgba(255, 255, 255, 0.15);
+}

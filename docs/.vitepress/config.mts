@@ -59,6 +59,7 @@ export default defineConfig({
           { text: '首页', link: '/' },
           { text: '快速开始', link: '/guide/getting-started' },
           { text: '指令参考', link: '/commands/basic' },
+          { text: '更新记录', link: '/updates' },
         ],
         sidebar: {
           '/guide/': [
@@ -99,6 +100,7 @@ export default defineConfig({
           { text: 'Home', link: '/en/' },
           { text: 'Getting Started', link: '/en/guide/getting-started' },
           { text: 'Commands', link: '/en/commands/basic' },
+          { text: 'Updates', link: '/en/updates' },
         ],
         sidebar: {
           '/en/guide/': [
@@ -138,6 +140,7 @@ export default defineConfig({
           { text: 'ホーム', link: '/ja/' },
           { text: 'はじめに', link: '/ja/guide/getting-started' },
           { text: 'コマンド一覧', link: '/ja/commands/basic' },
+          { text: '更新履歴', link: '/ja/updates' },
         ],
         sidebar: {
           '/ja/guide/': [
@@ -177,6 +180,7 @@ export default defineConfig({
           { text: '首頁', link: '/zh-TW/' },
           { text: '快速開始', link: '/zh-TW/guide/getting-started' },
           { text: '指令參考', link: '/zh-TW/commands/basic' },
+          { text: '更新紀錄', link: '/zh-TW/updates' },
         ],
         sidebar: {
           '/zh-TW/guide/': [
