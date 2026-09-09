@@ -1,13 +1,13 @@
 ---
 layout: home
-title: "McMai：maimai DX スコア照会・分析 Bot"
+title: "McMai：maimai DX スコア確認・成績管理 Bot"
 titleTemplate: false
-description: "McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア照会・分析 Bot です。"
+description: "McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア確認・成績管理 Bot です。"
 
 hero:
   name: "McMai"
   text: "maimai DX オールインワン"
-  tagline: 日本・国際・中国サーバーのデータ照会・統計分析・チャート生成を一括サポート
+  tagline: 日本版・国際版・中国版のスコア確認、成績管理、チャート生成をまとめてサポート
   image:
     src: /logo.png
     alt: McMai
@@ -22,7 +22,7 @@ hero:
 features:
   - icon: 🎮
     title: マルチサーバー対応
-    details: CN・JP・INTL 三つのサーバーのデータ照会と分析を同時にサポート。
+    details: CN・JP・INTL 三つのサーバーのスコア確認とプレイデータ分析に対応。
   - icon: 📊
     title: Best 50 分析
     details: B50・B40・AP50・PC50 を照会し、フレンドとスコアを PK 比較。

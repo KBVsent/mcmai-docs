@@ -1,11 +1,11 @@
 ---
 title: maimai 查分與成績查詢指南
-description: 使用 McMai 在 QQ、LINE 和 Discord 查詢 maimai 中國版、日本版及國際版成績，了解資料更新、區服切換、B50、單曲成績和進度查詢。
+description: 使用 McMai maimai 查分器在 QQ、LINE 和 Discord 查詢中國版、日本版及國際版成績，了解資料更新、區服切換、B50、單曲成績和進度查詢。
 ---
 
 # maimai 查分與成績查詢指南
 
-McMai 是一款面向 maimai DX 玩家的免費成績查詢 Bot。你可以在 QQ、LINE 或 Discord 更新並查詢中國版（CN）、日本版（JP）及國際版（INTL）的遊玩資料，無需開啟獨立查分網頁。
+McMai 是一款面向 maimai DX 玩家的免費查分器與成績查詢 Bot。你可以在 QQ、LINE 或 Discord 更新並查詢中國版（CN）、日本版（JP）及國際版（INTL）的遊玩資料，無需開啟獨立查分網頁。
 
 ## 可以查詢哪些內容？
 

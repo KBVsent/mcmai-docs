@@ -7,7 +7,7 @@ description: "McMai is a maimai DX score tracker and analytics bot for CN, JP, a
 hero:
   name: "McMai"
   text: "All-in-One maimai DX"
-  tagline: Comprehensive JP / INTL / CN region data queries, statistical analysis, and chart generation.
+  tagline: Track maimai DX scores for JP, INTL, and CN regions on QQ, LINE, or Discord.
   image:
     src: /logo.png
     alt: McMai
@@ -22,7 +22,7 @@ hero:
 features:
   - icon: 🎮
     title: Multi-Region Support
-    details: Supports CN, JP, and INTL regional data queries and analysis simultaneously.
+    details: Track and analyze maimai DX scores for CN, JP, and INTL regions from QQ, LINE, or Discord.
   - icon: 📊
     title: Best 50 Analysis
     details: Query B50, B40, AP50, PC50 and compare scores with friends via PK mode.

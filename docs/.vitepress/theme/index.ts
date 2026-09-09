@@ -6,6 +6,7 @@ import Confetti from "./components/Confetti.vue";
 import HeroTypewriter from "./components/HeroTypewriter.vue";
 import UpdateLog from "./components/UpdateLog.vue";
 import HomeColumns from "./components/HomeColumns.vue";
+import LanguageSuggestion from "./components/LanguageSuggestion.vue";
 
 export default {
   extends: Teek,
@@ -13,6 +14,7 @@ export default {
     return h(Teek.Layout, null, {
       'home-hero-info': () => h(HeroTypewriter),
       'home-features-after': () => h(Confetti),
+      'layout-bottom': () => h(LanguageSuggestion),
     });
   },
   enhanceApp({ app }) {

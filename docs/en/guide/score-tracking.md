@@ -5,7 +5,7 @@ description: Use McMai on QQ, LINE, or Discord to update and query maimai DX sco
 
 # maimai DX Score Tracking Guide
 
-McMai is a free score tracking and analytics bot for maimai DX players. It works on QQ, LINE, and Discord and supports play data from the CN, JP, and INTL regions without requiring a separate score-tracker website.
+McMai is a free score tracking and analytics bot for maimai DX players. It works as a maimai score tracker on Discord, LINE, and QQ, and supports play data from the CN, JP, and INTL regions without requiring a separate score-tracker website.
 
 ## What can you check?
 

@@ -1,13 +1,13 @@
 ---
-title: maimai DX スコア照会ガイド
-description: QQ・LINE・Discord の McMai で、中国版・日本版・国際版の maimai DX 成績を更新・照会する方法と、上位成績・楽曲・進捗機能を紹介します。
+title: maimai DX スコア確認・成績管理ガイド
+description: QQ・LINE・Discord の McMai で、中国版・日本版・国際版の maimai DX スコアを確認・管理する方法と、上位成績・楽曲・進捗機能を紹介します。
 ---
 
-# maimai DX スコア照会ガイド
+# maimai DX スコア確認・成績管理ガイド
 
-McMai は、maimai DX プレイヤー向けの無料スコア照会／分析 Bot です。QQ・LINE・Discord から、中国版（CN）・日本版（JP）・国際版（INTL）のプレイデータを更新・照会できます。
+McMai は、maimai DX プレイヤー向けの無料スコア確認・成績管理 Bot です。QQ・LINE・Discord から、中国版（CN）・日本版（JP）・国際版（INTL）のプレイデータを更新し、成績を確認できます。
 
-## 照会できる内容
+## 確認できる内容
 
 | 目的 | McMai の機能 | 詳細 |
 |------|--------------|------|
@@ -27,7 +27,7 @@ McMai は、maimai DX プレイヤー向けの無料スコア照会／分析 Bot
 
 連携、ブックマークレット、サーバー切り替えの詳細は[アカウントとサーバー](/ja/commands/account)を参照してください。
 
-## スコア照会を始める
+## スコア確認を始める
 
 1. QQ・LINE・Discord のいずれかで McMai を追加します。
 2. プレイしている地域に合った方法でデータを更新します。

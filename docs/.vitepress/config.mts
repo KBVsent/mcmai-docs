@@ -12,7 +12,7 @@ const seoLocales = [
     prefix: 'zh-TW/',
     hreflang: 'zh-TW',
     fallbackDescription: (title: string) =>
-      `${title}：查看 McMai maimai DX 查分 Bot 的功能說明、指令用法與範例。`,
+      `${title}：查看 McMai maimai DX 成績查詢工具的功能說明、指令用法與範例。`,
   },
   {
     prefix: 'en/',
@@ -24,7 +24,7 @@ const seoLocales = [
     prefix: 'ja/',
     hreflang: 'ja-JP',
     fallbackDescription: (title: string) =>
-      `${title}：McMai maimai DX Bot の機能、コマンド、オプション、使用例を紹介します。`,
+      `${title}：McMai maimai DX スコア確認・成績管理 Bot の機能、コマンド、オプション、使用例を紹介します。`,
   },
   {
     prefix: '',
@@ -129,33 +129,7 @@ export default defineConfig({
 
     return head
   },
-  head: [
-    ['link', { rel: 'icon', href: '/logo.png' }],
-    ['script', {}, `
-(function () {
-  // Only auto-redirect from the root path on first visit
-  var path = window.location.pathname;
-  if (path !== '/' && path !== '/index.html') return;
-  if (sessionStorage.getItem('lang-redirected')) return;
-
-  var lang = (navigator.language || '').toLowerCase();
-  var target;
-
-  if (lang.startsWith('zh-tw') || lang.startsWith('zh-hk') || lang.startsWith('zh-mo')) {
-    target = '/zh-TW/';
-  } else if (lang.startsWith('ja')) {
-    target = '/ja/';
-  } else if (lang.startsWith('zh')) {
-    target = null; // root is already Simplified Chinese
-  } else {
-    target = '/en/';
-  }
-
-  sessionStorage.setItem('lang-redirected', '1');
-  if (target) window.location.replace(target);
-})();
-    `],
-  ],
+  head: [['link', { rel: 'icon', href: '/logo.png' }]],
 
   locales: {
     root: {
@@ -248,12 +222,12 @@ export default defineConfig({
     ja: {
       label: '日本語',
       lang: 'ja-JP',
-      description: 'McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア照会・分析 Bot です。',
+      description: 'McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア確認・成績管理 Bot です。',
       themeConfig: {
         nav: [
           { text: 'ホーム', link: '/ja/' },
           { text: 'はじめに', link: '/ja/guide/getting-started' },
-          { text: 'スコア照会', link: '/ja/guide/score-tracking' },
+          { text: 'スコア確認', link: '/ja/guide/score-tracking' },
           { text: 'コマンド一覧', link: '/ja/commands/basic' },
           { text: '更新履歴', link: '/ja/updates' },
         ],
@@ -263,7 +237,7 @@ export default defineConfig({
               text: 'ガイド',
               items: [
                 { text: 'はじめに', link: '/ja/guide/getting-started' },
-                { text: 'スコア照会ガイド', link: '/ja/guide/score-tracking' },
+                { text: 'スコア確認・成績管理ガイド', link: '/ja/guide/score-tracking' },
                 { text: 'ユーザー名とフレンドシステム', link: '/ja/guide/identity-and-friends' },
               ],
             },
@@ -291,7 +265,7 @@ export default defineConfig({
     'zh-TW': {
       label: '繁體中文',
       lang: 'zh-TW',
-      description: 'McMai 是支援中國版、日本版及國際版的 maimai DX 成績查詢與 B50 Bot，可在 QQ、LINE 和 Discord 使用。',
+      description: 'McMai 是支援中國版、日本版及國際版的 maimai DX 成績查詢工具與 B50 Bot，可在 QQ、LINE 和 Discord 使用。',
       themeConfig: {
         nav: [
           { text: '首頁', link: '/zh-TW/' },
