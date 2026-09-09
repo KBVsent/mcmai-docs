@@ -201,6 +201,29 @@
   transform: translateY(0);
 }
 
+/* B50 docs: keep the tall result image readable without dominating the page. */
+.mcmai-b50-preview {
+  width: min(100%, 420px);
+  margin: 20px auto 32px;
+}
+
+.mcmai-b50-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgb(15 23 42 / 18%);
+}
+
+.mcmai-b50-preview figcaption {
+  margin-top: 10px;
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
 /* ==========================================================================
    提交类型的配色，首页动态与更新记录页共用。
 
