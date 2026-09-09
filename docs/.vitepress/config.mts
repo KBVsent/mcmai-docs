@@ -166,6 +166,7 @@ export default defineConfig({
         nav: [
           { text: '首页', link: '/' },
           { text: '快速开始', link: '/guide/getting-started' },
+          { text: '查分指南', link: '/guide/score-tracking' },
           { text: '指令参考', link: '/commands/basic' },
           { text: '更新记录', link: '/updates' },
         ],
@@ -175,6 +176,7 @@ export default defineConfig({
               text: '指南',
               items: [
                 { text: '快速开始', link: '/guide/getting-started' },
+                { text: 'maimai 查分指南', link: '/guide/score-tracking' },
                 { text: 'QQ Bot 使用小提示', link: '/guide/qqbot-tips' },
                 { text: '用户名与好友系统', link: '/guide/identity-and-friends' },
               ],
@@ -208,6 +210,7 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Getting Started', link: '/en/guide/getting-started' },
+          { text: 'Score Tracking', link: '/en/guide/score-tracking' },
           { text: 'Commands', link: '/en/commands/basic' },
           { text: 'Updates', link: '/en/updates' },
         ],
@@ -217,6 +220,7 @@ export default defineConfig({
               text: 'Guide',
               items: [
                 { text: 'Getting Started', link: '/en/guide/getting-started' },
+                { text: 'Score Tracking Guide', link: '/en/guide/score-tracking' },
                 { text: 'Username & Friend System', link: '/en/guide/identity-and-friends' },
               ],
             },
@@ -249,6 +253,7 @@ export default defineConfig({
         nav: [
           { text: 'ホーム', link: '/ja/' },
           { text: 'はじめに', link: '/ja/guide/getting-started' },
+          { text: 'スコア照会', link: '/ja/guide/score-tracking' },
           { text: 'コマンド一覧', link: '/ja/commands/basic' },
           { text: '更新履歴', link: '/ja/updates' },
         ],
@@ -258,6 +263,7 @@ export default defineConfig({
               text: 'ガイド',
               items: [
                 { text: 'はじめに', link: '/ja/guide/getting-started' },
+                { text: 'スコア照会ガイド', link: '/ja/guide/score-tracking' },
                 { text: 'ユーザー名とフレンドシステム', link: '/ja/guide/identity-and-friends' },
               ],
             },
@@ -290,6 +296,7 @@ export default defineConfig({
         nav: [
           { text: '首頁', link: '/zh-TW/' },
           { text: '快速開始', link: '/zh-TW/guide/getting-started' },
+          { text: '查分指南', link: '/zh-TW/guide/score-tracking' },
           { text: '指令參考', link: '/zh-TW/commands/basic' },
           { text: '更新紀錄', link: '/zh-TW/updates' },
         ],
@@ -299,6 +306,7 @@ export default defineConfig({
               text: '指南',
               items: [
                 { text: '快速開始', link: '/zh-TW/guide/getting-started' },
+                { text: 'maimai 查分指南', link: '/zh-TW/guide/score-tracking' },
                 { text: '使用者名稱與好友系統', link: '/zh-TW/guide/identity-and-friends' },
               ],
             },
