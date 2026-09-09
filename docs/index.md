@@ -1,5 +1,8 @@
 ---
 layout: home
+title: "McMai：maimai DX 查分与 B50 Bot"
+titleTemplate: false
+description: "McMai 是支持国服、日服和国际服的 maimai DX 查分与 B50 Bot，可在 QQ、LINE 和 Discord 使用。"
 
 hero:
   name: "McMai"

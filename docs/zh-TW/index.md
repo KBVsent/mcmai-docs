@@ -1,5 +1,8 @@
 ---
 layout: home
+title: "McMai：maimai DX 成績查詢與 B50 Bot"
+titleTemplate: false
+description: "McMai 是支援中國版、日本版及國際版的 maimai DX 成績查詢與 B50 Bot，可在 QQ、LINE 和 Discord 使用。"
 
 hero:
   name: "McMai"

@@ -1,5 +1,58 @@
+import { existsSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { defineTeekConfig } from "vitepress-theme-teek/config";
+
+const siteOrigin = 'https://mcmai.moev.cc'
+const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+
+const seoLocales = [
+  {
+    prefix: 'zh-TW/',
+    hreflang: 'zh-TW',
+    fallbackDescription: (title: string) =>
+      `${title}：查看 McMai maimai DX 查分 Bot 的功能說明、指令用法與範例。`,
+  },
+  {
+    prefix: 'en/',
+    hreflang: 'en-US',
+    fallbackDescription: (title: string) =>
+      `${title}: Learn how to use this McMai feature, including commands, options, and examples.`,
+  },
+  {
+    prefix: 'ja/',
+    hreflang: 'ja-JP',
+    fallbackDescription: (title: string) =>
+      `${title}：McMai maimai DX Bot の機能、コマンド、オプション、使用例を紹介します。`,
+  },
+  {
+    prefix: '',
+    hreflang: 'zh-CN',
+    fallbackDescription: (title: string) =>
+      `${title}：查看 McMai maimai DX 查分 Bot 的功能说明、指令用法与示例。`,
+  },
+] as const
+
+function publicPath(relativePath: string) {
+  const normalizedPath = relativePath.replace(/\\/g, '/')
+
+  if (normalizedPath === 'index.md') return '/'
+  if (normalizedPath.endsWith('/index.md')) {
+    return `/${normalizedPath.slice(0, -'index.md'.length)}`
+  }
+
+  return `/${normalizedPath.replace(/\.md$/, '.html')}`
+}
+
+function contentPath(relativePath: string) {
+  const locale = seoLocales.find(({ prefix }) => prefix && relativePath.startsWith(prefix))
+  return locale ? relativePath.slice(locale.prefix.length) : relativePath
+}
+
+function localizedSourcePath(prefix: string, relativePath: string) {
+  return `${prefix}${contentPath(relativePath)}`
+}
 
 // Teek 主题配置（文档模式：禁用博客风格首页，使用 VitePress 原生首页）
 const teekConfig = defineTeekConfig({
@@ -22,6 +75,60 @@ export default defineConfig({
   title: "McMai",
   description: "maimai DX 一站式服务插件 - 数据查询、统计分析、图表生成",
   extends: teekConfig,
+  sitemap: {
+    hostname: siteOrigin,
+  },
+  transformPageData(pageData) {
+    if (pageData.isNotFound || pageData.frontmatter.description) return
+
+    const locale = seoLocales.find(({ prefix }) =>
+      prefix ? pageData.relativePath.startsWith(prefix) : true,
+    )!
+
+    return {
+      description: locale.fallbackDescription(pageData.title),
+    }
+  },
+  transformHead({ pageData, title, description }) {
+    if (pageData.isNotFound || !pageData.relativePath.endsWith('.md')) return
+
+    const canonicalUrl = `${siteOrigin}${publicPath(pageData.relativePath)}`
+    const head = [
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      ['meta', { property: 'og:type', content: 'website' }],
+      ['meta', { property: 'og:site_name', content: 'McMai' }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:url', content: canonicalUrl }],
+      ['meta', { property: 'og:image', content: `${siteOrigin}/logo.png` }],
+    ]
+    const alternates = []
+
+    for (const locale of seoLocales) {
+      const sourcePath = localizedSourcePath(locale.prefix, pageData.relativePath)
+      if (!existsSync(resolve(docsRoot, sourcePath))) continue
+
+      alternates.push([
+        'link',
+        {
+          rel: 'alternate',
+          hreflang: locale.hreflang,
+          href: `${siteOrigin}${publicPath(sourcePath)}`,
+        },
+      ])
+    }
+
+    if (alternates.length > 1) head.push(...alternates)
+
+    if (alternates.length > 1 && contentPath(pageData.relativePath) === 'index.md') {
+      head.push([
+        'link',
+        { rel: 'alternate', hreflang: 'x-default', href: `${siteOrigin}/` },
+      ])
+    }
+
+    return head
+  },
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     ['script', {}, `
@@ -54,6 +161,7 @@ export default defineConfig({
     root: {
       label: '简体中文',
       lang: 'zh-CN',
+      description: 'McMai 是支持国服、日服和国际服的 maimai DX 查分与 B50 Bot，可在 QQ、LINE 和 Discord 使用。',
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -95,6 +203,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-US',
+      description: 'McMai is a maimai DX score tracker and analytics bot for CN, JP, and INTL players on QQ, LINE, and Discord.',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
@@ -135,6 +244,7 @@ export default defineConfig({
     ja: {
       label: '日本語',
       lang: 'ja-JP',
+      description: 'McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア照会・分析 Bot です。',
       themeConfig: {
         nav: [
           { text: 'ホーム', link: '/ja/' },
@@ -175,6 +285,7 @@ export default defineConfig({
     'zh-TW': {
       label: '繁體中文',
       lang: 'zh-TW',
+      description: 'McMai 是支援中國版、日本版及國際版的 maimai DX 成績查詢與 B50 Bot，可在 QQ、LINE 和 Discord 使用。',
       themeConfig: {
         nav: [
           { text: '首頁', link: '/zh-TW/' },

@@ -1,5 +1,8 @@
 ---
 layout: home
+title: "McMai：maimai DX スコア照会・分析 Bot"
+titleTemplate: false
+description: "McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア照会・分析 Bot です。"
 
 hero:
   name: "McMai"

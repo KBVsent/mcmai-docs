@@ -1,5 +1,8 @@
 ---
 layout: home
+title: "McMai: maimai DX Score Tracker and Analytics Bot"
+titleTemplate: false
+description: "McMai is a maimai DX score tracker and analytics bot for CN, JP, and INTL players on QQ, LINE, and Discord."
 
 hero:
   name: "McMai"

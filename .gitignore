@@ -23,5 +23,8 @@ Thumbs.db
 # 源码参考（本地）
 ref/
 
+# 本地 SEO 执行计划
+SEO_PLAN.md
+
 # Cloudflare Worker（独立仓库）
 worker/
