@@ -77,6 +77,14 @@ export default defineConfig({
   extends: teekConfig,
   sitemap: {
     hostname: siteOrigin,
+    xmlns: {
+      news: false,
+      xhtml: false,
+      image: false,
+      video: false,
+    },
+    transformItems: (items) =>
+      items.map(({ url, lastmod }) => ({ url, lastmod })),
   },
   transformPageData(pageData) {
     if (pageData.isNotFound || pageData.frontmatter.description) return
