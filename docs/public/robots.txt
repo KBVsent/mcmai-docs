@@ -5,3 +5,4 @@ User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://mcmai.moev.cc/sitemap.xml
+Sitemap: https://mcmai.moev.cc/sitemap.txt

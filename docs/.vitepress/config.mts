@@ -1,4 +1,5 @@
 import { existsSync } from 'node:fs'
+import { writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
@@ -6,6 +7,7 @@ import { defineTeekConfig } from "vitepress-theme-teek/config";
 
 const siteOrigin = 'https://mcmai.moev.cc'
 const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+let sitemapUrls: string[] = []
 
 const seoLocales = [
   {
@@ -83,8 +85,13 @@ export default defineConfig({
       image: false,
       video: false,
     },
-    transformItems: (items) =>
-      items.map(({ url, lastmod }) => ({ url, lastmod })),
+    transformItems: (items) => {
+      sitemapUrls = items.map(({ url }) => new URL(url, siteOrigin).href)
+      return items.map(({ url, lastmod }) => ({ url, lastmod }))
+    },
+  },
+  async buildEnd({ outDir }) {
+    await writeFile(resolve(outDir, 'sitemap.txt'), `${sitemapUrls.join('\n')}\n`, 'utf8')
   },
   transformPageData(pageData) {
     if (pageData.isNotFound || pageData.frontmatter.description) return
