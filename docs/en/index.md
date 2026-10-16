@@ -1,16 +1,18 @@
 ---
 layout: home
-title: "McMai: maimai DX Score Tracker and Analytics Bot"
+title: "McMai Docs | maimai DX Scores and B50 with Cain Bot"
 titleTemplate: false
-description: "McMai is a maimai DX score tracker and analytics bot for CN, JP, and INTL players on QQ, LINE, and Discord."
+description: "Use Cain on QQ, LINE, or Discord to access maimai DX score tracking, B50 analysis, and progress features powered by McMai for CN, JP, and INTL players."
 
 hero:
   name: "McMai"
   text: "All-in-One maimai DX"
-  tagline: Track maimai DX scores for JP, INTL, and CN regions on QQ, LINE, or Discord.
+  tagline: Use McMai’s score tracking, B50 analysis, and progress features through Cain on QQ, LINE, or Discord.
   image:
-    src: /logo.png
-    alt: McMai
+    src: /images/cain-mcmai-hero.webp
+    alt: Chibi Cain presenting the McMai logo
+    width: 640
+    height: 640
   actions:
     - theme: brand
       text: Get Started

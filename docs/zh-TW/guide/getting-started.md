@@ -1,14 +1,14 @@
 # 快速開始
 
-McMai 是一個支援中國服、日服、國際服三區資料查詢的全功能 maimai DX 輔助 Bot 插件。
+McMai 是提供成績查詢、B50 分析與進度追蹤等功能的 maimai DX 輔助插件，支援中國服、日服與國際服。你在 QQ、Discord 或 LINE 上互動的 Bot 名為「該隱」，透過該隱即可使用 McMai 提供的這些功能。
 
-## 新增 Bot
+## 新增該隱 Bot {#新增-bot}
 
-McMai 已在 QQ、Discord、LINE 平台發布，**掃描下方 QR Code，或點擊按鈕**即可使用：
+該隱可在 QQ、Discord 和 LINE 使用，**掃描下方 QR Code，或點擊按鈕**即可使用：
 
 | QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 官方帳號 QR Code" width="200" /> |
+| <img src="/QQBot.png" alt="該隱 QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="該隱 Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="該隱 LINE 官方帳號 QR Code" width="200" /> |
 | 加好友<br>或將其拉入群組使用 | 邀請 Bot 加入你的伺服器<br>或作為個人安裝 | 加入官方帳號好友<br>或將其邀請進群組使用 |
 | [🔗 點擊新增](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 點擊邀請](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 點擊新增](https://line.me/R/ti/p/@819jucvv) |
 

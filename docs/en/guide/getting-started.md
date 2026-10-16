@@ -1,14 +1,14 @@
 # Getting Started
 
-McMai is a full-featured maimai DX assistant Bot plugin supporting CN, JP, and INTL region data queries.
+McMai is a plugin that provides maimai DX score tracking, B50 analysis, and progress features for CN, JP, and INTL players. Cain is the bot you interact with on QQ, Discord, or LINE to use these McMai features.
 
-## Add the Bot
+## Add Cain {#add-the-bot}
 
-McMai is available on QQ, Discord, and LINE. **Scan the QR code or tap the button** below to get started:
+Cain is available on QQ, Discord, and LINE. **Scan the QR code or tap the button** below to get started:
 
 | QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="McMai LINE Official Account QR Code" width="200" /> |
+| <img src="/QQBot.png" alt="Cain QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="Cain Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="Cain LINE Official Account QR Code" width="200" /> |
 | Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app | Add the official account<br>or invite it to a group chat |
 | [🔗 Add](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 Invite](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 Add](https://line.me/R/ti/p/@819jucvv) |
 

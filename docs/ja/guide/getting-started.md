@@ -1,14 +1,14 @@
 # はじめに
 
-McMai は CN・JP・INTL 三サーバーのデータ照会をサポートする、全機能搭載の maimai DX 補助 Bot プラグインです。
+McMai は、中国版・日本版・国際版のスコア確認・B50 分析・進捗管理などに対応した maimai DX サポートプラグインです。QQ・Discord・LINE では、Bot「該隠」を通じてこれらの機能を利用できます。
 
-## Bot を追加する
+## 該隠を追加する {#bot-を追加する}
 
-McMai は QQ・Discord・LINE で公開されています。**QR コードをスキャン、またはボタンをタップ**してご利用ください：
+該隠は QQ・Discord・LINE で利用できます。**QR コードをスキャン、またはボタンをタップ**してご利用ください：
 
 | QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot QR コード" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot QR コード" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 公式アカウント QR コード" width="200" /> |
+| <img src="/QQBot.png" alt="該隠 QQ Bot QR コード" width="200" /> | <img src="/Discord.png" alt="該隠 Discord Bot QR コード" width="200" /> | <img src="/Line.jpg" alt="該隠 LINE 公式アカウント QR コード" width="200" /> |
 | Bot を友達に追加<br>またはグループに招待 | Bot をサーバーに招待<br>または個人インストール | 公式アカウントを友だち追加<br>またはグループに招待 |
 | [🔗 追加する](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 招待する](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 追加する](https://line.me/R/ti/p/@819jucvv) |
 

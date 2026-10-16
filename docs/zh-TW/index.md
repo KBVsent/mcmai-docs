@@ -1,16 +1,18 @@
 ---
 layout: home
-title: "McMai：maimai DX 成績查詢與 B50 Bot"
+title: "McMai 使用指南｜該隱 Bot 的 maimai 查分與 B50"
 titleTemplate: false
-description: "McMai 是支援中國版、日本版及國際版的 maimai DX 成績查詢工具與 B50 Bot，可在 QQ、LINE 和 Discord 使用。"
+description: "透過 QQ、LINE 或 Discord 上的該隱 Bot，使用 McMai 提供的 maimai DX 成績查詢、B50 與進度追蹤功能，支援中國版、日本版及國際版。"
 
 hero:
   name: "McMai"
   text: "maimai DX 一站式服務"
-  tagline: 適用於日服／國際服／中國服的 maimai 查分器，支援成績查詢、統計分析與圖表生成
+  tagline: 在 QQ、LINE 或 Discord 上，透過該隱使用 McMai 的查分、B50 與進度查詢功能。
   image:
-    src: /logo.png
-    alt: McMai
+    src: /images/cain-mcmai-hero.webp
+    alt: Q 版該隱展示 McMai 標誌
+    width: 640
+    height: 640
   actions:
     - theme: brand
       text: 快速開始

@@ -1,16 +1,18 @@
 ---
 layout: home
-title: "McMai：maimai DX スコア確認・成績管理 Bot"
+title: "McMai ガイド｜該隠 Bot の maimai DX スコア確認・B50"
 titleTemplate: false
-description: "McMai は、QQ・LINE・Discord で使える、中国版・日本版・国際版対応の maimai DX スコア確認・成績管理 Bot です。"
+description: "QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・国際版に対応しています。"
 
 hero:
   name: "McMai"
   text: "maimai DX オールインワン"
-  tagline: 日本版・国際版・中国版のスコア確認、成績管理、チャート生成をまとめてサポート
+  tagline: McMai のスコア確認・B50・進捗管理を、QQ・LINE・Discord の該隠から利用できます。
   image:
-    src: /logo.png
-    alt: McMai
+    src: /images/cain-mcmai-hero.webp
+    alt: McMai のロゴを掲げる該隠のデフォルメイラスト
+    width: 640
+    height: 640
   actions:
     - theme: brand
       text: はじめに

@@ -1,14 +1,14 @@
 # 快速开始
 
-McMai 是一个支持国服、日服、国际服三区数据查询的全功能 maimai DX 辅助 Bot 插件。
+McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助插件，支持国服、日服和国际服。你在 QQ、Discord 或 LINE 上互动的 Bot 名为「该隐」，通过该隐即可使用 McMai 提供的这些功能。
 
-## 添加 Bot
+## 添加该隐 Bot {#添加-bot}
 
-McMai 已在 QQ、Discord、LINE 平台发布，**扫描下方二维码，或点击按钮**即可使用：
+该隐可在 QQ、Discord 和 LINE 使用，**扫描下方二维码，或点击按钮**即可使用：
 
 | QQ | Discord | LINE |
 | :---: | :---: | :---: |
-| <img src="/QQBot.png" alt="McMai QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="McMai Discord Bot 二维码" width="200" /> | <img src="/Line.jpg" alt="McMai LINE 官方账号二维码" width="200" /> |
+| <img src="/QQBot.png" alt="该隐 QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="该隐 Discord Bot 二维码" width="200" /> | <img src="/Line.jpg" alt="该隐 LINE 官方账号二维码" width="200" /> |
 | 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 | 添加官方账号好友<br>或将其邀请进群聊使用 |
 | [🔗 点击添加](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 点击邀请](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 点击添加](https://line.me/R/ti/p/@819jucvv) |
 

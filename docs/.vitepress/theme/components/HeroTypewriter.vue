@@ -3,6 +3,7 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 
 type HeroCopy = {
+  botName: string
   phrases: string[]
   summary: string
   hint: string
@@ -10,24 +11,28 @@ type HeroCopy = {
 
 const COPY: Record<string, HeroCopy> = {
   'zh-CN': {
+    botName: '该隐',
     phrases: ['多区服数据查询', '成绩统计与分析', '排行榜与进度追踪', 'SNS 内即开即用'],
     summary: '多区服数据查询、成绩统计与分析、排行榜与进度追踪、SNS 内即开即用',
-    hint: 'maimai DX 查分 Bot，支持国服、日服和国际服，可在 QQ、LINE 与 Discord 使用。',
+    hint: 'McMai 是提供 maimai DX 辅助功能的插件，支持国服、日服和国际服；通过该隐 Bot 即可使用。',
   },
   'zh-TW': {
+    botName: '該隱',
     phrases: ['多區服資料查詢', '成績統計與分析', '排行榜與進度追蹤', 'SNS 內即開即用'],
     summary: '多區服資料查詢、成績統計與分析、排行榜與進度追蹤、SNS 內即開即用',
-    hint: 'maimai DX 成績查詢 Bot，支援中國版、日本版及國際版，可在 QQ、LINE 與 Discord 使用。',
+    hint: 'McMai 是提供 maimai DX 輔助功能的插件，支援中國版、日本版及國際版；透過該隱 Bot 即可使用。',
   },
   'en-US': {
+    botName: 'Cain',
     phrases: ['Multi-region data', 'Score analytics', 'Rankings & progress', 'Built for social chat'],
     summary: 'Multi-region data, score analytics, rankings and progress, built for social chat',
-    hint: 'A maimai DX score bot for CN, JP, and INTL players on QQ, LINE, and Discord.',
+    hint: 'McMai is the plugin behind Cain’s maimai DX features for CN, JP, and INTL players.',
   },
   'ja-JP': {
+    botName: '該隠',
     phrases: ['マルチサーバー照会', 'スコア統計・分析', 'ランキング・進捗管理', 'SNS ですぐ使える'],
     summary: 'マルチサーバー照会、スコア統計・分析、ランキング・進捗管理、SNS ですぐ使える',
-    hint: '中国版・日本版・国際版に対応し、QQ・LINE・Discord で使える maimai DX スコア照会 Bot です。',
+    hint: 'McMai は、中国版・日本版・国際版に対応した maimai DX サポートプラグインです。Bot「該隠」を通じて利用できます。',
   },
 }
 
@@ -35,6 +40,7 @@ const { frontmatter, lang } = useData()
 const copy = computed(() => COPY[lang.value] ?? COPY['en-US'])
 const heroName = computed(() => frontmatter.value.hero?.name ?? 'McMai')
 const tagline = computed(() => frontmatter.value.hero?.tagline ?? '')
+const taglineParts = computed(() => tagline.value.split(copy.value.botName))
 const displayed = ref(copy.value.phrases[0])
 
 let phraseIndex = 0
@@ -131,7 +137,7 @@ onUnmounted(() => {
     </span>
     <span class="mcmai-sr-only">{{ copy.summary }}</span>
   </h1>
-  <p v-if="tagline" class="mcmai-hero-tagline">{{ tagline }}</p>
+  <p v-if="tagline" class="mcmai-hero-tagline"><template v-for="(part, index) in taglineParts" :key="index"><span v-if="index > 0" class="mcmai-hero-bot-sign"><span class="mcmai-sr-only">{{ copy.botName }}</span><span class="mcmai-hero-bot-white" aria-hidden="true">{{ copy.botName }}</span><span class="mcmai-hero-bot-red" aria-hidden="true">{{ copy.botName }}</span></span>{{ part }}</template></p>
 </template>
 
 <style scoped>
@@ -242,10 +248,53 @@ onUnmounted(() => {
   margin: 0 auto;
   padding-top: 8px;
   line-height: 28px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   white-space: pre-wrap;
   color: var(--vp-c-text-2);
+}
+
+/* Red/white diagonal signature from McMai's _bot_sign.html. Keep both clips and the slash aligned. */
+.mcmai-hero-bot-sign {
+  position: relative;
+  display: inline-grid;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  filter: drop-shadow(0 .02em .045em rgb(92 26 44 / 65%));
+}
+
+.mcmai-hero-bot-white,
+.mcmai-hero-bot-red {
+  grid-area: 1 / 1;
+  user-select: none;
+}
+
+.mcmai-hero-bot-white {
+  color: #fff;
+  -webkit-text-stroke: .025em rgb(124 36 57 / 85%);
+  clip-path: polygon(0 0, 78% 0, 22% 100%, 0 100%);
+}
+
+.mcmai-hero-bot-red {
+  clip-path: polygon(78% 0, 100% 0, 100% 100%, 22% 100%);
+  translate: -.07em .08em;
+  background: linear-gradient(180deg, #ff6a80, #d9133b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mcmai-hero-bot-sign::after {
+  content: '';
+  position: absolute;
+  left: 13.6%;
+  right: 13.6%;
+  top: -15%;
+  bottom: -15%;
+  background: linear-gradient(to bottom right, transparent calc(50% - .042em), #fff 50%, transparent calc(50% + .042em));
+  filter: drop-shadow(0 0 .083em rgb(255 40 80 / 95%));
+  pointer-events: none;
 }
 
 .mcmai-sr-only {
@@ -276,8 +325,8 @@ onUnmounted(() => {
   .mcmai-hero-tagline {
     max-width: 576px;
     padding-top: 12px;
-    line-height: 32px;
-    font-size: 20px;
+    line-height: 30px;
+    font-size: 18px;
   }
 }
 
@@ -309,8 +358,8 @@ onUnmounted(() => {
 
   .mcmai-hero-tagline {
     margin: 0;
-    line-height: 36px;
-    font-size: 24px;
+    line-height: 32px;
+    font-size: 18px;
   }
 }
 
