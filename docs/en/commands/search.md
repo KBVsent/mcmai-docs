@@ -26,6 +26,13 @@ Query detailed chart info (difficulty, constant, charter, etc.) by song ID.
 |---------|
 | `/id 11451` |
 
+::: tip What search and /id results include
+- **Chart structure**: a structure summary of one high-difficulty chart (nine-axis radar, structure constant, main chart tags, and associated charts); the note distribution table also lists each difficulty's structure constant next to its fitted constant. For every difficulty, tap the "Chart Analysis" button or send `/chartanalysis`. See [Chart Analysis & Practice](/en/commands/analysis).
+- **Related charts**: the result lists the song's other charts (Standard, DX, UTAGE), each with its ID and level; use `/id <ID>` for details. Charts not on your server, or removed from the game, are labeled. If the song has another non-UTAGE chart, platforms with buttons show a button under the result that jumps straight to it.
+- **Multiple matches**: when a keyword matches several songs, each candidate ends with its chart type, `[SD]` / `[DX]` / `[UTAGE]`, so you can tell same-named Standard and DX charts apart.
+- **Removed songs**: if no server has the song, the bot also searches songs removed from the game and notes that the song is unplayable on every server. Removed songs also work with `/scoreline`.
+:::
+
 ---
 
 ## Song Recognition (from Image)
@@ -52,6 +59,10 @@ On success the reply is the same as `/search` (chart details, chart-confirm butt
 ## Search by Level Constant
 
 Find songs within a specified constant range, with paging support.
+
+::: tip List search results
+Constant, BPM, composer, charter, and version searches show results as two-column cards, 16 songs per page: each difficulty's constant is visible at a glance, the difficulties and details matching your query are highlighted, and the version is shown as the game logo. When results run past one page, the image includes a QR code for the [McMai song database site](https://mcmai-db.moev.cc), where you can combine filters and sorting.
+:::
 
 **Command:** `/dssearch <constant> [page]`
 

@@ -10,9 +10,13 @@ View a list of all available commands (rendered as an image).
 
 ## Today's Fortune
 
-View today's maimai fortune, randomly generated each day.
+View today's maimai fortune with its Do and Avoid lists, plus a recommended chart for the day.
 
 **Command:** `/maitoday`
+
+::: tip Personalized pick
+If you have scores, the recommended chart is chosen from your scores and the day's Do and Avoid lists: a Rating target, practice, a new chart, an overreach, or a chill pick. Anything on the day's Avoid list is skipped. If your scores can't be read, a random chart from your server's song list is picked instead.
+:::
 
 ---
 
@@ -26,7 +30,7 @@ Randomly recommend a song. Can be filtered by type, difficulty color, or level.
 
 | Parameter | Description | Options |
 |-----------|-------------|---------|
-| type | Song type (optional) | `dx`, `sd` |
+| type | Song type (optional) | `dx`, `sd` (or `standard`) |
 | color | Difficulty color (optional) | `green`, `yellow`, `red`, `purple`, `white` |
 | level | Level (optional) | `12`, `13+`, etc. |
 
@@ -40,6 +44,8 @@ Randomly recommend a song. Can be filtered by type, difficulty color, or level.
 
 ::: tip
 Parameter order is flexible. You can combine them in any order, for example `/randommusic 14 dx` and `/randommusic dx 14` produce the same result.
+
+Songs are picked from your current server's song list (follows `/switchserver`).
 :::
 
 ---
@@ -70,6 +76,10 @@ Run without arguments to view your current language setting.
 | `/lang en` | Switch to English |
 | `/lang ja` | Switch to Japanese |
 
+::: tip Discord users
+On Discord, if the bot can't tell your language yet (it replies in English by default), replies with buttons also show a 🌐 language dropdown. Pick your language there; it works the same as `/lang`.
+:::
+
 ---
 
 ## Server Status
@@ -90,5 +100,6 @@ List the commands that are exclusive to the region you are currently on.
 
 | Region | Exclusive command |
 |--------|-------------------|
-| Japan (JP) | `/aime` — view / switch Aime card slots |
+| Japan (JP) | `/aime` — view / switch Aime card slots<br>`/recent` — play history by credit<br>`/ralog` — Rating curve and Rating-up history |
+| International (INTL) | `/recent` — play history by credit<br>`/ralog` — Rating curve and Rating-up history |
 | China (CN) | `/pc50` — top 50 scores by play count |

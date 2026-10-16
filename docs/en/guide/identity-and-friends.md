@@ -30,8 +30,9 @@ Username is the primary way for others to find and query you on QQ. If you want 
 **Command:** `/setname <username>`
 
 **Rules:**
-- 5–10 characters long
-- May contain Chinese characters, letters, and digits, but cannot be purely numeric
+- Up to 10 characters
+- May contain Chinese characters, hiragana, katakana, letters, and digits, but cannot be purely numeric
+- Half-width katakana and full-width letters or digits are converted automatically; names that look confusingly similar to an existing username can't be used
 - Must be globally unique
 - After setting, you must wait **3 days** before changing it again — choose carefully
 
@@ -115,7 +116,7 @@ Friend slots also support localized notation, such as Japanese `#フレンド1`.
 
 ## Score PK (pk50)
 
-`/pk50` compares your Best 50 against another player: it takes your B50 songs as the baseline, finds those songs in the target's scores, calculates both players' ratings on the matched charts, and determines the winner.
+`/pk50` pits you against another player on the charts you've both played: the two of you take turns picking your own highest-RA charts to build a chart set (up to 35 old-version + 15 new-version charts), and whoever has the higher Rating on that set wins. See [PK B50](/en/commands/b50#pk-b50) for the full rules.
 
 **Command:** `/pk50 <target>`
 

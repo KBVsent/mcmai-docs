@@ -21,21 +21,27 @@ hero:
 
 features:
   - icon: 🎮
+    link: /ja/guide/score-tracking
     title: マルチサーバー対応
     details: CN・JP・INTL 三つのサーバーのスコア確認とプレイデータ分析に対応。
   - icon: 📊
+    link: /ja/commands/b50
     title: Best 50 分析
     details: B50・B40・AP50・PC50 を照会し、フレンドとスコアを PK 比較。
   - icon: 🏆
+    link: /ja/commands/leaderboard
     title: ランキングシステム
     details: 全体楽曲ランキング・グループ内ランキング・Rating ランキングで多角的に比較。
   - icon: 🔍
+    link: /ja/commands/search
     title: 強力な楽曲検索
     details: 曲名・別名・作曲者・譜面製作者・BPM・定数など多条件で検索可能。
   - icon: 📈
+    link: /ja/commands/progress
     title: 進捗トラッキング
     details: レベル進捗・ジャンル進捗・コンプリート表でゲームの状況を一目で把握。
   - icon: ⚙️
+    link: /ja/commands/settings
     title: 柔軟な設定
     details: プロフィール表示カスタマイズ・プライバシー設定・フレンド管理など。
 ---

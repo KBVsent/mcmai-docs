@@ -67,6 +67,10 @@ Query the Rating ranking of players in the current group.
 The group Rating ranking image now includes the group's Rating **distribution**, plus overview stats such as total players, average, highest, and median.
 :::
 
+::: tip Only records from the current version count
+Each player on the board shows when they last updated their records. Players who haven't updated since their server's latest major version launched are left out of the ranking, the distribution, and the player count; the image notes how many were left out. If your own records are out of date, your entry is shown grayed out. Send `/update` to get back on the board.
+:::
+
 ---
 
 ## Join Group Leaderboard

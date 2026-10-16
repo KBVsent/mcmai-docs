@@ -152,6 +152,8 @@ Set a username so others can query your data using `#username`.
 | `/setname 123456789` | Link a QQ number (5–11 digits) |
 | `/setname clearqq` | Unlink the linked QQ number |
 
+**Username rules:** letters, digits, Chinese characters, and Japanese kana (hiragana / katakana); not all digits; up to 10 characters. Half-width katakana and full-width letters or digits are converted automatically. Names that look confusingly similar to an existing username can't be used.
+
 **Query ID:**
 
 Every user has a system-assigned **query ID** (a short ID prefixed with `#mc`). Even without setting a username, others can query your data using this ID. After setting a username, both `#username` and the query ID work.
@@ -194,8 +196,8 @@ Control whether others can query your game data.
 | Target | Description |
 |--------|-------------|
 | `all` / `query` | Master switch — controls all query permissions |
-| `b50` | Best 50 and other similar queries |
-| `score` | Score (info) queries |
+| `b50` | Best 50 and other similar queries, plus PK and Rating improvement queries |
+| `score` | Score (info), recent plays, and Rating history queries |
 | `progress` | Completion table / progress queries |
 
 ::: tip

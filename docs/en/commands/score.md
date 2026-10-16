@@ -119,3 +119,67 @@ Query AP rate, FC rate, play rate and other statistics for a song's charts.
 | `/rankstats 11451` |
 | `/rankstats 11451 jp` |
 | `/rankstats 11451 cn` |
+
+---
+
+## Recent Plays
+
+View your play history one credit per page (all the songs from one credit). Page 1 is your latest credit.
+
+::: info JP / INTL only
+This feature is only available to JP and INTL users.
+:::
+
+**Command:** `/recent [page]`
+
+Add `#username` to query another player (requires them to allow score queries).
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/recent` | Your latest credit |
+| `/recent 2` | The credit before that; higher numbers go further back |
+| `/recent #Sakura` | Sakura's latest credit |
+
+::: tip What the image shows
+Each song's achievement, rank, and judgment breakdown, with the BREAK breakdown and per-cell losses worked out as in [`/readscore`](#result-analysis-read-score). The arcade name is shown only when you check your own plays in a private chat.
+:::
+
+::: warning Records start from your first update
+maimai NET keeps only your latest 50 tracks. McMai saves them each time you run `/update`, so plays from before your first update won't appear. If you play more than 50 tracks between two updates, the older ones are overwritten on NET, and the bot reminds you to update before reaching 50 tracks.
+:::
+
+---
+
+## Rating History
+
+View your Rating curve, daily gains, and a record of every Rating-up play.
+
+::: info JP / INTL only
+This feature is only available to JP and INTL users. The data comes from your [recent plays](#recent-plays).
+:::
+
+**Command:** `/ralog [range] [page]`
+
+**Parameters:**
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| Range | Optional. Defaults to this version (since the latest major version launched). Use `30d` for the last N days, or `all` for all records | `30d` |
+| Page | Optional. Page 1 is your latest Rating-up plays | `2` |
+
+Range and page can go in either order. Add `#username` to query another player (requires them to allow score queries).
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/ralog` | Rating history for this version |
+| `/ralog 30d` | Last 30 days |
+| `/ralog all` | All records |
+| `/ralog 30d 2` | Last 30 days, page 2 of Rating-up plays |
+
+::: tip
+Rating changes not caused by playing, such as a major version switch or constant adjustments, are labeled separately. Gaps in the records are drawn as dashed lines.
+:::

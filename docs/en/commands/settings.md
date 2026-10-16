@@ -56,7 +56,7 @@ Customize the fields displayed on your profile card.
 
 ## Privacy Settings
 
-Control others' ability to query your data. See also [Account & Server → Privacy Settings](/commands/account#privacy-settings).
+Control others' ability to query your data. See also [Account & Server → Privacy Settings](/en/commands/account#privacy-settings).
 
 **Command:** `/privacy <action> [target]`
 
@@ -65,8 +65,8 @@ Control others' ability to query your data. See also [Account & Server → Priva
 | Target | Description |
 |--------|-------------|
 | `all` / `query` | Master switch — controls all query permissions |
-| `b50` | Best 50 and other similar queries |
-| `score` | Score (info) queries |
+| `b50` | Best 50 and other similar queries, plus PK and Rating improvement queries |
+| `score` | Score (info), recent plays, and Rating history queries |
 | `progress` | Completion table / progress queries |
 
 **Examples:**

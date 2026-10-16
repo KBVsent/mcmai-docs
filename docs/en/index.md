@@ -21,21 +21,27 @@ hero:
 
 features:
   - icon: 🎮
+    link: /en/guide/score-tracking
     title: Multi-Region Support
     details: Track and analyze maimai DX scores for CN, JP, and INTL regions from QQ, LINE, or Discord.
   - icon: 📊
+    link: /en/commands/b50
     title: Best 50 Analysis
     details: Query B50, B40, AP50, PC50 and compare scores with friends via PK mode.
   - icon: 🏆
+    link: /en/commands/leaderboard
     title: Leaderboard System
     details: Global song ranking, group ranking, Rating leaderboard for multi-dimensional comparison.
   - icon: 🔍
+    link: /en/commands/search
     title: Powerful Song Search
     details: Search by title, alias, composer, charter, BPM, level constant, and more.
   - icon: 📈
+    link: /en/commands/progress
     title: Progress Tracking
     details: Level progress, genre progress, completion tables for clear game visibility.
   - icon: ⚙️
+    link: /en/commands/settings
     title: Flexible Settings
     details: Customize profile display, privacy controls, friend management, and more.
 ---
