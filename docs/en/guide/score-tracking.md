@@ -27,6 +27,8 @@ McMai is a free score tracking and analytics bot for maimai DX players. It works
 
 See [Account & Server](/en/commands/account) for complete binding, bookmarklet, and region-switching instructions.
 
+See the [Bookmarklet Update Guide](/en/guide/bookmarklet-update) for installation and usage instructions.
+
 ## Start tracking
 
 1. Add and open McMai on QQ, LINE, or Discord.

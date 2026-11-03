@@ -27,6 +27,8 @@ McMai は、maimai DX プレイヤー向けの無料スコア確認・成績管�
 
 連携、ブックマークレット、サーバー切り替えの詳細は[アカウントとサーバー](/ja/commands/account)を参照してください。
 
+登録と実行の手順は[ブックマークレット更新ガイド](/ja/guide/bookmarklet-update)を参照してください。
+
 ## スコア確認を始める
 
 1. QQ・LINE・Discord のいずれかで McMai を追加します。

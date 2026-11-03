@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import GuideLanguageSelect from './GuideLanguageSelect.vue'
 import ProxyValue from './ProxyValue.vue'
 import { useData } from 'vitepress'
-import { guideCopy, interfaceCopy, languages, type GuideLocale } from './cn-net-ios-copy'
+import { guideCopy, interfaceCopy, type GuideLocale } from './cn-net-ios-copy'
 import { platformCopy, platformUi, type ProxyPlatform } from './cn-net-platform-copy'
 
 const props = defineProps<{ platform: ProxyPlatform }>()
@@ -21,16 +22,7 @@ const platformName = computed(() => ({ windows: 'Windows 11', macos: 'macOS', an
   <figure class="proxy-guide" :data-platform="platform">
     <div class="guide-toolbar">
       <span class="guide-tag">{{ platformName }}</span>
-      <label class="guide-language">
-        <span>{{ platformCopy[locale].language }}</span>
-        <span class="guide-select">
-        <select v-model="screenLanguage">
-          <option value="">{{ common.follow }}</option>
-          <option v-for="language in languages" :key="language.value" :value="language.value">{{ language.label }}</option>
-        </select>
-        <svg class="guide-select-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
-        </span>
-      </label>
+      <GuideLanguageSelect v-model="screenLanguage" :label="platformCopy[locale].language" :follow="common.follow" />
     </div>
     <div class="guide-stages" :aria-label="copy.title">
       <button v-for="(step, index) in copy.steps" :key="index" type="button" :aria-pressed="scene === index" @click="scene = index">
@@ -150,16 +142,12 @@ const platformName = computed(() => ({ windows: 'Windows 11', macos: 'macOS', an
 .proxy-guide { margin: 24px 0; border: 1px solid var(--vp-c-divider); border-radius: 20px; overflow: hidden; background: var(--vp-c-bg-soft); }
 .guide-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; }
 .guide-tag { font-size:12px; font-weight:700; color:var(--vp-c-text-2); }
-.guide-language { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:12px; color:var(--vp-c-text-2); }
-.guide-select { position: relative; display: inline-flex; align-items: center; min-width: 0; max-width: 100%; }
-.guide-language select { box-sizing: border-box; min-width: 0; max-width: 100%; min-height: 32px; appearance: none; -webkit-appearance: none; padding: 5px 32px 5px 10px; border: 1px solid var(--vp-c-divider); border-radius: 7px; background: var(--vp-c-bg); background-image: none; color: var(--vp-c-text-1); font: inherit; line-height: 20px; cursor: pointer; }
-.guide-select-arrow { position: absolute; top: 50%; right: 10px; width: 14px; height: 14px; transform: translateY(-50%); pointer-events: none; color: var(--vp-c-text-2); stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .guide-stages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-block:1px solid var(--vp-c-divider); }
 .guide-stages button { display:flex; align-items:center; gap:8px; padding:14px 12px; text-align:start; font-size:13px; line-height:1.5; color:var(--vp-c-text-2); cursor:pointer; overflow-wrap:anywhere; }
 .guide-stages button + button { border-left:1px solid var(--vp-c-divider); }
 .guide-stages button[aria-pressed="true"] { background:var(--vp-c-bg); color:var(--vp-c-brand-1); font-weight:650; box-shadow:inset 0 -3px var(--vp-c-brand-1); }
 .stage-number { flex-shrink:0; display:grid; place-items:center; width:23px; height:23px; border:1px solid currentColor; border-radius:50%; font-size:11px; }
-button:focus-visible, select:focus-visible { outline:3px solid var(--vp-c-brand-1); outline-offset:-3px; }
+button:focus-visible { outline:3px solid var(--vp-c-brand-1); outline-offset:-3px; }
 .guide-body { padding:24px 20px; }
 .illustration { container-type:inline-size; min-width:0; border:1px solid #cfd2d9; border-radius:12px; overflow:hidden; background:#f5f6fa; color:#242730; box-shadow:0 8px 22px #0000000b; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
 .window-chrome { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 14px; background:#eef0f5; font-size:11px; }

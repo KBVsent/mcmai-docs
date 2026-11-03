@@ -27,6 +27,8 @@ McMai 是一款面向 maimai DX 玩家的免费查分 Bot。你可以在 QQ、LI
 
 账号绑定、书签更新及区服切换的完整说明见[账号与服务器](/commands/account)。
 
+书签的安装和使用步骤见[书签更新教程](/guide/bookmarklet-update)。
+
 ## 开始查分
 
 1. 在 QQ、LINE 或 Discord 添加并打开 McMai。

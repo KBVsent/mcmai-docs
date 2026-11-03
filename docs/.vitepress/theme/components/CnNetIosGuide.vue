@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import GuideLanguageSelect from './GuideLanguageSelect.vue'
 import ProxyValue from './ProxyValue.vue'
 import { useData } from 'vitepress'
-import { guideCopy, interfaceCopy, languages, type GuideLocale } from './cn-net-ios-copy'
+import { guideCopy, interfaceCopy, type GuideLocale } from './cn-net-ios-copy'
 
 const { lang } = useData()
 const locale = computed<GuideLocale>(() => lang.value.startsWith('en') ? 'en' : lang.value.startsWith('ja') ? 'ja' : /TW|Hant|HK/i.test(lang.value) ? 'zh-TW' : 'zh')
@@ -16,16 +17,7 @@ const scene = ref(0)
   <figure class="net-ios-guide">
     <div class="guide-toolbar">
       <span class="guide-tag">iPhone / iPad</span>
-      <label class="guide-language">
-        <span>{{ copy.language }}</span>
-        <span class="guide-select">
-        <select v-model="screenLanguage">
-          <option value="">{{ copy.follow }}</option>
-          <option v-for="language in languages" :key="language.value" :value="language.value">{{ language.label }}</option>
-        </select>
-        <svg class="guide-select-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
-        </span>
-      </label>
+      <GuideLanguageSelect v-model="screenLanguage" :label="copy.language" :follow="copy.follow" />
     </div>
 
     <div class="guide-stages" :aria-label="copy.navigation">
@@ -96,16 +88,12 @@ const scene = ref(0)
 .net-ios-guide { --guide-accent: var(--vp-c-brand-1); margin: 24px 0; border: 1px solid var(--vp-c-divider); border-radius: 20px; overflow: hidden; background: var(--vp-c-bg-soft); }
 .guide-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; }
 .guide-tag { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--vp-c-text-2); }
-.guide-language { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12px; color: var(--vp-c-text-2); }
-.guide-select { position: relative; display: inline-flex; align-items: center; min-width: 0; max-width: 100%; }
-.guide-language select { box-sizing: border-box; min-width: 0; max-width: 100%; min-height: 32px; appearance: none; -webkit-appearance: none; padding: 5px 32px 5px 10px; border: 1px solid var(--vp-c-divider); border-radius: 7px; background: var(--vp-c-bg); background-image: none; color: var(--vp-c-text-1); font: inherit; line-height: 20px; cursor: pointer; }
-.guide-select-arrow { position: absolute; top: 50%; right: 10px; width: 14px; height: 14px; transform: translateY(-50%); pointer-events: none; color: var(--vp-c-text-2); stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .guide-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--vp-c-divider); }
 .guide-stages button { display: flex; align-items: center; gap: 8px; padding: 14px 12px; text-align: start; font-size: 13px; line-height: 1.5; color: var(--vp-c-text-2); cursor: pointer; overflow-wrap: anywhere; }
 .guide-stages button + button { border-left: 1px solid var(--vp-c-divider); }
 .guide-stages button[aria-pressed="true"] { background: var(--vp-c-bg); color: var(--guide-accent); font-weight: 650; box-shadow: inset 0 -3px var(--guide-accent); }
 .stage-number { flex-shrink: 0; display: grid; place-items: center; width: 23px; height: 23px; border: 1px solid currentColor; border-radius: 50%; font-size: 11px; }
-.guide-stages button:focus-visible, .guide-language select:focus-visible { outline: 3px solid var(--guide-accent); outline-offset: -3px; }
+.guide-stages button:focus-visible { outline: 3px solid var(--guide-accent); outline-offset: -3px; }
 .guide-body { display: grid; grid-template-columns: minmax(0, 290px) minmax(0, 1fr); align-items: center; gap: 26px; padding: 28px 20px; }
 .guide-device { container-type: inline-size; min-width: 0; position: relative; padding: 10px 0 24px; border: 5px solid #30343c; border-radius: 32px; background: #f2f2f7; color: #17171c; box-shadow: 0 12px 24px #00000012; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 .device-status { display: flex; justify-content: space-between; padding: 0 19px; font-size: 10px; font-weight: 700; }
