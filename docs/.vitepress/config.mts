@@ -166,6 +166,7 @@ export default defineConfig({
               items: [
                 { text: '快速开始', link: '/guide/getting-started' },
                 { text: 'maimai 查分指南', link: '/guide/score-tracking' },
+                { text: '国服 NET 更新教程', link: '/guide/cn-net-update' },
                 { text: 'QQ Bot 使用小提示', link: '/guide/qqbot-tips' },
                 { text: '用户名与好友系统', link: '/guide/identity-and-friends' },
               ],
@@ -211,6 +212,7 @@ export default defineConfig({
               items: [
                 { text: 'Getting Started', link: '/en/guide/getting-started' },
                 { text: 'Score Tracking Guide', link: '/en/guide/score-tracking' },
+                { text: 'CN NET Update Guide', link: '/en/guide/cn-net-update' },
                 { text: 'Username & Friend System', link: '/en/guide/identity-and-friends' },
               ],
             },
@@ -255,6 +257,7 @@ export default defineConfig({
               items: [
                 { text: 'はじめに', link: '/ja/guide/getting-started' },
                 { text: 'スコア確認・成績管理ガイド', link: '/ja/guide/score-tracking' },
+                { text: '中国版 NET 更新ガイド', link: '/ja/guide/cn-net-update' },
                 { text: 'ユーザー名とフレンドシステム', link: '/ja/guide/identity-and-friends' },
               ],
             },
@@ -299,6 +302,7 @@ export default defineConfig({
               items: [
                 { text: '快速開始', link: '/zh-TW/guide/getting-started' },
                 { text: 'maimai 查分指南', link: '/zh-TW/guide/score-tracking' },
+                { text: '中國服 NET 更新教學', link: '/zh-TW/guide/cn-net-update' },
                 { text: '使用者名稱與好友系統', link: '/zh-TW/guide/identity-and-friends' },
               ],
             },

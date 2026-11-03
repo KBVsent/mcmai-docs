@@ -4,7 +4,7 @@
 
 Link your QQ account to your SEGA ID for querying maimai NET data.
 
-Only JP and INTL users need to bind an account. CN users update data via MAID directly.
+SEGA ID binding is for JP and INTL. CN users can update through [NET WeChat authorization](/en/guide/cn-net-update) or MAID without binding a SEGA ID.
 
 **Command:** `/bind`
 
@@ -20,7 +20,7 @@ Each execution of `/bind` generates a new verification code. Complete the bindin
 
 You can update your scores without handing over your SEGA ID and password. Install a bookmarklet, click it on a maimai NET page you are already logged into, and your scores upload to McMai.
 
-Available for the **JP and INTL regions**. CN players update via MAID and do not need this.
+Available for the **JP and INTL regions**. CN players use [NET WeChat authorization](/en/guide/cn-net-update) or MAID and do not need a bookmarklet.
 
 ::: tip Why no password is needed
 Fetching runs inside your own browser using the session you are already logged into. Your SEGA ID and password never reach the bot.

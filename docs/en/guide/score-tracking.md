@@ -21,7 +21,7 @@ McMai is a free score tracking and analytics bot for maimai DX players. It works
 
 | Region | How to update data |
 |--------|--------------------|
-| CN | Send the `SGWCMAID` content obtained from the player QR code in the official 舞萌｜中二 WeChat account |
+| CN | Follow the [NET WeChat authorization guide](/en/guide/cn-net-update), or send the `SGWCMAID` from the official player QR code |
 | JP | Use the binding page from `/bind`, or update with the bookmarklet without submitting a password |
 | INTL | Use the binding page from `/bind`, or update with the bookmarklet without submitting a password |
 
