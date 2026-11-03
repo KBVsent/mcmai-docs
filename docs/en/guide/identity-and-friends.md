@@ -6,7 +6,7 @@ On the QQ platform, the Bot has a limitation: **it cannot read @ mention data fr
 
 At the same time, the internal user IDs used by McMai are not visible to regular users and are inconvenient to type manually.
 
-To solve this, McMai introduces a **username** and **QQ number binding** system: once you set a username (or bind your QQ number), others can use `#username` or `#QQnumber` to target you in queries.
+To solve this, McMai introduces a **username** system: once you set a username, others can use `#username` to target you in queries.
 
 However, usernames can be hard to remember or may change over time — that's where the **friend system** comes in. Add frequently queried players as friends, then reference them with `#friend1` at any time, with no need to memorize their username, and updates to their username won't affect you.
 
@@ -40,33 +40,7 @@ Username is the primary way for others to find and query you on QQ. If you want 
 |---------|-------------|
 | `/setname MaiPlayer` | Set username to MaiPlayer |
 | `/setname clear` | Delete current username |
-| `/setname` | View current username and QQ binding status |
-
----
-
-## QQ Number Binding
-
-### What is QQ number binding for?
-
-QQ number binding is an alternative identity method alongside usernames, primarily for **CN server users**:
-
-- After binding, the Bot can fetch your CN server data via the **Diving Fish score tracker** — some features require this binding to work
-- Others can query you or add you as a friend using `#QQnumber`, as a fallback when you have no username
-
-::: tip CN Users Only
-JP / INTL users bind their accounts via SEGA ID and do not need to bind a QQ number.
-:::
-
-### How to bind a QQ number?
-
-Pass your QQ number (5–11 digits) as the argument — the system automatically detects it as a QQ binding, not a username.
-
-**Command:** `/setname <QQ number>`
-
-| Command | Description |
-|---------|-------------|
-| `/setname 123456789` | Bind QQ number 123456789 |
-| `/setname clearqq` | Unbind QQ number |
+| `/setname` | View current username |
 
 ---
 
@@ -95,7 +69,6 @@ The friend system is designed for exactly this. Save up to **3 players** in frie
 | `/friend list` | View your 3 friend slots |
 | `/friend add #username` | Add a friend by username (auto-fills first empty slot) |
 | `/friend add #username 2` | Add a friend to a specific slot (overwrites existing) |
-| `/friend add #QQnumber` | Add a friend by QQ number |
 | `/friend del 1` | Remove friend in slot 1 |
 
 ### How to use friend slots in queries?
@@ -139,7 +112,6 @@ Most McMai commands support an optional target at the end to query a specific pl
 |--------|-------------|
 | (empty) | Query yourself (default) |
 | `#username` | Query by username |
-| `#QQnumber` | Query by QQ number (target must have QQ bound) |
 | `#friend1` / `#friend2` / `#friend3` | Query the player in the corresponding friend slot |
 
-Resolution priority: `#friendN` > `#username` > `#QQnumber` > default (self)
+Resolution priority: `#friendN` > `#username` > default (self)

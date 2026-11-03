@@ -118,7 +118,7 @@ Wi-Fi 代理開啟期間，其他網站可能無法存取。授權頁顯示交�
 
 ### MAID 更新
 
-中國服仍支援 MAID 更新，相關說明見[帳號與伺服器](/zh-TW/commands/account)。
+中國服仍支援 MAID 更新，相關說明見[中國服 MAID 更新](/zh-TW/commands/account#maid)。
 
 ---
 

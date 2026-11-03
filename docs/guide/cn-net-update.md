@@ -118,7 +118,7 @@ Wi-Fi 代理开启期间，其他网站可能无法访问。授权页面显示�
 
 ### MAID 更新
 
-国服仍支持 MAID 更新，相关说明见[账号与服务器](/commands/account)。
+国服仍支持 MAID 更新，相关说明见[国服 MAID 更新](/commands/account#maid)。
 
 ---
 

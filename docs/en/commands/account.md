@@ -1,14 +1,15 @@
 # Account & Server
 
-## Bind SEGA ID
-
-Link your QQ account to your SEGA ID for querying maimai NET data.
-
-SEGA ID binding is for JP and INTL. CN users can update through [NET WeChat authorization](/en/guide/cn-net-update) or MAID without binding a SEGA ID.
+## Bind Account
 
 **Command:** `/bind`
 
-**Note:** This generates a dedicated binding link (or QR code). Open it in your browser to complete authorization.
+**Note:** This generates a dedicated binding link (or QR code). Open it in your browser, select your server, and follow the instructions on the page.
+
+| Server | Method |
+|--------|--------|
+| JP / INTL | Bind your SEGA ID, or update with a [bookmarklet](/en/guide/bookmarklet-update) |
+| CN | Set up [NET WeChat authorization](/en/guide/cn-net-update), or [send your MAID](#maid) |
 
 ::: warning Note
 Each execution of `/bind` generates a new verification code. Complete the binding promptly.
@@ -25,6 +26,19 @@ Send `/bind`, select the region and Bookmarklet method on the binding page, then
 The [Bookmarklet Update Guide](/en/guide/bookmarklet-update) includes illustrated instructions for desktop Chrome, iPhone Safari, and Android Chrome.
 
 The code contains account upload credentials. Regenerating it immediately invalidates the previous code.
+
+---
+
+## CN MAID Updates {#maid}
+
+Send your MAID (an 84-character string starting with `SGWCMAID`) to the bot in a direct message, or mention the bot in a group, to update your CN scores. Play counts used by [PC50](/en/commands/b50#pc50) are only available from MAID updates.
+
+::: details How to get your MAID?
+1. Open the "舞萌 | 中二" (Maimai | Chunithm) official WeChat account
+2. Tap "获取二维码" (Get QR Code)
+3. A QR code page will open
+4. Long-press the QR code to scan, then copy the `SGWCMAID` string that appears
+:::
 
 ---
 
@@ -117,17 +131,15 @@ The change takes effect the next time you run `/update`.
 
 Set a username so others can query your data using `#username`.
 
-**Command:** `/setname [username|QQ number|clear|clearqq]`
+**Command:** `/setname [username|clear]`
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
 | `/setname Sakura` | Set username to Sakura |
-| `/setname` | View current username, query ID, and linked QQ |
+| `/setname` | View current username (or your query ID if none is set) |
 | `/setname clear` | Clear username |
-| `/setname 123456789` | Link a QQ number (5–11 digits) |
-| `/setname clearqq` | Unlink the linked QQ number |
 
 **Username rules:** letters, digits, Chinese characters, and Japanese kana (hiragana / katakana); not all digits; up to 10 characters. Half-width katakana and full-width letters or digits are converted automatically. Names that look confusingly similar to an existing username can't be used.
 

@@ -118,7 +118,7 @@ The service continues retrieving and processing NET data after handoff. The fina
 
 ### MAID updates
 
-MAID remains available for CN updates. See [Account & Server](/en/commands/account).
+MAID remains available for CN updates. See [CN MAID Updates](/en/commands/account#maid).
 
 ---
 

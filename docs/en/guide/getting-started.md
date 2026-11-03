@@ -35,7 +35,10 @@ You need to bind your account and update data before using personal data queries
 
 **CN Users**
 
-Directly send your MAID (an 84-character string starting with `SGWCMAID`) to update your data.
+Update your data in either of these ways:
+
+- **NET WeChat authorization**: use `/bind` and select NET WeChat authorization for CN on the binding page. See the [CN NET Update Guide](/en/guide/cn-net-update) for setup
+- **MAID**: send your MAID (an 84-character string starting with `SGWCMAID`) directly
 
 ::: details How to get your MAID?
 1. Open the "舞萌 | 中二" (Maimai | Chunithm) official WeChat account
@@ -51,10 +54,6 @@ After binding, switch to your region's server:
 | `/switchserver jp` | Switch to JP server |
 | `/switchserver intl` | Switch to INTL server |
 | `/switchserver cn` | Switch to CN server (default) |
-
-::: tip CN Users
-CN users can bind a QQ account via `/setname [your QQ]` to use data from the Diving Fish score tracker. Some features may be limited.
-:::
 
 ## Basic Usage
 
