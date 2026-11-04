@@ -120,6 +120,8 @@ Wi-Fi 代理开启期间，其他网站可能无法访问。授权页面显示�
 
 国服仍支持 MAID 更新，相关说明见[国服 MAID 更新](/commands/account#maid)。
 
+两种方式包含的数据不同，部分功能以最近一次更新的方式为准：NET 更新包含游玩记录，可使用 [`/最近游玩`](/commands/score#最近游玩) 与 [`/rating变化`](/commands/score#rating-变化)；MAID 更新包含游玩次数，可使用 [PC50](/commands/b50#pc50)。
+
 ---
 
 相关：[maimai 查分指南](/guide/score-tracking) · [账号与服务器](/commands/account)

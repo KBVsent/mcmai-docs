@@ -120,6 +120,8 @@ Wi-Fi 代理開啟期間，其他網站可能無法存取。授權頁顯示交�
 
 中國服仍支援 MAID 更新，相關說明見[中國服 MAID 更新](/zh-TW/commands/account#maid)。
 
+兩種方式包含的資料不同，部分功能以最近一次更新的方式為準：NET 更新包含遊玩記錄，可使用 [`/最近遊玩`](/zh-TW/commands/score#最近遊玩) 與 [`/rating記錄`](/zh-TW/commands/score#rating-變化)；MAID 更新包含遊玩次數，可使用 [PC50](/zh-TW/commands/b50#pc50)。
+
 ---
 
 相關：[查分指南](/zh-TW/guide/score-tracking) · [帳號與伺服器](/zh-TW/commands/account)

@@ -47,6 +47,7 @@ Query the deduction per note type for a given difficulty, the DX score tolerance
 ::: tip The image includes
 - **DX star**: the DX score tolerance required to reach each DX star level.
 - **Rank tolerance**: based on the theoretical 101% baseline, the maximum number of a single TAP Great / TAP Good / TAP Miss error tolerable throughout to still reach each rank (SSS+ / SSS / SS+ / SS / S+ / S); the three tiers are mutually exclusive.
+- **Watch points**: spots in the chart where points are easy to lose, such as BREAK shifts, jacks, and bursts into a BREAK, each drawn as it appears in game. These are examples only, and unlisted spots can lose points too. Some charts do not show this section.
 :::
 
 ---
@@ -126,8 +127,8 @@ Query AP rate, FC rate, play rate and other statistics for a song's charts.
 
 View your play history one credit per page (all the songs from one credit). Page 1 is your latest credit.
 
-::: info JP / INTL only
-This feature is only available to JP and INTL users.
+::: info CN requires NET updates
+Available on JP and INTL. On CN, it depends on how you last updated: it works after a [NET WeChat authorization](/en/guide/cn-net-update) update, but not after a MAID update, which does not include play history.
 :::
 
 **Command:** `/recent [page]`
@@ -143,11 +144,11 @@ Add `#username` to query another player (requires them to allow score queries).
 | `/recent #Sakura` | Sakura's latest credit |
 
 ::: tip What the image shows
-Each song's achievement, rank, and judgment breakdown, with the BREAK breakdown and per-cell losses worked out as in [`/readscore`](#result-analysis-read-score). The arcade name is shown only when you check your own plays in a private chat.
+Each song's achievement, rank, and judgment breakdown, with the BREAK breakdown and per-cell losses worked out as in [`/readscore`](#result-analysis-read-score).
 :::
 
 ::: warning Records start from your first update
-maimai NET keeps only your latest 50 tracks. McMai saves them each time you run `/update`, so plays from before your first update won't appear. If you play more than 50 tracks between two updates, the older ones are overwritten on NET, and the bot reminds you to update before reaching 50 tracks.
+maimai NET keeps only your latest 50 tracks. McMai saves them each time your scores are updated, so plays from before your first update won't appear. If you play more than 50 tracks between two updates, the older ones are overwritten on NET, and the bot reminds you to update before reaching 50 tracks.
 :::
 
 ---
@@ -156,8 +157,8 @@ maimai NET keeps only your latest 50 tracks. McMai saves them each time you run 
 
 View your Rating curve, daily gains, and a record of every Rating-up play.
 
-::: info JP / INTL only
-This feature is only available to JP and INTL users. The data comes from your [recent plays](#recent-plays).
+::: info CN requires NET updates
+The data comes from your [recent plays](#recent-plays), so the same server rules apply: JP and INTL are supported, and CN requires your latest update to be a [NET WeChat authorization](/en/guide/cn-net-update) update.
 :::
 
 **Command:** `/ralog [range] [page]`

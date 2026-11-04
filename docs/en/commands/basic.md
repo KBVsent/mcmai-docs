@@ -84,7 +84,7 @@ On Discord, if the bot can't tell your language yet (it replies in English by de
 
 ## Server Status
 
-View the real-time online status and heartbeat monitoring of each maimai DX region.
+View the real-time status of China (CN) maimai DX services, including the last 24 hours of availability for NET, the WeChat official account, and content delivery, plus cabinet self-check results and delivery progress.
 
 **Command:** `/status`
 
@@ -100,6 +100,5 @@ List the commands that are exclusive to the region you are currently on.
 
 | Region | Exclusive command |
 |--------|-------------------|
-| Japan (JP) | `/aime` — view / switch Aime card slots<br>`/recent` — play history by credit<br>`/ralog` — Rating curve and Rating-up history |
-| International (INTL) | `/recent` — play history by credit<br>`/ralog` — Rating curve and Rating-up history |
-| China (CN) | `/pc50` — top 50 scores by play count |
+| Japan (JP) | `/aime` — view / switch Aime card slots |
+| China (CN) | `/pc50` — top 50 scores by play count (requires MAID updates) |

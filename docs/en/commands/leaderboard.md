@@ -33,9 +33,9 @@ The `/rank` and `/grank` images now include the chart's **score distribution** (
 
 Query the achievement rate ranking for players in the current group.
 
-**Command:** `/grank <song ID or name> [difficulty] [region]`
+**Command:** `/grank <song ID or name> [difficulty] [region] [page]`
 
-Same parameters as `/rank`.
+Same parameters as `/rank`. Add a page number at the end to see lower ranks.
 
 **Examples:**
 
@@ -43,6 +43,11 @@ Same parameters as `/rank`.
 |---------|
 | `/grank 11451` |
 | `/grank 11451 white cn` |
+| `/grank 11451 2` |
+
+::: tip Pages
+`/grank` and `/grating` show 10 players per page, and the image tells you the command for the next page. On platforms that support buttons, tap the button to turn pages. Your own rank and the players around you appear only on page 1.
+:::
 
 ---
 
@@ -50,11 +55,12 @@ Same parameters as `/rank`.
 
 Query the Rating ranking of players in the current group.
 
-**Command:** `/grating [region]`
+**Command:** `/grating [region] [page]`
 
 | Parameter | Description | Options |
 |-----------|-------------|---------|
 | region | Filter by region (optional) | `cn`, `jp`, `intl` |
+| page | 10 players per page (optional) | `2` |
 
 **Examples:**
 
@@ -62,6 +68,7 @@ Query the Rating ranking of players in the current group.
 |---------|
 | `/grating` |
 | `/grating jp` |
+| `/grating jp 2` |
 
 ::: tip
 The group Rating ranking image now includes the group's Rating **distribution**, plus overview stats such as total players, average, highest, and median.

@@ -187,10 +187,10 @@ Control whether others can query your game data.
 | `all` / `query` | Master switch — controls all query permissions |
 | `b50` | Best 50 and other similar queries, plus PK and Rating improvement queries |
 | `score` | Score (info), recent plays, and Rating history queries |
-| `progress` | Completion table / progress queries |
+| `progress` | Completion table, progress, genre progress, and score list queries |
 
 ::: tip
-Disabling `all` (master switch) prevents others from accessing any of your data, overriding all individual settings.
+Disabling `all` (master switch) prevents others from accessing any of your data, overriding all individual settings. Leaderboards are not affected by privacy settings.
 :::
 
 **Examples:**

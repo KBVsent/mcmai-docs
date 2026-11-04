@@ -67,7 +67,7 @@ Control others' ability to query your data. See also [Account & Server → Priva
 | `all` / `query` | Master switch — controls all query permissions |
 | `b50` | Best 50 and other similar queries, plus PK and Rating improvement queries |
 | `score` | Score (info), recent plays, and Rating history queries |
-| `progress` | Completion table / progress queries |
+| `progress` | Completion table, progress, genre progress, and score list queries |
 
 **Examples:**
 

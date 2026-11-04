@@ -120,6 +120,8 @@ Wi-Fi プロキシが有効な間は、ほかの Web サイトが開けない場
 
 中国版では引き続き MAID も使用できます。詳細は[中国版 MAID による更新](/ja/commands/account#maid)を参照してください。
 
+2 つの方法では取得できるデータが異なり、一部の機能は直近の更新方法に従います。NET による更新にはプレイ履歴が含まれ、[`/プレイ履歴`](/ja/commands/score#recent-plays)と[`/レート推移`](/ja/commands/score#rating-history)を利用できます。MAID による更新にはプレイ回数が含まれ、[PC50](/ja/commands/b50#pc50) を利用できます。
+
 ---
 
 関連：[スコア確認ガイド](/ja/guide/score-tracking) · [アカウントとサーバー](/ja/commands/account)

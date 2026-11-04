@@ -120,6 +120,8 @@ The service continues retrieving and processing NET data after handoff. The fina
 
 MAID remains available for CN updates. See [CN MAID Updates](/en/commands/account#maid).
 
+The two methods carry different data, and some features follow whichever method you used last: NET updates include play history for [`/recent`](/en/commands/score#recent-plays) and [`/ralog`](/en/commands/score#rating-history), while MAID updates include the play counts used by [PC50](/en/commands/b50#pc50).
+
 ---
 
 Related: [Score Tracking Guide](/en/guide/score-tracking) · [Account & Server](/en/commands/account)
