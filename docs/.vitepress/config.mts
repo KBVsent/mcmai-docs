@@ -1,51 +1,45 @@
 import { existsSync } from 'node:fs'
-import { writeFile } from 'node:fs/promises'
+import { copyFile, mkdir, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { defineTeekConfig } from "vitepress-theme-teek/config";
+import { docsIndexFile, publicPath, siteOrigin } from './site-url'
 
-const siteOrigin = 'https://mcmai.moev.cc'
 const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 let sitemapUrls: string[] = []
+const pageTitles = new Map<string, string>()
 
 const seoLocales = [
   {
     prefix: 'zh-TW/',
+    indexLabels: ['McMai 文件索引', '教學', '指令參考', '其他頁面'],
     hreflang: 'zh-TW',
     fallbackDescription: (title: string) =>
       `${title}：查看 McMai maimai DX 成績查詢工具的功能說明、指令用法與範例。`,
   },
   {
     prefix: 'en/',
+    indexLabels: ['McMai documentation index', 'Guides', 'Command reference', 'Other pages'],
     hreflang: 'en-US',
     fallbackDescription: (title: string) =>
       `${title}: Learn how to use this McMai feature, including commands, options, and examples.`,
   },
   {
     prefix: 'ja/',
+    indexLabels: ['McMai ドキュメント一覧', 'ガイド', 'コマンドリファレンス', 'その他のページ'],
     hreflang: 'ja-JP',
     fallbackDescription: (title: string) =>
       `${title}：McMai の maimai DX サポート機能、コマンド、オプション、使用例を紹介します。`,
   },
   {
     prefix: '',
+    indexLabels: ['McMai 文档索引', '教程', '指令参考', '其他页面'],
     hreflang: 'zh-CN',
     fallbackDescription: (title: string) =>
       `${title}：查看 McMai 的 maimai DX 功能说明、指令用法与示例。`,
   },
 ] as const
-
-function publicPath(relativePath: string) {
-  const normalizedPath = relativePath.replace(/\\/g, '/')
-
-  if (normalizedPath === 'index.md') return '/'
-  if (normalizedPath.endsWith('/index.md')) {
-    return `/${normalizedPath.slice(0, -'index.md'.length)}`
-  }
-
-  return `/${normalizedPath.replace(/\.md$/, '.html')}`
-}
 
 function contentPath(relativePath: string) {
   const locale = seoLocales.find(({ prefix }) => prefix && relativePath.startsWith(prefix))
@@ -90,7 +84,27 @@ export default defineConfig({
       return items.map(({ url, lastmod }) => ({ url, lastmod }))
     },
   },
-  async buildEnd({ outDir }) {
+  async buildEnd({ outDir, srcDir, pages }) {
+    await Promise.all(pages.map(async (page) => {
+      const destination = resolve(outDir, page)
+      await mkdir(dirname(destination), { recursive: true })
+      await copyFile(resolve(srcDir, page), destination)
+    }))
+    for (const { prefix, indexLabels } of seoLocales) {
+      const [heading, guides, commands, other] = indexLabels
+      const sections = new Map<string, string[]>([[guides, []], [commands, []], [other, []]])
+      for (const page of [...pages].sort()) {
+        const path = contentPath(page)
+        if (page !== prefix + path) continue
+        const section = path.startsWith('guide/') ? guides : path.startsWith('commands/') ? commands : other
+        sections.get(section)!.push(`- [${pageTitles.get(page) ?? path}](${new URL(page, siteOrigin).href})`)
+      }
+      const blocks = [`# ${heading}`]
+      for (const [label, links] of sections) {
+        if (links.length) blocks.push(`## ${label}\n\n${links.join('\n')}`)
+      }
+      await writeFile(resolve(outDir, prefix, docsIndexFile), blocks.join('\n\n') + '\n')
+    }
     await writeFile(resolve(outDir, 'sitemap.txt'), `${sitemapUrls.join('\n')}\n`, 'utf8')
   },
   transformPageData(pageData) {
@@ -106,6 +120,7 @@ export default defineConfig({
   },
   transformHead({ pageData, title, description }) {
     if (pageData.isNotFound || !pageData.relativePath.endsWith('.md')) return
+    pageTitles.set(pageData.relativePath, pageData.title)
 
     const canonicalUrl = `${siteOrigin}${publicPath(pageData.relativePath)}`
     const head = [
