@@ -175,30 +175,82 @@
 }
 
 /* Plain text links in the platform table render as tappable buttons.
-   Always visible (works on touch / mobile, no hover required). */
-.vp-doc td a:not(:has(img)) {
+   Always visible (works on touch / mobile, no hover required).
+   Scoped to tables that contain images (the QR-code platform tables) so
+   ordinary reference tables keep the normal inline link style. */
+.vp-doc table:has(td img) td a:not(:has(img)) {
   display: inline-block;
   margin-top: 4px;
-  padding: 7px 18px;
+  padding: 6px 16px;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.2;
-  color: #fff !important;
+  color: var(--vp-button-brand-text, #fff) !important;
   text-decoration: none;
   white-space: nowrap;
-  background: var(--vp-c-brand-1, #f472b6);
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: background 0.2s ease, transform 0.15s ease;
+  background: var(--vp-button-brand-bg, var(--vp-c-brand-1));
+  border: 1px solid var(--vp-button-brand-border, transparent);
+  border-radius: 20px;
+  transition: background-color 0.25s, border-color 0.25s;
 }
 
-.vp-doc td a:not(:has(img)):hover {
-  background: var(--vp-c-brand-2, #ec4899);
-  transform: translateY(-1px);
+.vp-doc table:has(td img) td a:not(:has(img)):hover {
+  background: var(--vp-button-brand-hover-bg, var(--vp-c-brand-2));
+  border-color: var(--vp-button-brand-hover-border, transparent);
 }
 
-.vp-doc td a:not(:has(img)):active {
-  transform: translateY(0);
+.vp-doc table:has(td img) td a:not(:has(img)):active {
+  background: var(--vp-button-brand-active-bg, var(--vp-c-brand-3));
+}
+
+/* Body links (paragraphs, lists, reference tables) share one style: a faint
+   brand hairline at rest, and on hover a solid line sweeps in from the left.
+   Excludes heading anchors, component links (they carry a class), image
+   links, and the QR platform table buttons above. */
+.vp-doc a:not([class]):not(:has(img)):not(table:has(td img) a) {
+  text-decoration: none;
+  padding-bottom: 1px;
+  background-image:
+    linear-gradient(var(--vp-c-brand-1), var(--vp-c-brand-1)),
+    linear-gradient(var(--vp-c-brand-soft), var(--vp-c-brand-soft));
+  background-position: 0 100%, 0 100%;
+  background-size: 0 1.5px, 100% 1.5px;
+  background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 0.3s ease, color 0.25s;
+}
+
+.vp-doc a:not([class]):not(:has(img)):not(table:has(td img) a):hover {
+  background-size: 100% 1.5px, 100% 1.5px;
+}
+
+/* External links (leave the site) get a north-east arrow; internal links
+   don't, so the arrow keeps meaning "opens another site". */
+.vp-doc a[href*="://"]:not([class]):not(:has(img)):not(table:has(td img) a)::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 3px;
+  vertical-align: 0.05em;
+  background: currentColor;
+  opacity: 0.6;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.25s ease, opacity 0.25s;
+}
+
+.vp-doc a[href*="://"]:not([class]):not(:has(img)):not(table:has(td img) a):hover::after {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vp-doc a:not([class]),
+  .vp-doc a:not([class])::after {
+    transition: none;
+  }
 }
 
 /* B50 docs: keep the tall result image readable without dominating the page. */
