@@ -20,7 +20,7 @@ The custom data source imports scores from other sources, such as scores exporte
 4. To view these scores in McMai right after uploading, check “Switch McMai to the custom data source account after uploading”.
 5. Click “Upload scores” and wait for processing to finish.
 
-The result page shows the number of charts written and the rows that were not written. When writing succeeds and the account has scores, a B50 image is generated. The file's `catalog` must match the selected tab; otherwise the whole file is rejected.
+The result page shows the number of charts written and the rows that were not written. When writing succeeds and the account has scores, a B50 image is generated. The file's `catalog` must match the selected tab; otherwise the whole file is rejected. Uploads must be at least 60 seconds apart; see [Limits and error codes](#limits).
 
 ## 2. Standard format {#format}
 
@@ -213,7 +213,7 @@ If processing fails, `status` is `failed` and `error_code` is `update_failed`, m
 ### Limits and error codes {#limits}
 
 - Each user can have only one task in progress at a time, including web uploads.
-- Uploads must be at least 60 seconds apart, counted from the previous custom data source upload, including web uploads.
+- Uploads must be at least 60 seconds apart. Web and API uploads share one timer, counted from the previous custom data source upload.
 - The request body must not exceed 2 MiB, and scores must not exceed 8000 entries.
 
 Errors return `{"error_code": "…"}`:
