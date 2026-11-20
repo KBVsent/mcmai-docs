@@ -16,7 +16,7 @@ description: 將 maimai 成績上傳至 McMai 自訂資料來源：網頁上傳�
 
 1. 向 Bot 傳送 `/綁定`，開啟回傳的綁定連結。
 2. 選擇成績所屬的區服標籤，將更新方式切換為「自訂」。
-3. 選擇成績檔案（JSON，不超過 2 MiB），也可以直接拖曳進來。
+3. 選擇成績檔案（JSON，不超過 2.5 MiB），也可以直接拖曳進來。
 4. 如需上傳後在 McMai 中直接查看這些成績，勾選「上傳後在 McMai 中切換到自訂資料來源帳號」。
 5. 點選「上傳成績」，等待處理完成。
 
@@ -214,7 +214,7 @@ Authorization: Bearer <上傳權杖>
 
 - 同一使用者同時只能有一個處理中的任務，網頁上傳也計算在內。
 - 兩次上傳至少間隔 60 秒。網頁上傳與 API 上傳共用計時，從上一次自訂資料來源上傳起算。
-- 請求內容不超過 2 MiB，成績不超過 8000 筆。
+- 請求內容不超過 2.5 MiB，成績不超過 8000 筆。
 
 出錯時回傳 `{"error_code": "…"}`：
 
@@ -225,7 +225,7 @@ Authorization: Bearer <上傳權杖>
 | 401 | `bad_token` | 權杖缺失、格式不對、已重設或已刪除 |
 | 404 | `not_found` | 查詢的任務不存在，或不是這個權杖的使用者上傳的 |
 | 409 | `task_in_progress` | 已有處理中的任務，附帶它的 `task_id` |
-| 413 | `payload_too_large` | 請求內容超過 2 MiB |
+| 413 | `payload_too_large` | 請求內容超過 2.5 MiB |
 | 415 | `bad_content_type` | `Content-Type` 不是 `application/json` |
 | 429 | `too_many_requests` | 距上次上傳不足 60 秒，`retry_after` 與回應標頭 `Retry-After` 提供需等待的秒數 |
 | 503 | `bind_disabled` | 服務暫停受理，請稍後再試 |

@@ -16,7 +16,7 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 
 1. 向 Bot 发送 `/绑定`，打开返回的绑定链接。
 2. 选择成绩所属的区服标签，将更新方式切换为「自定义」。
-3. 选择成绩文件（JSON，不超过 2 MiB），也可以直接拖入。
+3. 选择成绩文件（JSON，不超过 2.5 MiB），也可以直接拖入。
 4. 如需上传后在 McMai 中直接查看这些成绩，勾选「上传后在 McMai 中切换到自定义数据源账号」。
 5. 点击「上传成绩」，等待处理完成。
 
@@ -214,7 +214,7 @@ Authorization: Bearer <上传令牌>
 
 - 同一用户同时只能有一个处理中的任务，网页上传也计算在内。
 - 两次上传至少间隔 60 秒。网页上传与 API 上传共用计时，从上一次自定义数据源上传算起。
-- 请求体不超过 2 MiB，成绩不超过 8000 条。
+- 请求体不超过 2.5 MiB，成绩不超过 8000 条。
 
 出错时返回 `{"error_code": "…"}`：
 
@@ -225,7 +225,7 @@ Authorization: Bearer <上传令牌>
 | 401 | `bad_token` | 令牌缺失、格式不对、已重置或已删除 |
 | 404 | `not_found` | 查询的任务不存在，或不是这个令牌的用户上传的 |
 | 409 | `task_in_progress` | 已有处理中的任务，附带它的 `task_id` |
-| 413 | `payload_too_large` | 请求体超过 2 MiB |
+| 413 | `payload_too_large` | 请求体超过 2.5 MiB |
 | 415 | `bad_content_type` | `Content-Type` 不是 `application/json` |
 | 429 | `too_many_requests` | 距上次上传不足 60 秒，`retry_after` 与响应头 `Retry-After` 给出需等待的秒数 |
 | 503 | `bind_disabled` | 服务暂停受理，请稍后再试 |

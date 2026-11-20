@@ -16,7 +16,7 @@ The custom data source imports scores from other sources, such as scores exporte
 
 1. Send `/bind` to the bot and open the returned binding link.
 2. Select the region tab the scores belong to, and set the update method to “Custom”.
-3. Select the score file (JSON, up to 2 MiB), or drag it in.
+3. Select the score file (JSON, up to 2.5 MiB), or drag it in.
 4. To view these scores in McMai right after uploading, check “Switch McMai to the custom data source account after uploading”.
 5. Click “Upload scores” and wait for processing to finish.
 
@@ -214,7 +214,7 @@ If processing fails, `status` is `failed` and `error_code` is `update_failed`, m
 
 - Each user can have only one task in progress at a time, including web uploads.
 - Uploads must be at least 60 seconds apart. Web and API uploads share one timer, counted from the previous custom data source upload.
-- The request body must not exceed 2 MiB, and scores must not exceed 8000 entries.
+- The request body must not exceed 2.5 MiB, and scores must not exceed 8000 entries.
 
 Errors return `{"error_code": "…"}`:
 
@@ -225,7 +225,7 @@ Errors return `{"error_code": "…"}`:
 | 401 | `bad_token` | Token missing, malformed, reset, or deleted |
 | 404 | `not_found` | The task does not exist or was not uploaded by this token's user |
 | 409 | `task_in_progress` | A task is already in progress. Its `task_id` is included |
-| 413 | `payload_too_large` | The request body exceeds 2 MiB |
+| 413 | `payload_too_large` | The request body exceeds 2.5 MiB |
 | 415 | `bad_content_type` | `Content-Type` is not `application/json` |
 | 429 | `too_many_requests` | Less than 60 seconds since the last upload. `retry_after` and the `Retry-After` response header give the seconds to wait |
 | 503 | `bind_disabled` | The service is temporarily not accepting uploads. Try again later |
