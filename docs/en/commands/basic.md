@@ -92,13 +92,8 @@ View the real-time status of China (CN) maimai DX services, including the last 2
 
 ## Region-Exclusive Features
 
-List the commands that are exclusive to the region you are currently on.
+Check which commands the current account's data cannot support.
 
 **Command:** `/serverfeat`
 
-**Notes:** Some features are only available in specific regions. This command lists the exclusive commands available on your current region; if there are none, it points you to `/switchserver` to change region.
-
-| Region | Exclusive command |
-|--------|-------------------|
-| Japan (JP) | `/aime` — view / switch Aime card slots |
-| China (CN) | `/pc50` — top 50 scores by play count (requires MAID updates) |
+**Notes:** Every command works in every region, but some depend on where the data comes from: `/recent` and `/ralog` need play records, `/pc50` needs play counts, and `/topboard` needs topboard information. This command lists what the current account (region and update method, such as "China Server · MAID") cannot do and how to fill the gap, and points you to `/aime` to switch accounts and `/switchserver` to change region.

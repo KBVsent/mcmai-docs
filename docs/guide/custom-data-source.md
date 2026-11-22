@@ -6,8 +6,8 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 自定义数据源用于导入其他来源的成绩，例如由其他工具导出、再转换为规范格式的成绩。国服、日服、国际服各有一个自定义数据源账号，与该区服的其他账号一样，可用 `/选卡` 或绑定页的账号列表切换。
 
 ::: info 使用前须知
-- **只收成绩。** 不含玩家资料与游玩记录，Rating 由 McMai 按成绩与定数重新计算。
-- **整份替换。** 每次上传都会替换该账号的全部成绩，文件中没有的谱面会被删除；上传空列表即清空。
+- **成绩与可选的资料。** 可附带头像、称号、旅行伙伴等[资料](#profile)。昵称与游玩记录不收，账号名显示为「自定义」；Rating 由 McMai 按成绩与定数重新计算。
+- **整份替换。** 每次上传都会替换该账号的全部成绩与资料，文件中没有的谱面会被删除、没有的资料会被清空；上传空列表即清空成绩。
 - **排行榜。** 不计入全局排行；`/群排行`、`/群rating` 的区服参数写 `all` 时计入，并标注来源。
 - **只收规范格式。** McMai 不转换其他查分器或工具的导出文件，上传前需转换为[规范格式](#format)。
 :::
@@ -20,7 +20,7 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 4. 如需上传后在 McMai 中直接查看这些成绩，勾选「上传后在 McMai 中切换到自定义数据源账号」。
 5. 点击「上传成绩」，等待处理完成。
 
-结果页显示写入的谱面数与未写入的行。写入成功且有成绩时生成 B50 图。文件中的 `catalog` 须与所在标签一致，否则整份不予受理。两次上传至少间隔 60 秒，见[限制与错误码](#limits)。
+结果页显示写入的谱面数、未写入的行与未写入的资料。写入成功且有成绩时生成 B50 图。文件中的 `catalog` 须与所在标签一致，否则整份不予受理。两次上传至少间隔 60 秒，见[限制与错误码](#limits)。
 
 ## 二、规范格式 {#format}
 
@@ -32,6 +32,8 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
   "version": 1,
   "catalog": "jp",
   "exported_at": "2026-11-19T08:30:00Z",
+  "profile": {"play_count": 4321, "frame": "ヒメヒナちほー その1", "title": "ニック 推し",
+              "characters": [{"id": 555401, "level": 928}]},
   "scores": [
     {"title": "Link(COF)", "type": "standard", "level_index": 3,
      "achievements": 100.5123, "dx_score": 1700, "fc": "ap", "fs": "fsp", "play_count": 12},
@@ -49,6 +51,7 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 | `version` | 是 | 整数 `1` |
 | `catalog` | 是 | `cn`、`jp`、`intl`。决定曲名按哪个区服的曲库识别，以及写入哪个区服的账号 |
 | `exported_at` | 否 | 成绩的导出时间，ISO 8601 格式且须带时区，如 `2026-11-19T08:30:00Z`。用作成绩的更新时间，不写或晚于上传时间时按上传时间计 |
+| `profile` | 否 | 账号资料，见[资料字段](#profile) |
 | `scores` | 是 | 成绩数组，最多 8000 条 |
 
 表中未列出的键会被忽略。
@@ -57,18 +60,91 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 
 | 字段 | 必填 | 说明 |
 | --- | --- | --- |
-| `title` | 二选一 | 曲名，最长 256 个字符 |
+| `title` | 二选一 | 曲名，按 `catalog` 区服的曲库识别，规则见[谱面定位](#locate)。最长 256 个字符 |
 | `type` | 用 `title` 时 | `standard`、`dx`、`utage`，不区分大小写；`sd`、`std` 视同 `standard` |
-| `song_id` | 二选一 | 官方乐曲编号。同一首歌的 DX 谱面编号比标准谱面多 10000，宴谱为六位数 |
+| `song_id` | 二选一 | 乐曲编号，整数 |
 | `level_index` | 是 | 难度，0 到 4 依次为 Basic、Advanced、Expert、Master、Re:Master。宴谱写 0，双人宴谱的第二位置写 1 |
 | `level` | 否 | 显示等级，如 `14+`，最长 8 个字符。用于区分同名的宴谱变体 |
 | `achievements` | 是 | 达成率，百分数，最多 4 位小数，如 `100.5123`。范围 0 到 101，宴谱到 202 |
 | `dx_score` | 是 | DX 分数，非负整数 |
 | `fc` | 否 | `fc`、`fcp`、`ap`、`app`。空字符串或 `null` 视为没有 |
 | `fs` | 否 | `sync`、`fs`、`fsp`、`fdx`、`fdxp`，也接受 `fsd`、`fsdp`。空字符串或 `null` 视为没有 |
-| `play_count` | 否 | 该谱面的游玩次数，不写记为 0 |
+| `play_count` | 否 | 该谱面的游玩次数，不写记为 0。有游玩次数时可使用 `/pc50` |
 
 `fc`、`fs` 区分大小写。同一个文件中不能有两行指向同一张谱面：`song_id` 与 `level_index` 相同，或 `title`、`type`、`level_index`、`level` 都相同。
+
+### 资料字段 {#profile}
+
+`profile` 中的字段都是可选的，在 B50 与 `/查看顶板` 中显示，不影响成绩与 Rating。
+
+```json
+"profile": {
+  "play_count": 4321, "current_play_count": 210,
+  "total_awake": 1500, "mai_mile": 23000, "partner_present": 12,
+  "course_rank": 15, "class_rank": 11,
+  "icon": "女の子", "nameplate": "QuiQ", "frame": "ヒメヒナちほー その1", "title": "ニック 推し",
+  "partner": {"name": "ちびみるく", "rate": 100},
+  "characters": [{"name": "ポリー", "level": 928}, {"name": "ソルト（ふぇすてぃばる）", "level": 931}]
+}
+```
+
+| 字段 | 说明 |
+| --- | --- |
+| `play_count` | 累计游玩次数 |
+| `current_play_count` | 本版本游玩次数 |
+| `total_awake` | 觉醒数 |
+| `mai_mile` | 里程 |
+| `partner_present` | 礼物数 |
+| `course_rank` | 段位编号，见[段位与阶级](#ranks) |
+| `class_rank` | 阶级编号，见[段位与阶级](#ranks) |
+| `icon`、`nameplate`、`frame`、`title` | 头像、姓名框、背景板、称号。写名称，也可写整数编号 |
+| `partner` | 搭档，`{"name": 名称}` 或 `{"id": 编号}`，可加 `rate`（亲密度） |
+| `characters` | 旅行伙伴，最多 5 个，第一个为队长。每个为 `{"name": 名称}` 或 `{"id": 编号}`，加必填的 `level` |
+
+除收藏品引用外，数值均为非负整数。昵称、Rating、小组等未列出的键会被忽略。
+
+收藏品名称的要求：
+
+- 写游戏中显示的日文名或国服名称，与 `catalog` 无关。
+- 比较时忽略大小写、全半角与多余空白，其余须完全一致。名称中的版本后缀不能省略，如 `ソルト（ふぇすてぃばる）`。
+- 图片路径、资源哈希等其他写法无法识别。
+- 同一角色的不同版本可能同名，这时无法确定是哪一个，结果中标为 `ambiguous`，请改用编号。
+
+称号的稀有度按收藏品数据确定，不需要填写。
+
+不写 `frame` 或 `frame` 无法识别时，B50 不显示顶板，只显示简易的玩家信息，`/查看顶板` 无法生成。计数、`partner`、`characters` 只显示在顶板上，这时不写入，结果中标为 `needs_frame`。
+
+### 段位与阶级 {#ranks}
+
+`course_rank` 与 `class_rank` 只能写编号。
+
+段位：
+
+| 编号 | 段位 | 编号 | 段位 |
+| --- | --- | --- | --- |
+| 0 | 初心者 | | |
+| 1 | 初段 | 12 | 真初段 |
+| 2 | 二段 | 13 | 真二段 |
+| 3 | 三段 | 14 | 真三段 |
+| 4 | 四段 | 15 | 真四段 |
+| 5 | 五段 | 16 | 真五段 |
+| 6 | 六段 | 17 | 真六段 |
+| 7 | 七段 | 18 | 真七段 |
+| 8 | 八段 | 19 | 真八段 |
+| 9 | 九段 | 20 | 真九段 |
+| 10 | 十段 | 21 | 真十段 |
+| 11 | 皆传 | 22 | 真皆传 |
+| | | 23 | 里皆传 |
+
+阶级：表中数字为编号，如 SS3 为 17，LEGEND 为 25。
+
+| 阶级 | 5 | 4 | 3 | 2 | 1 |
+| --- | --- | --- | --- | --- | --- |
+| B | 0 | 1 | 2 | 3 | 4 |
+| A | 5 | 6 | 7 | 8 | 9 |
+| S | 10 | 11 | 12 | 13 | 14 |
+| SS | 15 | 16 | 17 | 18 | 19 |
+| SSS | 20 | 21 | 22 | 23 | 24 |
 
 ### 谱面定位 {#locate}
 
@@ -92,7 +168,7 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 
 上传的文件经过两层校验。
 
-**结构校验**检查字段类型、取值范围与重复行。不通过时整份不予受理、不写入任何成绩，并列出前 20 个问题，位置写作 `scores[12].achievements` 这样的形式：
+**结构校验**检查字段类型、取值范围与重复行。不通过时整份不予受理、不写入任何成绩，并列出前 20 个问题，位置写作 `scores[12].achievements`、`profile.characters[0].level` 这样的形式：
 
 | 代码 | 含义 |
 | --- | --- |
@@ -101,8 +177,8 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 | `datetime` | 时间格式不正确或缺少时区 |
 | `required` | 缺少必填字段 |
 | `type` | 类型不正确，如数字写成了字符串 |
-| `too_many` | `scores` 超过 8000 条 |
-| `locator` | 缺少 `title` 或 `song_id` |
+| `too_many` | `scores` 超过 8000 条，或 `characters` 超过 5 个 |
+| `locator` | 缺少 `title` 或 `song_id`；`partner`、`characters` 中缺少 `id` 或 `name` |
 | `range` | 超出取值范围 |
 | `scaled` | 达成率大于 1000，疑似乘了 10000，应填百分数 |
 | `precision` | 达成率超过 4 位小数 |
@@ -120,6 +196,16 @@ description: 将 maimai 成绩上传至 McMai 自定义数据源：网页上传�
 | `duplicate_chart` | 多行对应同一张谱面，这些行都不写入 |
 
 曲库随游戏更新，新曲在 McMai 更新曲库前会被跳过，曲库更新后重新上传即可写入。
+
+**收藏品校验**只清空无法写入的资料字段，成绩与其他字段照常写入。结果中列出这些字段的位置：
+
+| 原因 | 含义 |
+| --- | --- |
+| `unknown` | 收藏品数据中找不到该编号或名称 |
+| `ambiguous` | 名称对应多个收藏品，请改用编号 |
+| `needs_frame` | 未写 `frame` 或 `frame` 无法识别，只显示在顶板上的字段不写入 |
+
+`characters` 中有一个无法识别时，整组旅行伙伴都不写入。
 
 ## 三、API 上传 {#api}
 
@@ -196,7 +282,8 @@ Authorization: Bearer <上传令牌>
     "written": 1203,
     "dropped": {
       "unknown": {"count": 2, "samples": [{"path": "scores[3]", "title": "曲名"}]}
-    }
+    },
+    "profile_dropped": [{"path": "profile.icon", "code": "ambiguous"}]
   }
 }
 ```
@@ -205,6 +292,7 @@ Authorization: Bearer <上传令牌>
 | --- | --- |
 | `written` | 写入的谱面数 |
 | `dropped` | 曲库校验跳过的行，按[原因](#validation)分组。`samples` 最多 10 条，`title` 为文件中的曲名，只写了 `song_id` 时为 `null` |
+| `profile_dropped` | 收藏品校验清空的资料字段，格式为 `{"path", "code"}`，代码见[校验结果](#validation) |
 | `empty` | 为 `true` 时表示该账号现在没有成绩 |
 | `rating_before`、`rating_after` | 上传前后的 Rating |
 
