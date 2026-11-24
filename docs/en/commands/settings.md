@@ -2,7 +2,7 @@
 
 ## View Profile Card
 
-View your profile card (a card-style image showing your best scores).
+View your in-game profile card (the name plate, nickname, Rating, and other in-game player details).
 
 **Command:** `/topboard [region]`
 
@@ -76,4 +76,4 @@ Control others' ability to query your data. See also [Account & Server → Priva
 | `/privacy show` | View current permission config |
 | `/privacy off all` | Block all queries from others |
 | `/privacy off score` | Block only score queries from others |
-| `/privacy reset all` | Reset all query permissions to default |
+| `/privacy reset` | Reset all query permissions to default |

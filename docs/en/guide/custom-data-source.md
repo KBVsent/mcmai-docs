@@ -3,7 +3,7 @@ title: Custom Data Source
 description: Upload maimai scores to a McMai custom data source, with web upload steps, the fields and chart matching rules of the mcmai-scores standard format, and API authentication, limits, and error codes.
 ---
 
-The custom data source imports scores from other sources, such as scores exported by another tool and converted to the standard format. CN, JP, and INTL each have one custom data source account. Like the other accounts in that region, it can be selected with `/aime` or from the account list on the binding page.
+The custom data source imports scores from other sources, such as scores exported by another tool and converted to the standard format. The China, Japan, and International Servers each have one custom data source account. Like the other accounts in that region, it can be selected with `/aime` or from the account list on the binding page.
 
 ::: info Notes
 - **Scores and an optional profile.** Profile fields such as icon, title, and tour members can be included; see [Profile fields](#profile). Nicknames and play records are not accepted, and the account name is shown as “Custom”. McMai recalculates Rating from the scores and chart constants.
@@ -105,7 +105,7 @@ Apart from collection references, all values are non-negative integers. Nickname
 
 Collection names must meet these rules:
 
-- Use the Japanese name shown in game or the CN name, regardless of `catalog`.
+- Use the Japanese name shown in game or the name used on the China Server, regardless of `catalog`.
 - Names are compared ignoring case, full-width/half-width differences, and extra whitespace; everything else must match exactly. Version suffixes such as the one in `ソルト（ふぇすてぃばる）` cannot be left out.
 - Image paths, resource hashes, and other forms are not recognized.
 - Different versions of the same character may share a name. When the item cannot be determined, the result reports `ambiguous`; use the ID instead.

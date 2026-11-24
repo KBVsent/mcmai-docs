@@ -10,6 +10,7 @@ Search for songs by title, alias, or ID.
 
 | Command |
 |---------|
+| `/search 潘多拉` |
 | `/search 11451` |
 
 ---
@@ -62,13 +63,17 @@ Find songs within a specified constant range, with paging support.
 
 ::: tip List search results
 Constant, BPM, composer, charter, and version searches show results as two-column cards, 16 songs per page: each difficulty's constant is visible at a glance, the difficulties and details matching your query are highlighted, and the version is shown as the game logo. When results run past one page, the image includes a QR code for the [McMai song database site](https://mcmai-db.moev.cc), where you can combine filters and sorting.
+
+BPM, composer, and charter searches also list songs that exist on other regions but not on yours, placed after your region's results, with the cards dimmed and their region marked. Constant searches list only your region's songs.
 :::
 
-**Command:** `/dssearch <constant> [page]`
+**Command:** `/dssearch <constant> [page]` or `/dssearch <min> <max> [page]`
+
+**Parameters:**
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| Constant | Single value or range (`min-max`) | `13.7`, `14.0-14.7` |
+| Constant | A single constant, or a minimum and maximum separated by a space. Constants must include a decimal point; a plain integer is treated as the page number | `13.7`, `14.0 14.7` |
 | Page | Page number (optional, default 1) | `2` |
 
 **Examples:**
@@ -76,7 +81,7 @@ Constant, BPM, composer, charter, and version searches show results as two-colum
 | Command |
 |---------|
 | `/dssearch 14.0` |
-| `/dssearch 13.7-14.0` |
+| `/dssearch 13.7 14.0` |
 | `/dssearch 14.0 2` |
 
 ---
@@ -85,11 +90,13 @@ Constant, BPM, composer, charter, and version searches show results as two-colum
 
 Find songs within a specified BPM range, with paging support.
 
-**Command:** `/bpmsearch <BPM> [page]`
+**Command:** `/bpmsearch <BPM> [page]` or `/bpmsearch <min> <max> [page]`
+
+**Parameters:**
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| BPM | Single value or range (`min-max`) | `180`, `160-200` |
+| BPM | A single BPM, or a minimum and maximum separated by a space. If the second number is less than 30, it is treated as the page number | `180`, `160 200` |
 | Page | Page number (optional, default 1) | `2` |
 
 **Examples:**
@@ -97,7 +104,7 @@ Find songs within a specified BPM range, with paging support.
 | Command |
 |---------|
 | `/bpmsearch 180` |
-| `/bpmsearch 160-200` |
+| `/bpmsearch 160 200` |
 
 ---
 
@@ -136,10 +143,13 @@ Filter songs by game version or release date, with paging support.
 
 **Command:** `/versearch <version keyword> [page]`
 
+**Parameter format:**
+
 | Input | Description | Example |
 |-------|-------------|---------|
 | `new` / `latest` | Songs added in the most recent update for your server | `/versearch new` |
 | Date | Songs released on the specified date (`YYYYMMDD` or `YYYY-MM-DD`) | `/versearch 2025-01-09` |
+| Plate character | Songs from the corresponding game version | `/versearch 丸`, `/versearch 鏡` |
 | English version name | Songs belonging to the corresponding game version | `/versearch circle`, `/versearch prism` |
 | Version name substring | Version name keyword (case-insensitive) | `/versearch buddies`, `/versearch 2025` |
 
@@ -149,9 +159,9 @@ Filter songs by game version or release date, with paging support.
 |---------|
 | `/versearch new` |
 | `/versearch 2025-01-09` |
-| `/versearch circle` |
+| `/versearch 丸` |
 | `/versearch prism 2` |
 
 ::: tip Cross-server lookup
-If the queried version doesn't exist on your server, the Bot automatically looks it up on other servers and returns those songs. The actual source server is noted above the results.
+If the queried version doesn't exist on your server, the Bot automatically looks it up on other servers and returns those songs, noting which server they actually come from.
 :::

@@ -1,6 +1,6 @@
 ---
 title: 书签更新教程
-description: McMai 日服与国际服书签更新流程，包含电脑 Chrome、iPhone Safari、Android Chrome 的安装和使用图解。
+description: McMai 日本服与国际服书签更新流程，包含电脑 Chrome、iPhone Safari、Android Chrome 的安装和使用图解。
 ---
 
 <script setup>
@@ -8,15 +8,15 @@ import BookmarkletGuide from '../.vitepress/theme/components/BookmarkletGuide.vu
 import UploaderProgressDemo from '../.vitepress/theme/components/UploaderProgressDemo.vue'
 </script>
 
-书签更新适用于日服和国际服。浏览器登录官方 maimai NET 后，书签读取当前登录会话中的成绩并上传至 McMai，无需向 McMai 提交 SEGA ID 和密码。
+书签更新适用于日本服和国际服。浏览器登录官方 maimai NET 后，书签读取当前登录会话中的成绩并上传至 McMai，无需向 McMai 提交 SEGA ID 和密码。
 
 ## 一、生成书签 {#generate}
 
 1. 向 Bot 发送 `/绑定`，打开返回的绑定链接。
-2. 选择「日服」或「国际服」，将更新方式切换为「书签」。
+2. 选择「日本服」或「国际服」，将更新方式切换为「书签」。
 3. 点击「生成书签」。手机用户点击「复制书签代码」，电脑用户可直接使用绑定页的拖拽按钮。
 
-日服和国际服共用同一个书签。完整代码与当前 McMai 账号关联，需从自己的绑定页获取。图解中的代码为占位说明，不能用于安装。
+日本服和国际服共用同一个书签。完整代码与当前 McMai 账号关联，需从自己的绑定页获取。图解中的代码为占位说明，不能用于安装。
 
 ::: warning 书签代码保管
 书签代码包含向该 McMai 账号上传成绩的凭证，不应转发或出现在公开截图中。「重新生成」会立即使旧书签失效，已安装的浏览器需更新书签代码。
@@ -58,7 +58,7 @@ Windows 和 macOS 的操作相同，书签栏快捷键分别为 `Ctrl+Shift+B` �
 
 | 区服 | 官方 NET |
 | --- | --- |
-| 日服 | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
+| 日本服 | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
 | 国际服 | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
 
 在 NET 页面执行书签后，右下角显示圆形悬浮按钮，左侧胶囊显示当前阶段。抓取时外圈按页面数显示进度；准备、上传和解析时显示旋转圆弧。完成后显示结果面板。

@@ -2,7 +2,7 @@
 layout: home
 title: "McMai 使用指南｜該隱 Bot 的 maimai 查分與 B50"
 titleTemplate: false
-description: "透過 QQ、LINE 或 Discord 上的該隱 Bot，使用 McMai 提供的 maimai DX 成績查詢、B50 與進度追蹤功能，支援中國版、日本版及國際版。"
+description: "透過 QQ、LINE 或 Discord 上的該隱 Bot，使用 McMai 提供的 maimai DX 成績查詢、B50 與進度追蹤功能，支援大陸區、日本區及國際區。"
 
 hero:
   name: "McMai"
@@ -25,7 +25,7 @@ features:
   - icon: 🎮
     link: /zh-TW/guide/score-tracking
     title: 多區服支援
-    details: 同時支援中國服（CN）、日服（JP）、國際服（INTL）三區資料查詢與分析。
+    details: 同時支援大陸區（CN）、日本區（JP）、國際區（INTL）三區資料查詢與分析。
   - icon: 📊
     link: /zh-TW/commands/b50
     title: Best 50 分析

@@ -1,11 +1,11 @@
 ---
 title: maimai 查分指南
-description: 使用 McMai 在 QQ、LINE 和 Discord 查询 maimai 国服、日服及国际服成绩，了解数据更新、区服切换、B50、单曲成绩和进度查询。
+description: 使用 McMai 在 QQ、LINE 和 Discord 查询 maimai 国服、日本服及国际服成绩，了解数据更新、区服切换、B50、单曲成绩和进度查询。
 ---
 
 # maimai 查分指南
 
-McMai 是一款面向 maimai DX 玩家的免费查分 Bot。你可以在 QQ、LINE 或 Discord 更新并查询国服（CN）、日服（JP）和国际服（INTL）的游玩数据，无需打开独立查分网页。
+McMai 是一款面向 maimai DX 玩家的免费查分 Bot。你可以在 QQ、LINE 或 Discord 更新并查询国服（CN）、日本服（JP）和国际服（INTL）的游玩数据，无需打开独立查分网页。
 
 ## 可以查询哪些内容？
 
@@ -21,9 +21,11 @@ McMai 是一款面向 maimai DX 玩家的免费查分 Bot。你可以在 QQ、LI
 
 | 区服 | 数据更新方式 |
 |------|--------------|
-| 国服（CN） | 通过绑定页的 [NET 微信授权图文教程](/guide/cn-net-update)更新，或发送公众号玩家二维码解析出的 `SGWCMAID` |
-| 日服（JP） | 通过 `/绑定` 使用绑定页更新，或使用无需提交密码的书签更新方式 |
-| 国际服（INTL） | 通过 `/绑定` 使用绑定页更新，或使用无需提交密码的书签更新方式 |
+| 国服（CN） | 通过绑定页的 [NET 微信授权图文教程](/guide/cn-net-update)更新，发送公众号玩家二维码解析出的 `SGWCMAID`，或授权[落雪查分器](/commands/account#lxns) |
+| 日本服（JP） | 通过 `/绑定` 在绑定页绑定 SEGA ID，或使用无需提交密码的书签更新方式 |
+| 国际服（INTL） | 通过 `/绑定` 在绑定页绑定 SEGA ID 或[登录令牌](/commands/account#intl-token)，或使用无需提交密码的书签更新方式 |
+
+绑定了 SEGA 账号、登录令牌或落雪查分器后，查询自己的成绩时数据超过 1 小时未更新会[自动更新](/commands/account#auto-update)。
 
 账号绑定、书签更新及区服切换的完整说明见[账号与服务器](/commands/account)。
 
@@ -39,5 +41,5 @@ McMai 是一款面向 maimai DX 玩家的免费查分 Bot。你可以在 QQ、LI
 如果你还没有添加 Bot，请先阅读[快速开始](/guide/getting-started)；需要查找其他功能和参数时，请打开[指令参考](/commands/basic)。
 
 ::: info 隐私提示
-日服和国际服玩家也可以选择书签方式更新成绩，无需向 McMai 提交 SEGA ID 和密码。
+日本服和国际服玩家也可以选择书签方式更新成绩，无需向 McMai 提交 SEGA ID 和密码。
 :::

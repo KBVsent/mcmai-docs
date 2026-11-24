@@ -165,7 +165,7 @@ export default defineConfig({
     root: {
       label: '简体中文',
       lang: 'zh-CN',
-      description: '通过 QQ、LINE 或 Discord 上的该隐 Bot，使用 McMai 提供的 maimai DX 查分、B50 与进度追踪功能，支持国服、日服和国际服。',
+      description: '通过 QQ、LINE 或 Discord 上的该隐 Bot，使用 McMai 提供的 maimai DX 查分、B50 与进度追踪功能，支持国服、日本服和国际服。',
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -213,7 +213,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-US',
-      description: 'Use Cain on QQ, LINE, or Discord to access maimai DX score tracking, B50 analysis, and progress features powered by McMai for CN, JP, and INTL players.',
+      description: 'Use Cain on QQ, LINE, or Discord to access maimai DX score tracking, B50 analysis, and progress features powered by McMai for China, Japan, and International Server players.',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
@@ -229,7 +229,7 @@ export default defineConfig({
               items: [
                 { text: 'Getting Started', link: '/en/guide/getting-started' },
                 { text: 'Score Tracking Guide', link: '/en/guide/score-tracking' },
-                { text: 'CN NET Update Guide', link: '/en/guide/cn-net-update' },
+                { text: 'China Server NET Update Guide', link: '/en/guide/cn-net-update' },
                 { text: 'Bookmarklet Update Guide', link: '/en/guide/bookmarklet-update' },
                 { text: 'Custom Data Source', link: '/en/guide/custom-data-source' },
                 { text: 'Username & Friend System', link: '/en/guide/identity-and-friends' },
@@ -260,7 +260,7 @@ export default defineConfig({
     ja: {
       label: '日本語',
       lang: 'ja-JP',
-      description: 'QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・国際版に対応しています。',
+      description: 'QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・インターナショナル版に対応しています。',
       themeConfig: {
         nav: [
           { text: 'ホーム', link: '/ja/' },
@@ -307,7 +307,7 @@ export default defineConfig({
     'zh-TW': {
       label: '繁體中文',
       lang: 'zh-TW',
-      description: '透過 QQ、LINE 或 Discord 上的該隱 Bot，使用 McMai 提供的 maimai DX 成績查詢、B50 與進度追蹤功能，支援中國版、日本版及國際版。',
+      description: '透過 QQ、LINE 或 Discord 上的該隱 Bot，使用 McMai 提供的 maimai DX 成績查詢、B50 與進度追蹤功能，支援大陸區、日本區及國際區。',
       themeConfig: {
         nav: [
           { text: '首頁', link: '/zh-TW/' },
@@ -323,7 +323,7 @@ export default defineConfig({
               items: [
                 { text: '快速開始', link: '/zh-TW/guide/getting-started' },
                 { text: 'maimai 查分指南', link: '/zh-TW/guide/score-tracking' },
-                { text: '中國服 NET 更新教學', link: '/zh-TW/guide/cn-net-update' },
+                { text: '大陸區 NET 更新教學', link: '/zh-TW/guide/cn-net-update' },
                 { text: '書籤更新教學', link: '/zh-TW/guide/bookmarklet-update' },
                 { text: '自訂資料來源', link: '/zh-TW/guide/custom-data-source' },
                 { text: '使用者名稱與好友系統', link: '/zh-TW/guide/identity-and-friends' },

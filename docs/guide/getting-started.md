@@ -1,6 +1,6 @@
 # 快速开始
 
-McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助插件，支持国服、日服和国际服。你在 QQ、Discord 或 LINE 上互动的 Bot 名为「该隐」，通过该隐即可使用 McMai 提供的这些功能。
+McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助插件，支持国服、日本服和国际服。你在 QQ、Discord 或 LINE 上互动的 Bot 名为「该隐」，通过该隐即可使用 McMai 提供的这些功能。
 
 ## 添加该隐 Bot {#添加-bot}
 
@@ -11,8 +11,6 @@ McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助�
 | <img src="/QQBot.png" alt="该隐 QQ Bot 二维码" width="200" /> | <img src="/Discord.png" alt="该隐 Discord Bot 二维码" width="200" /> | <img src="/Line.jpg" alt="该隐 LINE 官方账号二维码" width="200" /> |
 | 添加机器人好友<br>或将其拉入群聊使用 | 邀请 Bot 加入你的服务器<br>或者作为个人安装 | 添加官方账号好友<br>或将其邀请进群聊使用 |
 | [🔗 点击添加](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 点击邀请](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 点击添加](https://line.me/R/ti/p/@819jucvv) |
-
-后续将逐步拓展至 Telegram 等更多平台。
 
 ## 加入官方群组
 
@@ -32,17 +30,18 @@ McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助�
 
 使用 Bot 进行个人数据查询前，需要先完成账号绑定并更新数据。
 
-**日服 / 国际服用户**
+**日本服 / 国际服用户**
 
-1. 使用 `/绑定` 指令绑定 SEGA ID
-2. 绑定成功后，使用 `/更新记录` 指令更新数据
+1. 使用 `/绑定` 指令绑定 SEGA ID（国际服也可以提交[登录令牌](/commands/account#intl-token)）
+2. 绑定页提交后会立即更新一次成绩；之后可使用 `/更新记录` 更新，查询自己的成绩时也会[自动更新](/commands/account#auto-update)
 
 **国服用户**
 
 可选择以下任一方式更新数据：
 
-- **NET 微信授权**：使用 `/绑定` 指令，在绑定页选择国服「NET 微信授权」，设置步骤见[国服 NET 更新教程](/guide/cn-net-update)
+- **NET 微信授权**：使用 `/绑定` 指令，在绑定页选择「国服」→「NET」，设置步骤见[国服 NET 更新教程](/guide/cn-net-update)
 - **MAID**：直接发送 MAID（`SGWCMAID` 开头的 84 位字符串）
+- **落雪查分器**：使用 `/绑定` 指令，在绑定页选择「国服」→「落雪」完成授权，见[落雪查分器](/commands/account#lxns)
 
 ::: details 如何获取 MAID？
 1. 进入「舞萌 | 中二」公众号
@@ -51,11 +50,11 @@ McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助�
 4. 长按扫描，复制出现的 `SGWCMAID` 开头字符串
 :::
 
-完成绑定并更新数据后，根据实际游玩区服切换服务器：
+绑定页默认会同时切换 McMai 的当前区服。需要手动切换时，使用以下指令：
 
 | 指令 | 说明 |
 |------|------|
-| `/切换服务器 jp` | 切换到日服 |
+| `/切换服务器 jp` | 切换到日本服 |
 | `/切换服务器 intl` | 切换到国际服 |
 | `/切换服务器 cn` | 切换到国服（默认）|
 

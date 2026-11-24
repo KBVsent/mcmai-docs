@@ -1,6 +1,6 @@
 ---
 title: Bookmarklet Update Guide
-description: Install and use the McMai bookmarklet for JP and INTL scores, with illustrations for desktop Chrome, iPhone Safari, and Android Chrome.
+description: Install and use the McMai bookmarklet for Japan and International Server scores, with illustrations for desktop Chrome, iPhone Safari, and Android Chrome.
 ---
 
 <script setup>
@@ -8,15 +8,15 @@ import BookmarkletGuide from '../../.vitepress/theme/components/BookmarkletGuide
 import UploaderProgressDemo from '../../.vitepress/theme/components/UploaderProgressDemo.vue'
 </script>
 
-Bookmarklet updates support the JP and INTL regions. After login to the official maimai NET site, the bookmarklet retrieves scores using the browser's current session and uploads them to McMai. A SEGA ID and password do not need to be submitted to McMai.
+Bookmarklet updates support the Japan and International Servers. After login to the official maimai NET site, the bookmarklet retrieves scores using the browser's current session and uploads them to McMai. A SEGA ID and password do not need to be submitted to McMai.
 
 ## 1. Generate the bookmarklet {#generate}
 
 1. Send `/bind` to the bot and open the returned binding link.
-2. Select JP or INTL and choose Bookmarklet as the update method.
+2. Select Japan or International and choose Bookmarklet as the update method.
 3. Generate the bookmarklet. On a phone, copy its code. On a computer, the binding page also provides a draggable button.
 
-The same bookmarklet works for JP and INTL. Its full code is associated with the current McMai account and must be obtained from that account's binding page. The code in the illustrations is a placeholder and cannot be used for installation.
+The same bookmarklet works for both the Japan and International Servers. Its full code is associated with the current McMai account and must be obtained from that account's binding page. The code in the illustrations is a placeholder and cannot be used for installation.
 
 ::: warning Bookmarklet credentials
 The code contains credentials for uploading scores to the associated McMai account. Do not share it or include it in public screenshots. Regenerating invalidates the previous bookmarklet immediately; update its code in every browser where it is installed.
@@ -58,8 +58,8 @@ Open and log in to the appropriate region in the browser where the bookmarklet i
 
 | Region | Official NET |
 | --- | --- |
-| JP | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
-| INTL | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
+| Japan | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
+| International | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
 
 After running the bookmarklet on NET, a circular button appears at the lower right with a status pill on its left. During fetching, the outer ring shows progress by page count. During preparation, upload, and processing, it displays a rotating arc. A result panel appears on completion.
 
@@ -102,4 +102,4 @@ The bookmarklet uses the NET account currently logged in to the browser. Check t
 
 ---
 
-Related: [Account & Server](/en/commands/account) · [Score Tracking Guide](/en/guide/score-tracking) · [CN NET Update Guide](/en/guide/cn-net-update)
+Related: [Account & Server](/en/commands/account) · [Score Tracking Guide](/en/guide/score-tracking) · [China Server NET Update Guide](/en/guide/cn-net-update)

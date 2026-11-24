@@ -2,13 +2,15 @@
 
 ## Level Constant Table
 
-Query the constant table (as an image) for a specified level or constant.
+Query the constant table (as an image) for a specified level.
 
-**Command:** `/rating <level or constant> [server]`
+**Command:** `/rating <level> [server]`
+
+**Parameters:**
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| Level or constant | Level (`13`, `14+`) or constant range | `13+`, `14.0` |
+| Level | 1–15, optionally with `+` | `13+`, `14` |
 | Server | Region (optional) | `cn`, `jp`, `intl` |
 
 **Examples:**
@@ -27,11 +29,13 @@ Query the songs in a specified Dan-i (rank) course, with your scores on each. Yo
 
 **Command:** `/dancourse <rank name> [server] [version]`
 
+**Parameters:**
+
 | Parameter | Description |
 |-----------|-------------|
 | Rank name | e.g. `真初段`, `真十段`, `真皆伝` |
-| Server | Optional, `cn`, `jp`, `intl`. View another server's courses |
-| Version | Optional, view a past version's courses (defaults to the current version). Use a version name such as `prism`, `circle`, or `circle+` |
+| Server | Optional, `cn`, `jp`, `intl` (or `国服`, `日服`, `国际服`). View another server's courses |
+| Version | Optional, view a past version's courses (defaults to the current version). Use a plate character (such as `鏡`, `丸`) or an English version name (such as `prism`, `circle+`); for the China Server you can also use the year (such as `2025` or `舞萌DX2025`) |
 
 Server and version can go in either order.
 
@@ -40,12 +44,13 @@ Server and version can go in either order.
 | Command | Description |
 |---------|-------------|
 | `/dancourse 真十段` | 真十段 for the current version |
-| `/dancourse 真皆伝 jp` | 真皆伝 on the JP server, current version |
-| `/dancourse 真八段 jp circle` | 真八段 from JP's CiRCLE version |
+| `/dancourse 真皆伝 jp` | 真皆伝 on the Japan Server, current version |
+| `/dancourse 真八段 jp circle` | 真八段 from the Japan Server's CiRCLE version |
+| `/dancourse 真十段 cn 2025` | 真十段 from the China Server's 舞萌DX 2025 |
 
 ::: tip Available versions
-- **JP / INTL**: SPLASH PLUS and later.
-- **CN**: 舞萌DX 2023 and later. CN courses use the actual CN songs, which differ from the same-named JP version.
+- **Japan and International Servers**: SPLASH PLUS and later.
+- **China Server**: 舞萌DX 2023 and later. China Server courses use its actual songs, which differ from the Japan Server version of the same name.
 
 If the version you enter isn't available, the bot lists the versions that server offers.
 :::
@@ -66,25 +71,26 @@ View completion progress for a grade evaluation or plate.
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| Grade or plate | Numeric level (`13`, `14+`) or version name (`circle`, `plus`, etc.) | `13+` |
-| Plate level | Required for plate mode (`fc`, `sss`, `ap`, `fdx`) | `sss` |
+| Grade or plate | Numeric level (`13`, `14+`), optionally followed by `fc`, `fcp`, `ap`, or `app` to mark FC/AP status instead; or a version name (`circle`, `plus`, etc.) or plate character (`真`, `丸`, etc.) | `13+`, `13 ap` |
+| Plate level | Required for plate mode (`fc`, `sss`, `ap`, `fdx`, or `极`, `将`, `神`, `舞舞`); for the 霸者 plate, just write `霸者` | `sss` |
 | Filters | Optional, plate mode only. A level (`13`, `12+`; several allowed) or a difficulty (`basic`, `advanced`, `expert`, `master`, `remaster`; `remaster` only for the `maimai` and `ba` plates) | `expert` |
 | Server | Optional, view another server's table (`cn`, `jp`, `intl`). Can go anywhere in the arguments | `jp` |
 | #username | Query another player (requires their permission) | `#Sakura` |
 
-**Version name aliases:** `magical` (MAGiCAL), `circle` (丸), `plus` (真), `prism` (鏡), `buddies` (双), `festival` (祭), `universe` (宙), `splash` (爽), `dx` (熊), `maimai` (舞), `ba` (霸), and their `p` variants (e.g. `circlep`, `prismp`).
-
-With filters, the image shows only the matching charts, and the remaining count covers only that range.
+A plate character and its plate level can be written together, e.g. `/plate 丸将`. With filters, the image shows only the matching charts, and the remaining count covers only that range.
 
 **Examples:**
 
 | Command |
 |---------|
 | `/plate 13` |
+| `/plate 13 ap` |
 | `/plate 14 #Sakura` |
 | `/plate plus fc` |
 | `/plate circle sss` |
+| `/plate 丸将` |
 | `/plate circle sss #Sakura` |
+| `/plate 霸者` |
 | `/plate festival sss jp` |
 | `/plate festival sss expert 12+` |
 | `/plate maimai sss 13` |
@@ -94,7 +100,7 @@ Without a level, charts at Lv.13 and below list only the ones you haven't finish
 :::
 
 ::: tip Cross-server tables
-The server argument only chooses which server's song list to show. Scores always come from the server the queried player selected with `/switchserver`. For example, an INTL player sending `/plate festival sss jp` sees JP's FESTiVAL plate songs, filled in with their INTL scores. Charts that exist on that server but haven't been released on the scores' server are marked "N/A", separately from charts not yet played.
+The server argument only chooses which server's song list to show. Scores always come from the server the queried player selected with `/switchserver`. For example, an International Server player sending `/plate festival sss jp` sees the Japan Server's FESTiVAL plate songs, filled in with their International Server scores. Charts that exist on that server but haven't been released on the scores' server are marked "N/A", separately from charts not yet played.
 :::
 
 ---
@@ -125,7 +131,7 @@ The result image distinguishes two kinds of boost: **Rating** is the points your
 :::
 
 ::: tip The image also shows
-- **Rating trend** (on CN, requires NET updates): the top of the image shows your last 30 days: net Rating change, Rating-up plays and days, best single day and best single play, and a Rating curve marking each gain. When querying another player, this part appears only if they allow score queries.
+- **Rating trend** (on the China Server, requires NET updates): the top of the image shows your last 30 days: net Rating change, Rating-up plays and days, best single day and best single play, and a Rating curve marking each gain. When querying another player, this part appears only if they allow score queries.
 - **Personalized pick**: one recommended chart to raise your Rating. For more, see [Rating Targets](#rating-targets) below.
 :::
 

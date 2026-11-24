@@ -21,7 +21,8 @@ Add `#username` to query another player's data.
 
 ::: tip The image includes
 - **My Scores**: when the same account has scores on multiple servers, every server is shown side by side for comparison; a difficulty with no chart on that server shows "no chart".
-- **Friends**: when you add `#username`, the other player's scores are compared with yours on your main server difficulty by difficulty, with the achievement gap marked (▲/▼); if they hid their query permission, only "private" is shown.
+- **Friends**: when you query yourself, your [friends'](/en/commands/account#friend-management) scores on the song are listed too and compared with yours on your main server difficulty by difficulty, with the achievement gap marked (▲/▼); if a friend has turned off query permission, only "private" is shown.
+- **Play count and last played time**: on the Japan and International Servers, with a SEGA account linked and [auto-update](/en/commands/account#auto-update) on, querying your own scores shows the play count and last played time for each difficulty.
 :::
 
 ---
@@ -30,11 +31,13 @@ Add `#username` to query another player's data.
 
 Query the deduction per note type for a given difficulty, the DX score tolerance for each DX star level, and the TAP-error tolerance for each rank.
 
-**Command:** `/scoreline <song ID> [difficulty]`
+**Command:** `/scoreline <song ID or name> [difficulty]`
+
+**Parameters:**
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| Song ID | Numeric ID | — |
+| Song ID or name | Numeric ID or song title/alias | — |
 | Difficulty | `green`, `yellow`, `red`, `purple`, `white` | `purple` |
 
 **Examples:**
@@ -43,6 +46,7 @@ Query the deduction per note type for a given difficulty, the DX score tolerance
 |---------|
 | `/scoreline 11451` |
 | `/scoreline 11820 white` |
+| `/scoreline 潘多拉 white` |
 
 ::: tip The image includes
 - **DX star**: the DX score tolerance required to reach each DX star level.
@@ -77,7 +81,7 @@ When the image is too compressed and some numbers are misread, call the command 
 
 | Parameter | Description | Required |
 |-----------|-------------|----------|
-| `id` | Numeric song ID | At least one of `id` or the note breakdown |
+| `id` | Numeric song ID; if omitted, the chart is identified from the note breakdown | Optional |
 | `ach` | Achievement rate, 0–101, e.g. `100.8623` | Yes |
 | `tap` / `hold` / `slide` / `break` | The five judgement counts per note type, in `CP/P/GR/GD/MS` order, separated by `/` | Yes |
 | `touch` | Same format; may be omitted when the chart has no TOUCH notes (treated as all zeros) | Optional |
@@ -127,8 +131,8 @@ Query AP rate, FC rate, play rate and other statistics for a song's charts.
 
 View your play history one credit per page (all the songs from one credit). Page 1 is your latest credit.
 
-::: info CN requires NET updates
-Available on JP and INTL. On CN, it depends on how you last updated: it works after a [NET WeChat authorization](/en/guide/cn-net-update) update, but not after a MAID update, which does not include play history.
+::: info China Server requires NET updates
+Available on the Japan and International Servers. On the China Server, you need to have updated through [NET WeChat authorization](/en/guide/cn-net-update); MAID and LXNS data do not include play history. When the current account has no play records (for example, when it is the MAID account), the records of another account in the same region are shown, with the source noted.
 :::
 
 **Command:** `/recent [page]`
@@ -157,8 +161,8 @@ maimai NET keeps only your latest 50 tracks. McMai saves them each time your sco
 
 View your Rating curve, daily gains, and a record of every Rating-up play.
 
-::: info CN requires NET updates
-The data comes from your [recent plays](#recent-plays), so the same server rules apply: JP and INTL are supported, and CN requires your latest update to be a [NET WeChat authorization](/en/guide/cn-net-update) update.
+::: info China Server requires NET updates
+The data comes from your [recent plays](#recent-plays), so the same server rules apply: the Japan and International Servers are supported, and the China Server requires that you have updated through [NET WeChat authorization](/en/guide/cn-net-update).
 :::
 
 **Command:** `/ralog [range] [page]`

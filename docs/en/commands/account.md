@@ -4,24 +4,45 @@
 
 **Command:** `/bind`
 
-**Note:** This generates a dedicated binding link (or QR code). Open it in your browser, select your server, and follow the instructions on the page.
+**Note:** This generates a dedicated binding link. Open it in your browser, select your server, and follow the instructions on the page. Binding a SEGA ID or authorizing LXNS updates your scores right away, and you can tick an option to switch McMai's current region to that server at the same time.
+
+The binding link is only sent where only you can see it: a direct message, a button in a QQ group that only you can tap, or the private reply to Discord's `/bind` slash command. In other group chats, the bot asks you to send `/bind` in a direct message.
 
 | Server | Method |
 |--------|--------|
-| JP / INTL | Bind your SEGA ID, or update with a [bookmarklet](/en/guide/bookmarklet-update) |
-| CN | Set up [NET WeChat authorization](/en/guide/cn-net-update), or [send your MAID](#maid) |
+| Japan | Bind your SEGA ID, or update with a [bookmarklet](/en/guide/bookmarklet-update) |
+| International | Bind your SEGA ID, submit a [sign-in token](#intl-token), or update with a [bookmarklet](/en/guide/bookmarklet-update) |
+| China | Set up [NET WeChat authorization](/en/guide/cn-net-update), [send your MAID](#maid), or authorize [LXNS](#lxns) |
+
+All three regions can also upload score files through a [custom data source](/en/guide/custom-data-source).
 
 ::: warning Note
-Each execution of `/bind` generates a new verification code. Complete the binding promptly.
+The binding link is valid for 10 minutes, and each `/bind` generates a new link. Do not share it with anyone.
+:::
+
+::: tip Managing linked accounts
+The binding page lists the game accounts linked in each region. Tap one to make it the current account (same as [`/aime`](#aime)). When you no longer need an account, you can unbind it on its own from the binding page: your score data is kept after unlinking, and updating with the same account again links it back. Unbinding an account updated with a password or LXNS may also delete the saved password or LXNS authorization; the confirmation dialog lists the exact effects.
+:::
+
+---
+
+## International Server Sign-in Token {#intl-token}
+
+International Server players who sign in to maimai DX NET with X, Facebook, or LINE and have no SEGA ID password can bind with a sign-in token instead, then use `/update` as usual.
+
+Send `/bind`, choose "International" → "Token" on the binding page, and paste the cookie containing `clal`. To find out how to get it, tap "Ask ChatGPT how to get it" next to the input box and ask for the steps for your device.
+
+::: warning Signing out invalidates the token
+Signing out of maimai DX NET on any device invalidates the token, and you will need to submit it again. The token is equivalent to your login credentials; do not share it with anyone.
 :::
 
 ---
 
 ## Update Scores with a Bookmarklet
 
-JP and INTL scores can be updated using the browser's logged-in NET session without submitting a SEGA ID or password to McMai.
+Japan and International Server scores can be updated using the browser's logged-in NET session without submitting a SEGA ID or password to McMai.
 
-Send `/bind`, select the region and Bookmarklet method on the binding page, then generate and install the bookmarklet. Run it on a logged-in maimai NET page.
+Send `/bind`, select the region and the "Bookmarklet" method on the binding page, then generate and install the bookmarklet. Run it on a logged-in maimai NET page.
 
 The [Bookmarklet Update Guide](/en/guide/bookmarklet-update) includes illustrated instructions for desktop Chrome, iPhone Safari, and Android Chrome.
 
@@ -29,9 +50,9 @@ The code contains account upload credentials. Regenerating it immediately invali
 
 ---
 
-## CN MAID Updates {#maid}
+## China Server MAID Updates {#maid}
 
-Send your MAID (an 84-character string starting with `SGWCMAID`) to the bot in a direct message, or mention the bot in a group, to update your CN scores. Play counts used by [PC50](/en/commands/b50#pc50) are only available from MAID updates.
+Send your MAID (an 84-character string starting with `SGWCMAID`) to the bot in a direct message or mention the bot in a group, or paste it under "China" → "MAID" on the binding page, to update your China Server scores. Play counts used by China Server [PC50](/en/commands/b50#pc50) are only available from MAID updates.
 
 ::: details How to get your MAID?
 1. Open the "舞萌 | 中二" (Maimai | Chunithm) official WeChat account
@@ -39,6 +60,19 @@ Send your MAID (an 84-character string starting with `SGWCMAID`) to the bot in a
 3. A QR code page will open
 4. Long-press the QR code to scan, then copy the `SGWCMAID` string that appears
 :::
+
+---
+
+## LXNS {#lxns}
+
+China Server players can authorize LXNS (落雪查分器) to use B50 and other queries with their scores on LXNS. Send `/bind`, choose "China" → "LXNS" on the binding page, and tap "Authorize on LXNS" to complete the authorization.
+
+- Querying your own scores automatically syncs new scores from LXNS. You can also send `/update` to sync immediately.
+- The LXNS account is listed together with your other China Server accounts. Switch with [`/aime`](#aime) or on the binding page.
+- LXNS data has no play records or play counts, so `/recent`, `/ralog`, and `/pc50` are unavailable.
+- LXNS data is not counted on leaderboards by default. Add the [`all` parameter](/en/commands/leaderboard#group-song-ranking) to the group ranking and group Rating ranking to include it.
+
+When the authorization expires, the bot asks you to send `/bind` to authorize again. Scores already synced are kept.
 
 ---
 
@@ -52,27 +86,55 @@ Sharing is keyed on the game account, not the platform identity. Accounts bound 
 
 ---
 
-## Unbind Account
+## Auto-Update on Score Queries {#auto-update}
 
-Unbind your current SEGA account and clear your score records across **all regions**.
+When you query your own scores and your data is more than 1 hour old, the bot updates it first and then shows the result. LXNS is not subject to the 1-hour limit: any new scores are synced whenever you query.
 
-**Command:** `/unbind [confirm]`
+**Command:** `/autoupdate [on|off]`
 
-::: danger Irreversible
-Unbinding permanently clears the following, and it **cannot be undone**:
-
-- SEGA account binding info (segaid & password)
-- Your score records on all regions (CN / JP / INTL)
-
-To prevent mistakes, a two-step confirmation is required: first send `/unbind` to review what will be deleted, then send `/unbind confirm` to execute. The confirmation request is valid for **5 minutes**; after that you must start over.
-:::
+- No argument: view the current status. On by default.
+- Applies to data from a linked SEGA account (Japan or International Server), an International Server sign-in token, or LXNS. Data from the bookmarklet, China Server NET and MAID, and custom data sources must be updated manually the usual way.
+- Only triggered when you query yourself; querying another player does not update their data. Song searches and Today's Fortune do not trigger it.
+- On the Japan and International Servers, viewing `/recent` and `/ralog` also triggers an auto-update.
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/unbind` | Review what will be deleted and start an unbind request |
-| `/unbind confirm` | Confirm and execute the unbind (valid for 5 minutes) |
+| `/autoupdate` | View the current status |
+| `/autoupdate off` | Turn it off; use `/update` to update manually when needed |
+| `/autoupdate on` | Turn it back on |
+
+::: warning Do not sign in to NET during updates
+When updating through a SEGA account or sign-in token (including auto-updates), do not sign in to maimai DX NET manually while the update is queued or running. After the update finishes, recent play records continue to be fetched in the background, so also stay signed out for the next few minutes.
+:::
+
+---
+
+## Deregister Account
+
+Clear all your login credentials and score records.
+
+**Command:** `/deregister [confirm]`
+
+::: danger Irreversible
+Deregistering permanently clears the following, and it **cannot be undone**:
+
+- SEGA account login credentials (SEGA ID & password, or sign-in token)
+- LXNS authorization and your custom data source upload token
+- Your score records on all regions
+
+To prevent mistakes, a two-step confirmation is required: first send `/deregister` to review what will be deleted, then send `/deregister confirm` to execute. The confirmation request is valid for **5 minutes**; after that you must start over. You can't deregister while a score update is in progress; wait for it to finish, then send the command again.
+:::
+
+To remove just one game account and keep your other data, unbind that account on its own from the binding page. See [Managing linked accounts](#bind-account).
+
+**Examples:**
+
+| Command | Description |
+|---------|-------------|
+| `/deregister` | Review what will be deleted and start a deregistration request |
+| `/deregister confirm` | Confirm and execute the deregistration (valid for 5 minutes) |
 
 ---
 
@@ -86,9 +148,9 @@ Switch your current game region.
 
 | Parameter | Description |
 |-----------|-------------|
-| `cn` | China server |
-| `jp` | Japan server |
-| `intl` | International server |
+| `cn` | China Server |
+| `jp` | Japan Server |
+| `intl` | International Server |
 
 **Examples:**
 
@@ -100,30 +162,28 @@ Switch your current game region.
 
 ---
 
-## Switch Aime Card
+## Switch Account {#aime}
 
-View or switch the Aime card slot on your Japan-server account.
+Switch between the game accounts linked in your current region. Data updated through different methods (such as China Server NET and MAID, LXNS, or a custom data source) each forms its own account and does not overwrite the others. Queries use the currently selected account.
 
-::: info Japan server only
-This feature is available only to Japan-server (JP) users who have bound a Japan-server account.
-:::
+**Command:** `/aime [number]`
 
-**Command:** `/aime [card number]`
+**Alias:** `account`
 
 **Description:**
 
-- `/aime`: Lists all Aime cards on your account, marking the currently selected one along with its Rating and card type (standard / free).
-- `/aime <number>`: Switches to the card with the given number.
-- If your account has only one card, no switching is needed.
+- `/aime`: Lists the accounts in your current region, marking the current account along with its Rating, update method, and last update time.
+- `/aime <number>`: Switches to the account with the given number.
+- On the Japan Server with a SEGA ID bound, the list also includes Aime cards under that SEGA ID that have not been updated yet. If you select one of these cards, the next `/update` updates that card and then switches to it automatically.
 
-The change takes effect the next time you run `/update`.
+After you update your scores through a method, you are switched to that method's account automatically. You can also tap an account in the account list on the binding page to switch.
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
-| `/aime` | View all Aime cards on your account |
-| `/aime 2` | Switch to card #2 |
+| `/aime` | View the account list for your current region |
+| `/aime 2` | Switch to account #2 |
 
 ---
 
@@ -178,7 +238,7 @@ Control whether others can query your game data.
 | `show` / `status` | View current privacy settings |
 | `on` / `allow` | Allow others to query the specified target |
 | `off` | Block others from querying the specified target |
-| `reset` | Reset the specified target to default (all allowed) |
+| `reset` | Reset all query permissions to default (all allowed); takes no target |
 
 **Targets:**
 
@@ -201,7 +261,7 @@ Disabling `all` (master switch) prevents others from accessing any of your data,
 | `/privacy off all` | Block all queries from others |
 | `/privacy off score` | Block only score queries from others |
 | `/privacy on b50` | Re-allow Best 50 queries from others |
-| `/privacy reset all` | Reset all query permissions to default |
+| `/privacy reset` | Reset all query permissions to default |
 
 ---
 
@@ -216,8 +276,8 @@ Manage your McMai friend list, used for PK features.
 | Action | Description | Param |
 |--------|-------------|-------|
 | `list` | View friend list | — |
-| `add` | Add a friend | `#username` |
-| `del` / `remove` | Remove a friend | `#username` or slot number |
+| `add` | Add a friend | `#username` or `#query ID`, optionally followed by a slot number (1–3) to overwrite that slot |
+| `del` / `remove` | Remove a friend | Slot number (1–3) |
 
 **Examples:**
 

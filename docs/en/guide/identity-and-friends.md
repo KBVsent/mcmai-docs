@@ -56,7 +56,7 @@ While usernames solve the "how to find someone" problem, they still have drawbac
 The friend system is designed for exactly this. Save up to **3 players** in friend slots, then:
 
 - **Query friends directly with `#friend1`, `#friend2`, `#friend3`** — no need to remember usernames
-- Use `/info` to view your own scores and all your friends' scores at a glance
+- When you look up your own score on a song with `/info <song>`, your friends' scores on that song are listed too
 - **If a friend changes their username, your friend reference still works** — the system always tracks the account
 - Challenge any friend to a B50 PK comparison at any time
 
@@ -78,7 +78,7 @@ Once friends are added, use `#friendN` in any command that supports a target:
 | Example | Description |
 |---------|-------------|
 | `/b50 #friend1` | View friend 1's Best 50 |
-| `/info` | View your own and all friends' score overview |
+| `/info 潘多拉` | View your and your friends' scores on this song |
 | `/pk50 #friend1` | PK against friend 1 |
 
 ::: tip Multilingual Support
@@ -91,15 +91,16 @@ Friend slots also support localized notation, such as Japanese `#フレンド1`.
 
 `/pk50` pits you against another player on the charts you've both played: the two of you take turns picking your own highest-RA charts to build a chart set (up to 35 old-version + 15 new-version charts), and whoever has the higher Rating on that set wins. See [PK B50](/en/commands/b50#pk-b50) for the full rules.
 
-**Command:** `/pk50 <target>`
+**Command:** `/pk50 [target]`
 
 | Example | Description |
 |---------|-------------|
 | `/pk50 #MaiPlayer` | PK against a player by username |
 | `/pk50 #friend1` | PK against friend 1 |
+| `/pk50` | Random opponent with a similar Rating on the same server |
 
 ::: warning Note
-Both players must have updated B50 data (`/update` or `/updateb50`) before initiating a PK, and the target's B50 privacy must be set to public.
+Before starting a PK, both players must have updated their B50 data (`/update`), the opponent's B50 privacy must be public, and the two of you must share at least 10 charts.
 :::
 
 ---
@@ -112,6 +113,7 @@ Most McMai commands support an optional target at the end to query a specific pl
 |--------|-------------|
 | (empty) | Query yourself (default) |
 | `#username` | Query by username |
+| `#query ID` | Query by the `#mc`-prefixed query ID |
 | `#friend1` / `#friend2` / `#friend3` | Query the player in the corresponding friend slot |
 
-Resolution priority: `#friendN` > `#username` > default (self)
+Resolution priority: `#friendN` > `#query ID` > `#username` > default (self)

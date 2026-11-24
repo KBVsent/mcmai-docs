@@ -1,6 +1,6 @@
 # Getting Started
 
-McMai is a plugin that provides maimai DX score tracking, B50 analysis, and progress features for CN, JP, and INTL players. Cain is the bot you interact with on QQ, Discord, or LINE to use these McMai features.
+McMai is a plugin that provides maimai DX score tracking, B50 analysis, and progress features for China, Japan, and International Server players. Cain is the bot you interact with on QQ, Discord, or LINE to use these McMai features.
 
 ## Add Cain {#add-the-bot}
 
@@ -11,8 +11,6 @@ Cain is available on QQ, Discord, and LINE. **Scan the QR code or tap the button
 | <img src="/QQBot.png" alt="Cain QQ Bot QR Code" width="200" /> | <img src="/Discord.png" alt="Cain Discord Bot QR Code" width="200" /> | <img src="/Line.jpg" alt="Cain LINE Official Account QR Code" width="200" /> |
 | Add the bot as a friend<br>or invite it to a group | Invite the bot to your server<br>or install it as a user app | Add the official account<br>or invite it to a group chat |
 | [🔗 Add](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102076996&robot_uin=3889001355) | [🔗 Invite](https://discord.com/oauth2/authorize?client_id=1455121113758830763) | [🔗 Add](https://line.me/R/ti/p/@819jucvv) |
-
-More platforms (Telegram, etc.) will be supported in the future.
 
 ## Join an Official Group
 
@@ -28,17 +26,18 @@ You can also join an official group to **use the bot without installing anything
 
 You need to bind your account and update data before using personal data queries.
 
-**JP / INTL Users**
+**Japan / International Server Users**
 
-1. Use `/bind` to bind your SEGA ID
-2. After binding, use `/update` to sync your data
+1. Use `/bind` to bind your SEGA ID (International Server users can also submit a [sign-in token](/en/commands/account#intl-token))
+2. Submitting the binding page updates your scores right away; after that, use `/update` to update, and querying your own scores also [updates automatically](/en/commands/account#auto-update)
 
-**CN Users**
+**China Server Users**
 
 Update your data in either of these ways:
 
-- **NET WeChat authorization**: use `/bind` and select NET WeChat authorization for CN on the binding page. See the [CN NET Update Guide](/en/guide/cn-net-update) for setup
+- **NET WeChat authorization**: use `/bind` and choose "China" → "NET" on the binding page. See the [China Server NET Update Guide](/en/guide/cn-net-update) for setup
 - **MAID**: send your MAID (an 84-character string starting with `SGWCMAID`) directly
+- **LXNS**: use `/bind` and choose "China" → "LXNS" on the binding page to authorize. See [LXNS](/en/commands/account#lxns)
 
 ::: details How to get your MAID?
 1. Open the "舞萌 | 中二" (Maimai | Chunithm) official WeChat account
@@ -47,13 +46,13 @@ Update your data in either of these ways:
 4. Long-press the QR code to scan, then copy the `SGWCMAID` string that appears
 :::
 
-After binding, switch to your region's server:
+By default, the binding page also switches McMai's current region. To switch manually, use these commands:
 
 | Command | Description |
 |---------|-------------|
-| `/switchserver jp` | Switch to JP server |
-| `/switchserver intl` | Switch to INTL server |
-| `/switchserver cn` | Switch to CN server (default) |
+| `/switchserver jp` | Switch to Japan Server |
+| `/switchserver intl` | Switch to International Server |
+| `/switchserver cn` | Switch to China Server (default) |
 
 ## Basic Usage
 

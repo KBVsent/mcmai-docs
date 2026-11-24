@@ -5,7 +5,7 @@ export type UploadPhase = 'prepare' | 'fetching' | 'uploading' | 'parsing'
 export const bindingUi: Record<GuideLocale, Record<"title" | "jp" | "intl" | "cn" | "account" | "bookmark" | "step1" | "step2" | "step3" | "step4" | "next" | "desktop" | "ios" | "android" | "drag" | "bookmarkTitle", string>> = {
   "zh": {
     "title": "与我签订契约",
-    "jp": "日服",
+    "jp": "日本服",
     "intl": "国际服",
     "cn": "国服",
     "account": "账号密码",
@@ -23,9 +23,9 @@ export const bindingUi: Record<GuideLocale, Record<"title" | "jp" | "intl" | "cn
   },
   "zh-TW": {
     "title": "與我簽訂契約",
-    "jp": "日服",
-    "intl": "國際服",
-    "cn": "國服",
+    "jp": "日本區",
+    "intl": "國際區",
+    "cn": "大陸區",
     "account": "帳號密碼",
     "bookmark": "書籤",
     "step1": "產生書籤",
@@ -60,7 +60,7 @@ export const bindingUi: Record<GuideLocale, Record<"title" | "jp" | "intl" | "cn
   "ja": {
     "title": "僕と契約しよう",
     "jp": "日本版",
-    "intl": "国際版",
+    "intl": "海外版",
     "cn": "中国版",
     "account": "ID・パスワード",
     "bookmark": "ブックマークレット",

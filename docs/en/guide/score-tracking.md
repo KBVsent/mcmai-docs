@@ -1,11 +1,11 @@
 ---
 title: maimai DX Score Tracking Guide
-description: Use McMai on QQ, LINE, or Discord to update and query maimai DX scores for the CN, JP, and INTL regions, including top scores, song records, and progress.
+description: Use McMai on QQ, LINE, or Discord to update and query maimai DX scores on the China, Japan, and International Servers, including top scores, song records, and progress.
 ---
 
 # maimai DX Score Tracking Guide
 
-McMai is a free score tracking and analytics bot for maimai DX players. It works as a maimai score tracker on Discord, LINE, and QQ, and supports play data from the CN, JP, and INTL regions without requiring a separate score-tracker website.
+McMai is a free score tracking and analytics bot for maimai DX players. It works as a maimai score tracker on Discord, LINE, and QQ, and supports play data from the China, Japan, and International Servers without requiring a separate score-tracker website.
 
 ## What can you check?
 
@@ -21,9 +21,11 @@ McMai is a free score tracking and analytics bot for maimai DX players. It works
 
 | Region | How to update data |
 |--------|--------------------|
-| CN | Follow the [NET WeChat authorization guide](/en/guide/cn-net-update), or send the `SGWCMAID` from the official player QR code |
-| JP | Use the binding page from `/bind`, or update with the bookmarklet without submitting a password |
-| INTL | Use the binding page from `/bind`, or update with the bookmarklet without submitting a password |
+| China | Follow the [NET WeChat authorization guide](/en/guide/cn-net-update), send the `SGWCMAID` from the official player QR code, or authorize [LXNS](/en/commands/account#lxns) |
+| Japan | Bind your SEGA ID on the binding page from `/bind`, or update with the bookmarklet without submitting a password |
+| International | Bind your SEGA ID or a [sign-in token](/en/commands/account#intl-token) on the binding page from `/bind`, or update with the bookmarklet without submitting a password |
+
+With a SEGA account, sign-in token, or LXNS linked, querying your own scores [updates automatically](/en/commands/account#auto-update) when the data is more than 1 hour old.
 
 See [Account & Server](/en/commands/account) for complete binding, bookmarklet, and region-switching instructions.
 
@@ -33,11 +35,11 @@ See the [Bookmarklet Update Guide](/en/guide/bookmarklet-update) for installatio
 
 1. Add and open McMai on QQ, LINE, or Discord.
 2. Update your play data using the method for your region.
-3. Select CN, JP, or INTL with `/switchserver`.
+3. Select the China, Japan, or International Server with `/switchserver`.
 4. Send `/b50` to review your top scores, or `/info <song ID or title>` to query one song.
 
 If you have not added the bot yet, begin with [Getting Started](/en/guide/getting-started). Use the [Command Reference](/en/commands/basic) to find other features and parameters.
 
 ::: info Privacy note
-JP and INTL players can use the bookmarklet update method without submitting a SEGA ID or password to McMai.
+Japan and International Server players can use the bookmarklet update method without submitting a SEGA ID or password to McMai.
 :::

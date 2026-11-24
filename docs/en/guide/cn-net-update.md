@@ -1,6 +1,6 @@
 ---
-title: CN NET Update Guide
-description: Update McMai CN NET scores through WeChat authorization, with proxy settings for iOS, Android, Windows, and macOS, entry link setup, and troubleshooting.
+title: China Server NET Update Guide
+description: Update McMai China Server NET scores through WeChat authorization, with proxy settings for iOS, Android, Windows, and macOS, entry link setup, and troubleshooting.
 ---
 
 <script setup>
@@ -8,12 +8,12 @@ import CnNetIosGuide from '../../.vitepress/theme/components/CnNetIosGuide.vue'
 import CnNetProxyGuide from '../../.vitepress/theme/components/CnNetProxyGuide.vue'
 </script>
 
-CN NET scores can be updated through NET WeChat authorization on the binding page. Initial setup requires a proxy configuration and a saved WeChat entry link. Each update requires a new authorization.
+China Server NET scores can be updated through the "NET" tab (WeChat authorization) under "China" on the binding page. Initial setup requires a proxy configuration and a saved WeChat entry link. Each update requires a new authorization.
 
 ## Preparation {#prepare}
 
 1. Send `/bind` to the bot and open the returned binding link.
-2. Select NET WeChat authorization for CN to obtain the WeChat entry link.
+2. Choose "China" → "NET" to obtain the WeChat entry link.
 3. Authorize with the WeChat account associated with the game account.
 
 Use the WeChat entry link shown on the current account's binding page. The interface language in each illustration can be selected separately.
@@ -94,6 +94,10 @@ After handoff, disable the proxy used for the update or restore the previous con
 
 Restore cellular data and automatic network switching if they were disabled. Check the update status at the top of the binding page. After completion, send `/switchserver cn` to the bot, followed by `/b50` to view the scores.
 
+::: warning Do not open the NET page during the update
+Do not open the maimai NET page in WeChat until the update has finished; doing so interrupts the update. After the update finishes, recent play records continue to be fetched in the background, so also keep it closed for the next few minutes.
+:::
+
 ## Subsequent updates {#next-time}
 
 1. Enable the configured proxy.
@@ -118,9 +122,11 @@ The service continues retrieving and processing NET data after handoff. The fina
 
 ### MAID updates
 
-MAID remains available for CN updates. See [CN MAID Updates](/en/commands/account#maid).
+MAID remains available for China Server updates. See [China Server MAID Updates](/en/commands/account#maid).
 
-The two methods carry different data, and some features follow whichever method you used last: NET updates include play history for [`/recent`](/en/commands/score#recent-plays) and [`/ralog`](/en/commands/score#rating-history), while MAID updates include the play counts used by [PC50](/en/commands/b50#pc50).
+The two methods carry different data: NET updates include play history for [`/recent`](/en/commands/score#recent-plays) and [`/ralog`](/en/commands/score#rating-history), while MAID updates include the play counts used by [PC50](/en/commands/b50#pc50).
+
+Data from NET and MAID updates each forms its own account and does not overwrite the other. Updating through either method switches you to its account automatically, and you can also switch manually with [`/aime`](/en/commands/account#aime). When the current account is the MAID account, `/recent` and `/ralog` still show the NET account's records.
 
 ---
 

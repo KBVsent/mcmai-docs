@@ -14,25 +14,25 @@ const COPY: Record<string, HeroCopy> = {
     botName: '该隐',
     phrases: ['多区服数据查询', '成绩统计与分析', '排行榜与进度追踪', 'SNS 内即开即用'],
     summary: '多区服数据查询、成绩统计与分析、排行榜与进度追踪、SNS 内即开即用',
-    hint: 'McMai 是提供 maimai DX 辅助功能的插件，支持国服、日服和国际服；通过该隐 Bot 即可使用。',
+    hint: 'McMai 是提供 maimai DX 辅助功能的插件，支持国服、日本服和国际服；通过该隐 Bot 即可使用。',
   },
   'zh-TW': {
     botName: '該隱',
     phrases: ['多區服資料查詢', '成績統計與分析', '排行榜與進度追蹤', 'SNS 內即開即用'],
     summary: '多區服資料查詢、成績統計與分析、排行榜與進度追蹤、SNS 內即開即用',
-    hint: 'McMai 是提供 maimai DX 輔助功能的插件，支援中國版、日本版及國際版；透過該隱 Bot 即可使用。',
+    hint: 'McMai 是提供 maimai DX 輔助功能的插件，支援大陸區、日本區及國際區；透過該隱 Bot 即可使用。',
   },
   'en-US': {
     botName: 'Cain',
     phrases: ['Multi-region data', 'Score analytics', 'Rankings & progress', 'Built for social chat'],
     summary: 'Multi-region data, score analytics, rankings and progress, built for social chat',
-    hint: 'McMai is the plugin behind Cain’s maimai DX features for CN, JP, and INTL players.',
+    hint: 'McMai is the plugin behind Cain’s maimai DX features for China, Japan, and International Server players.',
   },
   'ja-JP': {
     botName: '該隠',
     phrases: ['マルチサーバー照会', 'スコア統計・分析', 'ランキング・進捗管理', 'SNS ですぐ使える'],
     summary: 'マルチサーバー照会、スコア統計・分析、ランキング・進捗管理、SNS ですぐ使える',
-    hint: 'McMai は、中国版・日本版・国際版に対応した maimai DX サポートプラグインです。Bot「該隠」を通じて利用できます。',
+    hint: 'McMai は、中国版・日本版・インターナショナル版に対応した maimai DX サポートプラグインです。Bot「該隠」を通じて利用できます。',
   },
 }
 

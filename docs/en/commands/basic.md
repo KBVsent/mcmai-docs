@@ -60,19 +60,22 @@ Switch the Bot's reply language.
 
 | Code | Language |
 |------|----------|
-| `zh` (or `cn`) | Simplified Chinese (default) |
-| `zh-Hant` (or `tw`) | Traditional Chinese (Taiwan) |
-| `zh-Hant-HK` (or `hk`) | Traditional Chinese (Hong Kong) |
+| `zh` (or `cn`, `简体`) | Simplified Chinese |
+| `zh-Hant` (or `tw`, `繁体`) | Traditional Chinese (Taiwan) |
+| `zh-Hant-HK` (or `hk`, `港繁`) | Traditional Chinese (Hong Kong) |
 | `en` (or `english`) | English |
-| `ja` (or `jp`) | Japanese |
+| `ja` (or `jp`, `日语`) | Japanese |
 
 Run without arguments to view your current language setting.
+
+When no language is set, the bot replies in your client's language. If that can't be determined, Discord defaults to English, LINE to Japanese, and QQ to Simplified Chinese.
 
 **Examples:**
 
 | Command | Description |
 |---------|-------------|
 | `/lang` | View current language |
+| `/lang zh` | Switch to Simplified Chinese |
 | `/lang en` | Switch to English |
 | `/lang ja` | Switch to Japanese |
 
@@ -84,7 +87,7 @@ On Discord, if the bot can't tell your language yet (it replies in English by de
 
 ## Server Status
 
-View the real-time status of China (CN) maimai DX services, including the last 24 hours of availability for NET, the WeChat official account, and content delivery, plus cabinet self-check results and delivery progress.
+View the real-time status of China Server maimai DX services, including the last 24 hours of availability for NET, the WeChat official account, and content delivery, plus cabinet self-check results and delivery progress.
 
 **Command:** `/status`
 

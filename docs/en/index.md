@@ -2,7 +2,7 @@
 layout: home
 title: "McMai Docs | maimai DX Scores and B50 with Cain Bot"
 titleTemplate: false
-description: "Use Cain on QQ, LINE, or Discord to access maimai DX score tracking, B50 analysis, and progress features powered by McMai for CN, JP, and INTL players."
+description: "Use Cain on QQ, LINE, or Discord to access maimai DX score tracking, B50 analysis, and progress features powered by McMai for China, Japan, and International Server players."
 
 hero:
   name: "McMai"
@@ -25,7 +25,7 @@ features:
   - icon: 🎮
     link: /en/guide/score-tracking
     title: Multi-Region Support
-    details: Track and analyze maimai DX scores for CN, JP, and INTL regions from QQ, LINE, or Discord.
+    details: Track and analyze maimai DX scores on the China, Japan, and International Servers from QQ, LINE, or Discord.
   - icon: 📊
     link: /en/commands/b50
     title: Best 50 Analysis

@@ -44,7 +44,7 @@ Recommends practice charts based on your Chart Affinity, showing each chart's ni
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| Ability or pattern | Optional. An ability is one of the nine axes; a pattern is a chart tag shown on `/info` or `/chartanalysis`. Defaults to your two relatively weaker abilities | `Hand Speed`, `Jacks` |
+| Ability or pattern | Optional. An ability is one of the nine axes; a pattern is a chart tag shown in song search results or `/chartanalysis`. Defaults to your two relatively weaker abilities | `Hand Speed`, `Jacks` |
 | Difficulty range | Optional. Levels or constants joined with `-`; a single value means one level. Estimated from your scores by default | `12-13`, `13`, `13.5-14.0` |
 
 The ability or pattern and the range can go in either order. Numbers without a decimal point are read as levels, so `12-13` means levels 12, 12+, and 13.

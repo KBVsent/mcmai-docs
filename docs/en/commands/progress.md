@@ -26,7 +26,7 @@ There are three modes: a level plus a target gives **level progress**, a level a
 | `SS` | ≥ 99.0000% |
 | `SS+` | ≥ 99.5000% |
 | `SSS` | ≥ 100.0000% |
-| `SSS+` | = 101.0000% |
+| `SSS+` | ≥ 100.5000% |
 
 **Sync/FC keywords:** `fc`, `fc+`, `ap`, `ap+`, `fs`, `fs+`, `fdx`, `fdx+`
 
@@ -75,7 +75,9 @@ Query completion progress for a version plate (e.g. `circle sss`, `prism ap`).
 | `ap` | AP all songs |
 | `fdx` | FDX all songs |
 
-Use English version name aliases such as `circle`, `prism`, `plus`, `buddies`, `festival`, `universe`, `splash`, and `dx`.
+Use English version name aliases such as `circle`, `prism`, `plus`, `buddies`, `festival`, `universe`, `splash`, and `dx`. Plate characters (such as `丸`, `鏡`) with the Chinese plate levels `极` (FC), `将` (SSS), `神` (AP), and `舞舞` (FDX) also work, e.g. `/progress 丸 将`.
+
+For the 霸者 plate, write `/progress 霸者`.
 
 **Examples:**
 
@@ -86,7 +88,7 @@ Use English version name aliases such as `circle`, `prism`, `plus`, `buddies`, `
 | `/progress prism ap 2` |
 
 ::: tip
-For plate progress, use the English version alias with a plate level, e.g. `/progress circle sss`.
+A plate character and its plate level can be written together: `/progress 丸将` works the same as `/progress 丸 将`.
 :::
 
 ---
@@ -132,7 +134,7 @@ Query your full score list for a specified level or constant, with multi-dimensi
 | Chart type | `dx`, `sd` |
 | New / old | `new` (new version), `old` (old version) |
 | DX star level | `1star` – `7star` (`7star` = theoretical DXScore 100%) |
-| Game version | Plate character (e.g. `双`, `鏡`, `丸`) or English version alias (e.g. `buddies`, `prism`; use `deluxe` for the original でらっくす, since bare `dx` means DX charts); Plus versions end with `+`, e.g. `buddies+` |
+| Game version | Plate character (e.g. `双`, `鏡`, `丸`) English version alias (e.g. `buddies`, `prism`; use `deluxe` for the original でらっくす, since bare `dx` means DX charts), or China Server version name (e.g. `舞萌DX2025`, or just the year `2025`); Plus versions end with `+`, e.g. `buddies+` |
 
 **Operators (Combo / Sync / Grade only):**
 
@@ -164,3 +166,4 @@ Sortable fields: `ra` (Rating contribution), `acc` (achievement rate), `dx` (DX 
 | `/scorelist buddies` | Filter songs from the BUDDiES version |
 | `/scorelist buddies+` | Filter songs from the BUDDiES PLUS version |
 | `/scorelist deluxe` | Filter songs from the original でらっくす version |
+| `/scorelist 舞萌DX2025` | Filter songs from the China Server's 舞萌DX 2025 version |

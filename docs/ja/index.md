@@ -2,7 +2,7 @@
 layout: home
 title: "McMai ガイド｜該隠 Bot の maimai DX スコア確認・B50"
 titleTemplate: false
-description: "QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・国際版に対応しています。"
+description: "QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・インターナショナル版に対応しています。"
 
 hero:
   name: "McMai"
@@ -25,7 +25,7 @@ features:
   - icon: 🎮
     link: /ja/guide/score-tracking
     title: マルチサーバー対応
-    details: CN・JP・INTL 三つのサーバーのスコア確認とプレイデータ分析に対応。
+    details: 中国版・日本版・インターナショナル版の三つのサーバーのスコア確認とプレイデータ分析に対応。
   - icon: 📊
     link: /ja/commands/b50
     title: Best 50 分析

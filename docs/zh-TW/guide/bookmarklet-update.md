@@ -1,6 +1,6 @@
 ---
 title: 書籤更新教學
-description: McMai 日服與國際服書籤更新流程，包含電腦 Chrome、iPhone Safari、Android Chrome 的安裝與使用圖解。
+description: McMai 日本區與國際區書籤更新流程，包含電腦 Chrome、iPhone Safari、Android Chrome 的安裝與使用圖解。
 ---
 
 <script setup>
@@ -8,15 +8,15 @@ import BookmarkletGuide from '../../.vitepress/theme/components/BookmarkletGuide
 import UploaderProgressDemo from '../../.vitepress/theme/components/UploaderProgressDemo.vue'
 </script>
 
-書籤更新適用於日服與國際服。瀏覽器登入官方 maimai NET 後，書籤使用目前登入階段讀取成績並上傳至 McMai，無需向 McMai 提交 SEGA ID 與密碼。
+書籤更新適用於日本區與國際區。瀏覽器登入官方 maimai NET 後，書籤使用目前登入階段讀取成績並上傳至 McMai，無需向 McMai 提交 SEGA ID 與密碼。
 
 ## 一、產生書籤 {#generate}
 
 1. 向 Bot 傳送 `/綁定`，開啟回傳的綁定連結。
-2. 選擇「日服」或「國際服」，將更新方式切換為「書籤」。
+2. 選擇「日本區」或「國際區」，將更新方式切換為「書籤」。
 3. 點選「產生書籤」。手機使用者點選「複製書籤程式碼」，電腦使用者可直接使用綁定頁的拖曳按鈕。
 
-日服與國際服共用同一書籤。完整程式碼與目前 McMai 帳號關聯，需從自己的綁定頁取得。圖解中的程式碼為佔位說明，不能用於安裝。
+日本區與國際區共用同一書籤。完整程式碼與目前 McMai 帳號關聯，需從自己的綁定頁取得。圖解中的程式碼為佔位說明，不能用於安裝。
 
 ::: warning 書籤程式碼保管
 程式碼包含向該 McMai 帳號上傳成績的憑證，不應轉傳或出現在公開截圖中。「重新產生」會立即使舊書籤失效，已安裝的瀏覽器需更新程式碼。
@@ -58,8 +58,8 @@ Windows 與 macOS 的操作相同，書籤列快捷鍵分別為 `Ctrl+Shift+B` �
 
 | 區服 | 官方 NET |
 | --- | --- |
-| 日服 | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
-| 國際服 | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
+| 日本區 | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
+| 國際區 | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
 
 在 NET 執行書籤後，右下角顯示圓形懸浮按鈕，左側膠囊顯示目前階段。抓取時外圈依頁面數顯示進度；準備、上傳與解析時顯示旋轉圓弧。完成後顯示結果面板。
 
@@ -102,4 +102,4 @@ QQ、LINE、微信等 App 的內建瀏覽器可能限制書籤腳本。使用 Sa
 
 ---
 
-相關：[帳號與伺服器](/zh-TW/commands/account) · [查分指南](/zh-TW/guide/score-tracking) · [中國服 NET 更新教學](/zh-TW/guide/cn-net-update)
+相關：[帳號與伺服器](/zh-TW/commands/account) · [查分指南](/zh-TW/guide/score-tracking) · [大陸區 NET 更新教學](/zh-TW/guide/cn-net-update)

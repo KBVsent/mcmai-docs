@@ -1,6 +1,6 @@
 ---
 title: ブックマークレット更新ガイド
-description: McMai 日本版・国際版のブックマークレット更新手順。パソコンの Chrome、iPhone の Safari、Android の Chrome での登録と実行を図解。
+description: McMai 日本版・インターナショナル版のブックマークレット更新手順。パソコンの Chrome、iPhone の Safari、Android の Chrome での登録と実行を図解。
 ---
 
 <script setup>
@@ -8,15 +8,15 @@ import BookmarkletGuide from '../../.vitepress/theme/components/BookmarkletGuide
 import UploaderProgressDemo from '../../.vitepress/theme/components/UploaderProgressDemo.vue'
 </script>
 
-ブックマークレット更新は日本版と国際版に対応します。公式 maimai NET にログインしたブラウザのセッションでスコアを取得し、McMai にアップロードします。SEGA ID とパスワードを McMai に送信する必要はありません。
+ブックマークレット更新は日本版とインターナショナル版に対応します。公式 maimai NET にログインしたブラウザのセッションでスコアを取得し、McMai にアップロードします。SEGA ID とパスワードを McMai に送信する必要はありません。
 
 ## 1. ブックマークレットの発行 {#generate}
 
 1. Bot に `/連携` を送り、返された連携リンクを開きます。
-2. 日本版または国際版を選び、更新方式をブックマークレットに切り替えます。
+2. 「日本版」または「海外版」を選び、更新方式を「ブックマーク」に切り替えます。
 3. ブックマークレットを発行します。スマートフォンではコードをコピーし、パソコンでは連携ページのドラッグ用ボタンも利用できます。
 
-日本版と国際版は同じブックマークレットを使用します。完全なコードは現在の McMai アカウントに対応する連携ページから取得します。図中のコードは説明用で、登録には使用できません。
+日本版とインターナショナル版は同じブックマークレットを使用します。完全なコードは現在の McMai アカウントに対応する連携ページから取得します。図中のコードは説明用で、登録には使用できません。
 
 ::: warning コードの管理
 コードには対象の McMai アカウントへスコアを送信する認証情報が含まれます。他人への転送や公開画像への掲載は避けてください。再発行すると古いコードは直ちに無効になるため、登録済みの各ブラウザでコードの更新が必要です。
@@ -59,7 +59,7 @@ Windows と macOS の操作は共通です。ブックマークバーの表示�
 | 地域 | 公式 NET |
 | --- | --- |
 | 日本版 | [maimaidx.jp](https://maimaidx.jp/maimai-mobile/) |
-| 国際版 | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
+| インターナショナル版 | [maimaidx-eng.com](https://maimaidx-eng.com/maimai-mobile/) |
 
 NET で実行すると、右下に円形ボタンが表示され、その左側に現在の状態が表示されます。取得中はページ数に応じて外周の進捗が変化し、準備・アップロード・解析中は円弧が回転します。完了後は結果パネルが表示されます。
 

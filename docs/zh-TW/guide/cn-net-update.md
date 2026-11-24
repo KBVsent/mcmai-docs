@@ -1,6 +1,6 @@
 ---
-title: 中國服 NET 更新教學
-description: McMai 中國服 NET 微信授權更新流程，包含 iOS、Android、Windows、macOS 代理設定、微信入口儲存與常見問題。
+title: 大陸區 NET 更新教學
+description: McMai 大陸區 NET 微信授權更新流程，包含 iOS、Android、Windows、macOS 代理設定、微信入口儲存與常見問題。
 ---
 
 <script setup>
@@ -8,12 +8,12 @@ import CnNetIosGuide from '../../.vitepress/theme/components/CnNetIosGuide.vue'
 import CnNetProxyGuide from '../../.vitepress/theme/components/CnNetProxyGuide.vue'
 </script>
 
-中國服 NET 成績可透過綁定頁的「NET 微信授權」更新。首次使用需設定代理並儲存微信入口，每次更新均需重新授權。
+大陸區 NET 成績可透過綁定頁大陸區的「NET」（微信授權）更新。首次使用需設定代理並儲存微信入口，每次更新均需重新授權。
 
 ## 準備 {#prepare}
 
 1. 向 Bot 傳送 `/綁定`，開啟回傳的綁定連結。
-2. 選擇中國服「NET 微信授權」，取得微信入口。
+2. 選擇「大陸區」→「NET」，取得微信入口。
 3. 使用對應遊戲帳號的微信完成授權。
 
 微信入口以目前帳號的綁定頁為準。圖解的介面語言可單獨切換。
@@ -94,6 +94,10 @@ Wi-Fi 代理開啟期間，其他網站可能無法存取。授權頁顯示交�
 
 恢復先前關閉的行動數據、自動網路切換等設定，返回綁定頁頂部查看更新狀態。更新完成後，向 Bot 傳送 `/切換伺服器 cn`，再傳送 `/b50` 查詢成績。
 
+::: warning 更新期間請勿開啟 NET 頁面
+更新完成前，請勿在微信中開啟 maimai NET 頁面，否則會中斷更新。更新完成後最近遊玩記錄會在背景繼續取得，接下來幾分鐘內同樣請勿開啟。
+:::
+
 ## 再次更新 {#next-time}
 
 1. 開啟已設定的代理。
@@ -118,9 +122,11 @@ Wi-Fi 代理開啟期間，其他網站可能無法存取。授權頁顯示交�
 
 ### MAID 更新
 
-中國服仍支援 MAID 更新，相關說明見[中國服 MAID 更新](/zh-TW/commands/account#maid)。
+大陸區仍支援 MAID 更新，相關說明見[大陸區 MAID 更新](/zh-TW/commands/account#maid)。
 
-兩種方式包含的資料不同，部分功能以最近一次更新的方式為準：NET 更新包含遊玩記錄，可使用 [`/最近遊玩`](/zh-TW/commands/score#最近遊玩) 與 [`/rating記錄`](/zh-TW/commands/score#rating-變化)；MAID 更新包含遊玩次數，可使用 [PC50](/zh-TW/commands/b50#pc50)。
+兩種方式包含的資料不同：NET 更新包含遊玩記錄，可使用 [`/最近遊玩`](/zh-TW/commands/score#最近遊玩) 與 [`/rating記錄`](/zh-TW/commands/score#rating-變化)；MAID 更新包含遊玩次數，可使用 [PC50](/zh-TW/commands/b50#pc50)。
+
+NET 與 MAID 更新的資料各是一個帳號，互不覆蓋，用哪種方式更新就自動切換到對應帳號，也可以用 [`/選卡`](/zh-TW/commands/account#aime) 手動切換。目前是 MAID 帳號時，`/最近遊玩` 與 `/rating記錄` 仍會顯示 NET 帳號的記錄。
 
 ---
 
