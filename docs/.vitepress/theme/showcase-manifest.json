@@ -1,0 +1,146 @@
+{
+  "b50": {
+    "raw_bytes": 2690865,
+    "full": {
+      "file": "b50.webp",
+      "width": 2200,
+      "height": 4472,
+      "bytes": 1091168,
+      "hash": "ef47f3f6"
+    },
+    "showcase": {
+      "file": "b50-showcase.webp",
+      "width": 720,
+      "height": 1464,
+      "bytes": 237858,
+      "hash": "a9abdf79"
+    },
+    "poster": {
+      "file": "b50-poster.webp",
+      "width": 90,
+      "height": 183,
+      "bytes": 674,
+      "hash": "e7786c43"
+    }
+  },
+  "pk50": {
+    "raw_bytes": 1907586,
+    "full": {
+      "file": "pk50.webp",
+      "width": 2200,
+      "height": 3868,
+      "bytes": 718298,
+      "hash": "a2826606"
+    },
+    "showcase": {
+      "file": "pk50-showcase.webp",
+      "width": 720,
+      "height": 1266,
+      "bytes": 169418,
+      "hash": "e4f63719"
+    },
+    "poster": {
+      "file": "pk50-poster.webp",
+      "width": 90,
+      "height": 158,
+      "bytes": 492,
+      "hash": "810d7f53"
+    }
+  },
+  "search": {
+    "raw_bytes": 2588954,
+    "full": {
+      "file": "search.webp",
+      "width": 1118,
+      "height": 3260,
+      "bytes": 190326,
+      "hash": "3e7cb6cd"
+    },
+    "showcase": {
+      "file": "search-showcase.webp",
+      "width": 720,
+      "height": 2099,
+      "bytes": 114246,
+      "hash": "d611ba63"
+    },
+    "poster": {
+      "file": "search-poster.webp",
+      "width": 90,
+      "height": 262,
+      "bytes": 782,
+      "hash": "5c5418b4"
+    }
+  },
+  "grank": {
+    "raw_bytes": 2257381,
+    "full": {
+      "file": "grank.webp",
+      "width": 1118,
+      "height": 2076,
+      "bytes": 165904,
+      "hash": "b96cd277"
+    },
+    "showcase": {
+      "file": "grank-showcase.webp",
+      "width": 720,
+      "height": 1240,
+      "bytes": 93904,
+      "hash": "a87f79c3"
+    },
+    "poster": {
+      "file": "grank-poster.webp",
+      "width": 90,
+      "height": 155,
+      "bytes": 566,
+      "hash": "076ba55b"
+    }
+  },
+  "plate": {
+    "raw_bytes": 985328,
+    "full": {
+      "file": "plate.webp",
+      "width": 1950,
+      "height": 2249,
+      "bytes": 397726,
+      "hash": "5abde0e7"
+    },
+    "showcase": {
+      "file": "plate-showcase.webp",
+      "width": 720,
+      "height": 830,
+      "bytes": 100174,
+      "hash": "37f73c7d"
+    },
+    "poster": {
+      "file": "plate-poster.webp",
+      "width": 90,
+      "height": 104,
+      "bytes": 506,
+      "hash": "f946e203"
+    }
+  },
+  "scorelist": {
+    "raw_bytes": 2611646,
+    "full": {
+      "file": "scorelist.webp",
+      "width": 2200,
+      "height": 3771,
+      "bytes": 1107894,
+      "hash": "4cd28445"
+    },
+    "showcase": {
+      "file": "scorelist-showcase.webp",
+      "width": 720,
+      "height": 1234,
+      "bytes": 220278,
+      "hash": "b336861a"
+    },
+    "poster": {
+      "file": "scorelist-poster.webp",
+      "width": 90,
+      "height": 154,
+      "bytes": 486,
+      "hash": "890f8776"
+    }
+  }
+}

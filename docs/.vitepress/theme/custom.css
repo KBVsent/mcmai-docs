@@ -54,13 +54,6 @@
   }
 }
 
-/* Feature cards: transparent background with shadow */
-.VPFeature {
-  border: none;
-  box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
-  background-color: transparent;
-}
-
 /* Safari can paint VitePress's masked dropdown chevron as a solid square.
    Draw the same shape with borders so this control does not depend on masks. */
 .VPNavBarTranslations .vpi-chevron-down {
@@ -148,6 +141,41 @@
 .VPHomeContent {
   position: relative;
   z-index: 1;
+}
+
+/* ===== Home page: showcase stage (HomeChatShowcase.vue) ===== */
+
+/* hero 的淡出由组件直接写 opacity / transform（不经过 <html> 上的变量），这里只定原点 */
+.VPHome .VPHero {
+  transform-origin: 50% 100%;
+}
+
+/* 舞台后面的内容（动态 + 社区）：组件给它负的 margin-top，让它在固定段里
+   像一张纸从下方盖住舞台。需要不透明的通栏底色，并压在 sticky 的舞台上面。
+   staged 只在桌面且未开启「减少动态效果」时存在 */
+@media (min-width: 961px) {
+  .VPHome .hcs-track.staged + * {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+    padding-top: 40px;
+  }
+
+  /* 向下延伸盖住 .VPHome 的 margin-bottom（≥768px 时 128px），和页脚接上，不露出纸的下沿 */
+  .VPHome .hcs-track.staged + *::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: -128px;
+    left: 50%;
+    width: 100vw;
+    translate: -50% 0;
+    border-top: 1px solid var(--vp-c-divider);
+    border-radius: 24px 24px 0 0;
+    background: var(--vp-c-bg);
+    box-shadow: 0 -12px 32px rgb(0 0 0 / 10%);
+  }
 }
 
 /* Dark mode: slightly brighter */

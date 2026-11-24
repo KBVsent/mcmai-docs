@@ -20,32 +20,6 @@ hero:
     - theme: alt
       text: 指令參考
       link: /zh-TW/commands/basic
-
-features:
-  - icon: 🎮
-    link: /zh-TW/guide/score-tracking
-    title: 多區服支援
-    details: 同時支援大陸區（CN）、日本區（JP）、國際區（INTL）三區資料查詢與分析。
-  - icon: 📊
-    link: /zh-TW/commands/b50
-    title: Best 50 分析
-    details: 查詢 B50、B40、AP50、PC50，支援與好友 PK 成績對比。
-  - icon: 🏆
-    link: /zh-TW/commands/leaderboard
-    title: 排行榜系統
-    details: 全域單曲排行、群組內排行、Rating 排名，多維度競爭比較。
-  - icon: 🔍
-    link: /zh-TW/commands/search
-    title: 強大查歌
-    details: 支援歌名、別名、曲師、譜師、BPM、定數等多條件查歌。
-  - icon: 📈
-    link: /zh-TW/commands/progress
-    title: 進度追蹤
-    details: 等級進度、分類進度、完成表，直觀掌握遊戲進展。
-  - icon: ⚙️
-    link: /zh-TW/commands/settings
-    title: 靈活設定
-    details: 支援頂板樣式自訂、隱私權限控制、好友管理等個性化設定。
 ---
 
 <HomeColumns>

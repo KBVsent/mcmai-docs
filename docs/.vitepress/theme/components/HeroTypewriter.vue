@@ -29,10 +29,10 @@ const COPY: Record<string, HeroCopy> = {
     hint: 'McMai is the plugin behind Cain’s maimai DX features for China, Japan, and International Server players.',
   },
   'ja-JP': {
-    botName: '該隠',
+    botName: 'Cain',
     phrases: ['マルチサーバー照会', 'スコア統計・分析', 'ランキング・進捗管理', 'SNS ですぐ使える'],
     summary: 'マルチサーバー照会、スコア統計・分析、ランキング・進捗管理、SNS ですぐ使える',
-    hint: 'McMai は、中国版・日本版・インターナショナル版に対応した maimai DX サポートプラグインです。Bot「該隠」を通じて利用できます。',
+    hint: 'McMai は、中国版・日本版・インターナショナル版に対応した maimai DX サポートプラグインです。Bot「Cain」を通じて利用できます。',
   },
 }
 

@@ -1,48 +1,9 @@
 import { computed, ref, type Ref } from 'vue'
 import { useData } from 'vitepress'
+import { LANG_KEY, UPDATES_API, pickText, typeLabelOf, type Localized, type Payload } from '../updates-data'
 
-const API = 'https://mcmai-updates.moev.cc/api/updates'
-
-export type Localized = Record<string, string>
-
-export interface StreamEntry {
-  seq: number
-  date: string
-  type: string
-  title: Localized
-}
-
-export interface ReleaseEntry {
-  id: string
-  date: string
-  type: string
-  title: Localized
-  desc: Localized | null
-  commits: number[]
-}
-
-export interface Payload {
-  total: number | null
-  heatmap: { start: string; weeks: number[][] } | null
-  stream: StreamEntry[]
-  changelog: ReleaseEntry[]
-}
-
-/** 站点 locale → API 里的语言键 */
-const LANG_KEY: Record<string, string> = {
-  'zh-CN': 'zh',
-  'zh-TW': 'zh-TW',
-  'ja-JP': 'ja',
-  'en-US': 'en',
-}
-
-/** 类型标签四语。首页与更新记录页共用，改一处即可 */
-export const TYPE_LABELS: Record<string, Record<string, string>> = {
-  'zh-CN': { feat: '新功能', fix: '修复', perf: '性能优化', refactor: '重构', chore: '细节优化', docs: '文档' },
-  'zh-TW': { feat: '新功能', fix: '修復', perf: '效能優化', refactor: '重構', chore: '細節優化', docs: '文件' },
-  'ja-JP': { feat: '新機能', fix: '修正', perf: '最適化', refactor: 'リファクタ', chore: '細部改善', docs: 'ドキュメント' },
-  'en-US': { feat: 'Feature', fix: 'Fix', perf: 'Performance', refactor: 'Refactor', chore: 'Improvement', docs: 'Docs' },
-}
+export type { Localized, Payload, ReleaseEntry, StreamEntry } from '../updates-data'
+export { TYPE_LABELS } from '../updates-data'
 
 export const SUPPORTED = Object.keys(LANG_KEY)
 
@@ -54,7 +15,7 @@ let inflight: Promise<Payload> | null = null
 
 function load(): Promise<Payload> {
   if (!inflight) {
-    inflight = fetch(API)
+    inflight = fetch(UPDATES_API)
       .then((res) => {
         if (!res.ok) throw new Error(String(res.status))
         return res.json() as Promise<Payload>
@@ -76,12 +37,14 @@ const UNITS: [Intl.RelativeTimeFormatUnit, number][] = [
 ]
 
 export function useUpdates() {
-  const { lang } = useData()
+  const { lang, frontmatter } = useData()
   const locale = computed(() => (SUPPORTED.includes(lang.value) ? lang.value : 'en-US'))
   const key = computed(() => LANG_KEY[locale.value])
 
-  const data = ref<Payload | null>(null) as Ref<Payload | null>
-  const status = ref<'loading' | 'ready' | 'failed'>('loading')
+  // 构建时写进页面的快照（目前只有更新记录页有）：服务端渲染直接出内容，挂载后再换成接口的最新数据
+  const snapshot = (frontmatter.value.updatesSnapshot as Payload | undefined) ?? null
+  const data = ref<Payload | null>(snapshot) as Ref<Payload | null>
+  const status = ref<'loading' | 'ready' | 'failed'>(snapshot ? 'ready' : 'loading')
 
   async function fetchUpdates(): Promise<Payload | null> {
     try {
@@ -89,15 +52,15 @@ export function useUpdates() {
       status.value = 'ready'
       return data.value
     } catch {
-      status.value = 'failed'
-      return null
+      // 有快照就继续显示快照，不换成报错
+      status.value = data.value ? 'ready' : 'failed'
+      return data.value
     }
   }
 
   /** 取本地化文本；缺失时退回简中再退回英文，绝不显示空白 */
   function pick(node: Localized | null | undefined): string {
-    if (!node) return ''
-    return node[key.value] || node.zh || node.en || ''
+    return pickText(node, key.value)
   }
 
   const rtf = computed(() => new Intl.RelativeTimeFormat(locale.value, { numeric: 'auto' }))
@@ -117,8 +80,7 @@ export function useUpdates() {
 
   /** 类型标签始终以文字出现，颜色只是辅助 —— 识别从不只靠颜色 */
   function typeLabel(type: string): string {
-    const table = TYPE_LABELS[locale.value]
-    return table[type] ?? table.chore
+    return typeLabelOf(type, locale.value)
   }
 
   return { locale, data, status, fetchUpdates, pick, relative, absolute, typeLabel, dateFmt }

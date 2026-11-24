@@ -1,16 +1,16 @@
 ---
 layout: home
-title: "McMai ガイド｜該隠 Bot の maimai DX スコア確認・B50"
+title: "McMai ガイド｜Cain Bot の maimai DX スコア確認・B50"
 titleTemplate: false
-description: "QQ・LINE・Discord の Bot「該隠」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・インターナショナル版に対応しています。"
+description: "QQ・LINE・Discord の Bot「Cain」を通じて、McMai が提供する maimai DX のスコア確認・B50 分析・進捗管理を利用できます。中国版・日本版・インターナショナル版に対応しています。"
 
 hero:
   name: "McMai"
   text: "maimai DX オールインワン"
-  tagline: McMai のスコア確認・B50・進捗管理を、QQ・LINE・Discord の該隠から利用できます。
+  tagline: McMai のスコア確認・B50・進捗管理を、QQ・LINE・Discord の Cain から利用できます。
   image:
     src: /images/cain-mcmai-hero.webp
-    alt: McMai のロゴを掲げる該隠のデフォルメイラスト
+    alt: McMai のロゴを掲げる Cain のデフォルメイラスト
     width: 640
     height: 640
   actions:
@@ -20,32 +20,6 @@ hero:
     - theme: alt
       text: コマンド一覧
       link: /ja/commands/basic
-
-features:
-  - icon: 🎮
-    link: /ja/guide/score-tracking
-    title: マルチサーバー対応
-    details: 中国版・日本版・インターナショナル版の三つのサーバーのスコア確認とプレイデータ分析に対応。
-  - icon: 📊
-    link: /ja/commands/b50
-    title: Best 50 分析
-    details: B50・B40・AP50・PC50 を照会し、フレンドとスコアを PK 比較。
-  - icon: 🏆
-    link: /ja/commands/leaderboard
-    title: ランキングシステム
-    details: 全体楽曲ランキング・グループ内ランキング・Rating ランキングで多角的に比較。
-  - icon: 🔍
-    link: /ja/commands/search
-    title: 強力な楽曲検索
-    details: 曲名・別名・作曲者・譜面製作者・BPM・定数など多条件で検索可能。
-  - icon: 📈
-    link: /ja/commands/progress
-    title: 進捗トラッキング
-    details: レベル進捗・ジャンル進捗・コンプリート表でゲームの状況を一目で把握。
-  - icon: ⚙️
-    link: /ja/commands/settings
-    title: 柔軟な設定
-    details: プロフィール表示カスタマイズ・プライバシー設定・フレンド管理など。
 ---
 
 <HomeColumns>
