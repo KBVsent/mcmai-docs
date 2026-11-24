@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { defineConfig, type HeadConfig, type Plugin } from 'vitepress'
 import { defineTeekConfig } from "vitepress-theme-teek/config";
 import { docsIndexFile, publicPath, siteOrigin } from './site-url'
-import { COPY, PLATFORMS } from './theme/showcase-copy'
+import { COPY, PLATFORMS, SHOT_CAPTION, findShot, type ShotKey } from './theme/showcase-copy'
 import { LANG_KEY, UPDATES_API, localizePayload, pickText, typeLabelOf, type Payload } from './theme/updates-data'
 
 const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -74,6 +74,7 @@ function homeFeaturesMarkdown(locale: (typeof seoLocales)[number]) {
       if (!step) continue
       const shows = (step.callouts ?? []).map(({ text }) => `- ${text}`)
       blocks.push([locale.resultLabel(step.command), '', ...shows].join('\n'))
+      blocks.push(`![${step.image.alt}](${siteOrigin}${step.image.full})`)
     }
     blocks.push(`[${copy.learnMore}](${siteOrigin}${scene.link}.md)`)
   }
@@ -114,8 +115,18 @@ async function updatesMarkdown(markdown: string, locale: (typeof seoLocales)[num
  * 给 LLM 读的 md（/index.md、/updates.md 等）：多数页面原样输出源文件，
  * 首页和更新记录页的内容由组件渲染，这里补成文字。构建（buildEnd）和开发服务器（llmMarkdownDev）共用。
  */
+/** 指令页的 <ShowcaseFigure shot="…" /> 换成 Markdown 图片加图注（图片用绝对地址，脱离网站也能显示） */
+function showcaseFigureMarkdown(markdown: string, locale: (typeof seoLocales)[number]) {
+  return markdown.replace(/<ShowcaseFigure shot="(\w+)" \/>/g, (_, key: ShotKey) => {
+    const shot = findShot(locale.hreflang, key)
+    const caption = SHOT_CAPTION[locale.hreflang].text.replace('{command}', `\`${shot.command}\``)
+    return `![${shot.alt}](${siteOrigin}${shot.src})\n\n*${caption}*`
+  })
+}
+
 async function llmMarkdown(page: string, source: string) {
-  const markdown = await readFile(source, 'utf8')
+  const locale = seoLocales.find(({ prefix }) => !prefix || page.startsWith(prefix))!
+  const markdown = showcaseFigureMarkdown(await readFile(source, 'utf8'), locale)
   const home = seoLocales.find(({ prefix }) => page === `${prefix}index.md`)
   if (home) return homeMarkdown(markdown, home)
   const updates = seoLocales.find(({ prefix }) => page === `${prefix}updates.md`)
@@ -123,7 +134,7 @@ async function llmMarkdown(page: string, source: string) {
   return markdown
 }
 
-/** 开发服务器默认把 .md 当静态文件原样返回；首页和更新记录页改成和线上一样的内容 */
+/** 开发服务器默认把 .md 当静态文件原样返回；改成和线上一样的内容（首页、更新记录页、示例图） */
 function llmMarkdownDev(): Plugin {
   return {
     name: 'mcmai-llm-markdown',
@@ -134,10 +145,10 @@ function llmMarkdownDev(): Plugin {
         const [rawPath, query] = (req.url ?? '').split('?')
         if (query !== undefined || req.headers['sec-fetch-dest'] === 'script') return next()
         const path = decodeURIComponent(rawPath).replace(/^\//, '')
-        const generated = seoLocales.some(({ prefix }) => path === `${prefix}index.md` || path === `${prefix}updates.md`)
-        if (!generated) return next()
+        const file = resolve(docsRoot, path)
+        if (!path.endsWith('.md') || !file.startsWith(`${docsRoot}/`) || !existsSync(file)) return next()
         try {
-          const body = await llmMarkdown(path, resolve(docsRoot, path))
+          const body = await llmMarkdown(path, file)
           res.setHeader('Content-Type', 'text/markdown; charset=utf-8')
           res.setHeader('Cache-Control', 'no-cache')
           res.end(body)
@@ -209,6 +220,8 @@ function homeJsonLd(locale: (typeof seoLocales)[number], url: string, descriptio
           ...copy.scenes.map(({ title, desc }) => `${title}${colon}${desc}`),
           `${copy.regionTitle}${colon}${copy.regionDesc}`,
         ],
+        screenshot: copy.scenes.flatMap((scene) => [scene, scene.then]).flatMap((step) =>
+          step ? [{ '@type': 'ImageObject', url: `${siteOrigin}${step.image.full}`, caption: step.image.alt }] : []),
         isPartOf: { '@id': `${siteOrigin}/#website` },
       },
     ],

@@ -13,6 +13,8 @@ Search for songs by title, alias, or ID.
 | `/search 潘多拉` |
 | `/search 11451` |
 
+<ShowcaseFigure shot="search" />
+
 ---
 
 ## Exact ID Lookup

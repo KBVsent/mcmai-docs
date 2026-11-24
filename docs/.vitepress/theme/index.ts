@@ -7,6 +7,7 @@ import HeroTypewriter from "./components/HeroTypewriter.vue";
 import UpdateLog from "./components/UpdateLog.vue";
 import HomeColumns from "./components/HomeColumns.vue";
 import HomeChatShowcase from "./components/HomeChatShowcase.vue";
+import ShowcaseFigure from "./components/ShowcaseFigure.vue";
 import LanguageSuggestion from "./components/LanguageSuggestion.vue";
 import AskChatGPT from "./components/AskChatGPT.vue";
 
@@ -24,5 +25,6 @@ export default {
   enhanceApp({ app }) {
     app.component("UpdateLog", UpdateLog);
     app.component("HomeColumns", HomeColumns);
+    app.component("ShowcaseFigure", ShowcaseFigure);
   },
 };

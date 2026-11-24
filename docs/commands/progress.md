@@ -91,6 +91,8 @@
 牌子字和评级可以连写，例如 `/进度 丸将` 与 `/进度 丸 将` 效果相同。
 :::
 
+<ShowcaseFigure shot="plate" />
+
 ---
 
 ## 分类进度
@@ -168,3 +170,5 @@
 | `/分数列表 双` | 筛选 BUDDiES 版本曲目 |
 | `/分数列表 buddies+` | 筛选 BUDDiES PLUS 版本曲目 |
 | `/分数列表 舞萌DX2025` | 筛选国服舞萌DX 2025 版本曲目 |
+
+<ShowcaseFigure shot="scorelist" />

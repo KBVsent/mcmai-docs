@@ -52,6 +52,8 @@ Same parameters as `/rank`. Add a page number at the end to see lower ranks. The
 `/grank` and `/grating` show 10 players per page, and the image tells you the command for the next page. On platforms that support buttons, tap the button to turn pages. Your own rank and the players around you appear only on page 1.
 :::
 
+<ShowcaseFigure shot="grank" />
+
 ---
 
 ## Group Rating Ranking

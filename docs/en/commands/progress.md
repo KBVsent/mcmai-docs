@@ -91,6 +91,8 @@ For the 霸者 plate, write `/progress 霸者`.
 A plate character and its plate level can be written together: `/progress 丸将` works the same as `/progress 丸 将`.
 :::
 
+<ShowcaseFigure shot="plate" />
+
 ---
 
 ## Genre Progress
@@ -167,3 +169,5 @@ Sortable fields: `ra` (Rating contribution), `acc` (achievement rate), `dx` (DX 
 | `/scorelist buddies+` | Filter songs from the BUDDiES PLUS version |
 | `/scorelist deluxe` | Filter songs from the original でらっくす version |
 | `/scorelist 舞萌DX2025` | Filter songs from the China Server's 舞萌DX 2025 version |
+
+<ShowcaseFigure shot="scorelist" />

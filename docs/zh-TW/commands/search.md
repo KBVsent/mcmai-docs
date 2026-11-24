@@ -13,6 +13,8 @@
 | `/查歌 潘多拉` |
 | `/查歌 11451` |
 
+<ShowcaseFigure shot="search" />
+
 ---
 
 ## ID 精確查詢

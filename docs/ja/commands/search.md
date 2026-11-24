@@ -13,6 +13,8 @@
 | `/曲検索 潘多拉` |
 | `/曲検索 11451` |
 
+<ShowcaseFigure shot="search" />
+
 ---
 
 ## ID 精密検索

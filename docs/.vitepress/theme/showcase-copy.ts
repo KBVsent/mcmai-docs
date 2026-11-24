@@ -409,3 +409,49 @@ export const COPY: Record<string, Copy> = {
     ],
   },
 }
+
+/**
+ * 指令文档页里的示例图卡片（ShowcaseFigure.vue）的文案。演示图默认用日本服数据出图（脚本的 --server）。
+ * label / note 用在卡片上；text 是给 LLM 的 md 里的图注，{command} 处换成指令。
+ */
+export const SHOT_CAPTION: Record<string, { label: string; note: string; text: string }> = {
+  'zh-CN': {
+    label: '结果示例',
+    note: '日本服数据，图中随语言变化的文字以占位条示意。',
+    text: '发送 {command} 的结果示例（日本服），图中随语言变化的文字以占位条示意。',
+  },
+  'zh-TW': {
+    label: '結果示例',
+    note: '日本區資料，圖中隨語言變化的文字以佔位條示意。',
+    text: '傳送 {command} 的結果示例（日本區），圖中隨語言變化的文字以佔位條示意。',
+  },
+  'en-US': {
+    label: 'Example result',
+    note: 'Japan Server data. Language-dependent text is shown as placeholder bars.',
+    text: 'Example result of {command} (Japan Server). Language-dependent text is shown as placeholder bars.',
+  },
+  'ja-JP': {
+    label: '結果の例',
+    note: '日本版のデータです。言語によって変わる文字はプレースホルダーのバーで示しています。',
+    text: '{command} の結果例（日本版）。言語によって変わる文字はプレースホルダーのバーで示しています。',
+  },
+}
+
+/** 某张演示图在该语言下的指令与 alt（取自上面的演示文案），以及全图与缩略图地址 */
+export function findShot(lang: string, key: ShotKey) {
+  const copy = COPY[lang] ?? COPY['en-US']
+  const { full, showcase } = SHOTS[key]
+  const src = shotUrl(full)
+  const step = copy.scenes.flatMap((scene) => [scene, scene.then]).find((s) => s?.image.full === src)!
+  return {
+    command: step.command,
+    alt: step.image.alt,
+    viewFull: copy.viewFull,
+    /** 全图：给 LLM 的 md 与点击放大 */
+    src,
+    width: full.width,
+    height: full.height,
+    /** 缩略图：用首页聊天框那张截取顶部的图，比全图小得多，首页看过的还能直接命中缓存 */
+    thumb: shotUrl(showcase),
+  }
+}
