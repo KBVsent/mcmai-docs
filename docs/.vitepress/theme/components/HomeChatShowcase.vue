@@ -1139,7 +1139,7 @@ const avatar = withBase('/images/cain-mcmai-avatar-128.webp')
           <div class="hcs-chat-bar">
             <img class="hcs-avatar sm" :src="avatar" alt="" width="28" height="28">
             <span class="hcs-chat-name">{{ copy.botName }}</span>
-            <span class="hcs-chat-status"><i />{{ copy.online }}</span>
+            <span class="hcs-chat-status"><i /><span class="hcs-chat-status-text">{{ copy.online }}</span></span>
             <span class="hcs-demo-badge">{{ copy.demo }}</span>
             <a class="hcs-more" :href="withBase(active.link)">{{ copy.learnMore }} →</a>
           </div>
@@ -1902,6 +1902,12 @@ const avatar = withBase('/images/cain-mcmai-avatar-128.webp')
   font-weight: 600;
 }
 
+/* 标题栏一行放不下时不许逐字折行（日文无空格，会被挤成竖排），只让右侧链接省略 */
+.hcs-chat-bar > * {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .hcs-demo-badge {
   padding: 1px 8px;
   font-size: 11px;
@@ -1924,6 +1930,13 @@ const avatar = withBase('/images/cain-mcmai-avatar-128.webp')
   height: 7px;
   border-radius: 50%;
   background: #3fb950;
+}
+
+.hcs-chat-bar > .hcs-more {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hcs-more {
@@ -2470,6 +2483,21 @@ a.hcs-image {
   /* 窄屏下夹在标签和聊天窗之间太挤；区服与平台信息首屏 hero 已经提到 */
   .hcs-meta {
     display: none;
+  }
+
+  .hcs-chat-bar {
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  /* 窄屏只留绿点表示在线，文字留给读屏，给右侧链接腾位置 */
+  .hcs-chat-status-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .hcs-chat-body {
