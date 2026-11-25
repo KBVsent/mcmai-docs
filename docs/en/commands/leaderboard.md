@@ -1,3 +1,7 @@
+---
+description: Check maimai DX global song rankings, group song rankings, and group rating rankings, and learn how to join, leave, and manage a group leaderboard with McMai.
+---
+
 # Leaderboard
 
 ## Global Song Ranking

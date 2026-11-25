@@ -1,3 +1,7 @@
+---
+description: Track maimai DX level progress, version plate progress, and genre progress with McMai, and filter your score list by AP/FC, FS/FDX, rank, DX stars, and more.
+---
+
 # Progress
 
 ## Level Progress / Plate Progress

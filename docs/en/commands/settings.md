@@ -1,3 +1,7 @@
+---
+description: View your maimai DX profile card in McMai, customize what it displays, and use privacy settings to control who can query your top scores, song records, and progress.
+---
+
 # Personal Settings
 
 ## View Profile Card

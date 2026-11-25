@@ -1,3 +1,7 @@
+---
+description: 几分钟上手 McMai：在 QQ、LINE 或 Discord 添加该隐 Bot，绑定 SEGA ID，或用国服 NET、MAID、落雪查分器更新 maimai 数据，开始查询 B50 与成绩。
+---
+
 # 快速开始
 
 McMai 是提供查分、B50 分析与进度追踪等功能的 maimai DX 辅助插件，支持国服、日本服和国际服。你在 QQ、Discord 或 LINE 上互动的 Bot 名为「该隐」，通过该隐即可使用 McMai 提供的这些功能。

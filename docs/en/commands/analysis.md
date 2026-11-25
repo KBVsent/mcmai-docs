@@ -1,3 +1,7 @@
+---
+description: Analyze maimai DX charts on a nine-axis structure, see your chart affinity radar, and get daily practice picks and rating targets based on your relatively weaker skills.
+---
+
 # Chart Analysis & Practice
 
 McMai analyzes the structure of every chart and combines it with your scores to show your Chart Affinity, recommend practice charts, and suggest [Rating targets](/en/commands/tables#rating-targets).

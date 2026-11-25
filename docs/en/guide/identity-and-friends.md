@@ -1,3 +1,7 @@
+---
+description: Learn how McMai usernames and friend slots let you look up friends' maimai DX scores on QQ, where mentions are unavailable, and compare results with pk50 score PK.
+---
+
 # Username & Friend System
 
 ## Why Does This System Exist?

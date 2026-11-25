@@ -1,3 +1,7 @@
+---
+description: Basic McMai commands for maimai DX, including help, today's fortune, random songs, language switching, server status, and checking which commands your account cannot use.
+---
+
 # Basic Functions
 
 ## Help

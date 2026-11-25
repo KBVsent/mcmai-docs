@@ -1,3 +1,7 @@
+---
+description: 数分で McMai を始めましょう。QQ・LINE・Discord で Cain を追加し、SEGA ID などを連携して maimai DX のデータを更新すれば、B50 や成績を確認できます。
+---
+
 # はじめに
 
 McMai は、中国版・日本版・インターナショナル版のスコア確認・B50 分析・進捗管理などに対応した maimai DX サポートプラグインです。QQ・Discord・LINE では、Bot「Cain」を通じてこれらの機能を利用できます。

@@ -1,3 +1,7 @@
+---
+description: Bind your maimai DX account to McMai and update scores with a sign-in token, bookmarklet, China Server MAID, or LXNS. Also covers switching servers, usernames, privacy, and friends.
+---
+
 # Account & Server
 
 ## Bind Account

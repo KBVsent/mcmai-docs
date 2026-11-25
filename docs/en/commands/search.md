@@ -1,3 +1,7 @@
+---
+description: Search maimai DX songs by title, alias, ID, level constant, BPM, composer, charter, or version, or identify a song from an image with McMai.
+---
+
 # Song Search
 
 ## Search by Title / Alias / ID

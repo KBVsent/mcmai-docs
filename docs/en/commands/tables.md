@@ -1,3 +1,7 @@
+---
+description: Generate maimai DX level constant, dan-i, and completion tables with McMai, and find the charts that raise your rating most, including new-version mode and rating targets.
+---
+
 # Level Tables
 
 ## Level Constant Table

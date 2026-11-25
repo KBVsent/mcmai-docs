@@ -1,3 +1,7 @@
+---
+description: Start using McMai in minutes. Add Cain on QQ, LINE, or Discord, bind your SEGA ID or a China Server data source, and start checking your maimai DX B50 and scores.
+---
+
 # Getting Started
 
 McMai is a plugin that provides maimai DX score tracking, B50 analysis, and progress features for China, Japan, and International Server players. Cain is the bot you interact with on QQ, Discord, or LINE to use these McMai features.

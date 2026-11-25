@@ -1,3 +1,7 @@
+---
+description: Look up personal maimai DX song records, score tolerance, chart statistics, recent plays, and rating history, or analyze a result screenshot to break down BREAK judgments and lost points.
+---
+
 # Score Queries
 
 ## Personal Song Data
