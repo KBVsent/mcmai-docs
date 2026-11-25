@@ -613,8 +613,35 @@ const isTall = computed(() => {
   return (img.height / img.width) * imgW.value > frameMax.value
 })
 
+/**
+ * 窄屏首屏的「向下滑动」提示：首屏常常只有 hero，用户不知道下面还有演示。
+ * 固定在屏幕底部，只在页面还停在顶部、聊天窗还没露出来时显示；一开始滚动就收起，之后不再出现。
+ * 桌面端的舞台卡片里有自己的提示，这里不显示。
+ */
+const scrollCue = ref(false)
+let scrollCueDone = false
+
+function updateScrollCue() {
+  if (scrollCueDone) return
+  if (staged.value || window.scrollY > 24) {
+    // 桌面舞台模式只是不显示；真的滚动过才算看到了
+    if (!staged.value) scrollCueDone = true
+    scrollCue.value = false
+    return
+  }
+  const top = chatEl.value?.getBoundingClientRect().top ?? 0
+  scrollCue.value = top > window.innerHeight - 120
+}
+
+function scrollToDemo() {
+  scrollCueDone = true
+  scrollCue.value = false
+  chatEl.value?.scrollIntoView({ behavior: reduceMotion.value ? 'auto' : 'smooth', block: 'center' })
+}
+
 function onResize() {
   viewportH.value = window.innerHeight
+  updateScrollCue()
   // 视口高度变了，舞台高度（vh 单位）跟着变；ResizeObserver 也会触发，这里保证至少一次
   if (staged.value) remeasure()
 }
@@ -661,6 +688,7 @@ function measureStage() {
 }
 
 function onScroll() {
+  if (scrollCue.value || !scrollCueDone) updateScrollCue()
   if (!staged.value) return
   if (!rafId) rafId = requestAnimationFrame(measureStage)
   if (snapping) return
@@ -778,6 +806,11 @@ function setupReveal() {
   revealIo?.disconnect()
   revealIo = undefined
   const targets = [headEl.value, tabsEl.value, chatEl.value].filter((el): el is HTMLElement => !!el)
+  // 挂载时已经露在屏幕里的（比如字号大的手机上，标题刚好卡在首屏底部）直接算入场：
+  // 静态 HTML 里它本来就看得见，先藏起来再淡入只会让首屏底部空一块
+  if (!staged.value && !reduceMotion.value) {
+    for (const el of targets) if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-in')
+  }
   const pending = targets.filter((el) => !el.classList.contains('is-in'))
   if (staged.value || reduceMotion.value || !pending.length) {
     reveal.value = false
@@ -962,6 +995,7 @@ onMounted(() => {
   // 不播动画时没有「错过开头」的问题，直接展示第一个场景
   if (reduceMotion.value) run(0)
   applyMode()
+  updateScrollCue()
 
   // 聊天窗可见部分达到「自身高度与视口高度中较小者」的 85% 才算看到了：
   // 窗口比视口高时（高缩放）用视口高度做基准，否则永远达不到阈值
@@ -1253,6 +1287,18 @@ const avatar = withBase('/images/cain-mcmai-avatar-128.webp')
         </dl>
       </div>
     </div>
+    <!-- 窄屏首屏底部的「向下滑动」提示（见 updateScrollCue），默认隐藏，脚本判断需要时才显示 -->
+    <button
+      v-if="!staged"
+      type="button"
+      class="hcs-scroll-cue"
+      :class="{ shown: scrollCue }"
+      :tabindex="scrollCue ? 0 : -1"
+      :aria-hidden="!scrollCue"
+      @click="scrollToDemo"
+    >
+      {{ copy.cue }} <span class="hcs-cue-arrow">↓</span>
+    </button>
     <!-- 固定段里被后面内容盖住时的变暗层：只改它的 opacity，不对整块内容做 filter -->
     <div v-if="staged" ref="dimEl" class="hcs-dim" aria-hidden="true" />
   </section>
@@ -1497,6 +1543,41 @@ const avatar = withBase('/images/cain-mcmai-avatar-128.webp')
 @keyframes hcs-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(4px); }
+}
+
+/* 窄屏首屏底部的「向下滑动」提示：居中贴底，避开右下角的文档助手按钮 */
+.hcs-scroll-cue {
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 999px;
+  background: rgb(17 18 24 / 78%);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hcs-scroll-cue.shown {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+@media (min-width: 961px) {
+  .hcs-scroll-cue {
+    display: none;
+  }
 }
 
 /* ---------- 预告海报 ---------- */
