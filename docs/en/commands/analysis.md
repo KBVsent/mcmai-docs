@@ -13,9 +13,23 @@ These terms appear on search results, chart analysis, and practice picks:
 | Term | Meaning |
 |------|---------|
 | Nine axes | Nine aspects of a chart: Hand Speed, Stamina, Movement, Coordination, Slide Accuracy, Slide Reading, Touch, Rhythm Reading, and Visual Reading. Measured against the full chart library and shown as a radar |
-| Structure constant | A constant derived from the chart's content, shown in the center of the radar. It reflects only the difficulty of the content itself, not individual differences. The note distribution table on `/search` results lists it next to the fitted constant; songs without a fitted constant show only the structure constant |
+| Structure constant | A constant derived from the chart's content, shown in the center of the radar. The note distribution table on `/search` results lists it next to the fitted constant; songs without a fitted constant show only the structure constant. See [Fitted and Structure Constants](#fitted-and-structure-constants) |
 | Chart tags | Patterns that appear in the chart, such as Jacks or Trill, ordered by how much of the chart's length they take up |
 | Associated charts | Other charts with a similar structure |
+
+### Fitted and Structure Constants {#fitted-and-structure-constants}
+
+Both are difficulty numbers that sit alongside the official constant and describe difficulty from a different angle:
+
+| Number | Based on | Higher than the official constant | Lower than the official constant |
+|------|------|------|------|
+| Fitted constant | Players' actual scores; reflects how hard the chart plays in practice | Harder to score on than charts with the same constant | Easier to score on |
+| Structure constant | The chart's content itself, unaffected by player skill or personal feel | Its main challenges are heavier than those of charts with the same constant | Its main challenges are lighter |
+
+- Both are for reference only. In-game Rating is still calculated from the official constant.
+- It's normal for the two numbers to disagree. Everyone is good at different kinds of charts, so how a chart feels to you may also differ from the numbers.
+- The structure constant condenses the nine axes. To see what exactly makes a chart hard, the nine axes are more reliable.
+- Compare these two numbers across many charts alongside your own understanding of them, and over time you'll work out what they can tell you.
 
 ---
 
