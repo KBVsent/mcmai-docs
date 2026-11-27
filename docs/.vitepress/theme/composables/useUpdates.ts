@@ -48,7 +48,14 @@ export function useUpdates() {
 
   async function fetchUpdates(): Promise<Payload | null> {
     try {
-      data.value = await load()
+      const fresh = await load()
+      // 接口的数字类字段可能临时为 null（上游 stats 还在计算）：此时保留快照里的值，不让图凭空消失
+      const prev = data.value
+      data.value = {
+        ...fresh,
+        total: fresh.total ?? prev?.total ?? null,
+        heatmap: fresh.heatmap ?? prev?.heatmap ?? null,
+      }
       status.value = 'ready'
       return data.value
     } catch {
